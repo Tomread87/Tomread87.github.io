@@ -66,6 +66,7 @@ function addCrumb(){
     
     var page = window.location.pathname.split("/").pop().split(".")
     page = page[0]
+    console.log(page);
     if (page == ""){
         page = "index"
     }
@@ -220,9 +221,6 @@ var NavLinks = ["index","starters","maindishes","bakery","desserts"]
 //function to change the language of the Menu
 function PopulateMenu(MenuLang){
     var navContainer = document.getElementById("nav-menu")
-    if (navContainer.firstChild) {
-        console.log("test");
-    }
     var ul = document.createElement("ul")
     ul.setAttribute("class","nav-menu")
 
