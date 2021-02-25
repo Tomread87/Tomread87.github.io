@@ -451,7 +451,3 @@ var BakeryENG = {
         link: "bakery.html#Recipe_3"
     },
 }
-
-Object.values(BakeryENG).forEach(val => {
-    console.log(val.ingredients[0]);
-})

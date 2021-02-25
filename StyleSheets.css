@@ -458,4 +458,11 @@ footer {
     .recipe-thumbnail{
         max-width: 100%;
     }
+    .recipe-image {
+        margin: 0 12px 0 12px;
+        max-width: 100%;
+    }
+    .general-text-box {
+        margin: 0;
+    }
 }

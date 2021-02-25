@@ -3,22 +3,44 @@ window.sessionStorage //this will create a temporary variable that will be store
 //-*-*-*-*-*-*-*-* Function to hide and show top menu on scroll -*-*-*-*-*-*-*-*//
 //Code found, modified and adpated from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 var prevScrollpos = window.pageYOffset;
+var tapped = false
 window.addEventListener("scroll", function HideTopMenu(){    
     var header = document.getElementById("header")
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos+25) {
         header.style.top = "0"
+        console.log(tapped);
+        if (tapped) {
+            $("#nav-menu").fadeIn()
+        }
     } else if (prevScrollpos < currentScrollPos) {
         header.style.top = "-96px"
+        if ($(window).width() <= 850) {
+            $("#nav-menu").fadeOut()
+        }
+
     }
     prevScrollpos = currentScrollPos
 })
 
 //code to show and hide navigation menu on mobile devices
+
 $(document).ready(function(){
-    var screenWidth = $(window).width()
+    document.getElementById("button-menu").addEventListener("touchstart", function(){
+          if($("#nav-menu").css("display") =="none") {
+            $("#nav-menu").css("display","block")
+            $("#button-menu").css({"background-color":"rgba(70, 70, 70)", "transition":"0.25s"})
+            tapped = true
+        } else if ($("#nav-menu").css("display") =="block"){
+            $("#nav-menu").css("display","none")
+            $("#button-menu").css({"background-color":"rgba(255, 70, 70)", "transition":"0.25s"})
+            tapped = false
+        }
+    })
+    $("#logo").click(function(){window.location = "index.html"})
+    screenWidth = $(window).width()
     if (screenWidth <= 850){
-        
+
         $("#drop-down").mouseover(function(){
             $("#nav-menu").css("display","block")
             $("#button-menu").css({"background-color":"rgba(70, 70, 70)", "transition":"0.25s"})
@@ -27,15 +49,9 @@ $(document).ready(function(){
             $("#nav-menu").css("display","none")
             $("#button-menu").css({"background-color":"rgba(255, 70, 70)", "transition":"0.25s"})
         })
-        $("button-menu").on("tap", function(){
-            if($("#nav-menu").attr("display") =="none") {
-                $("#nav-menu").css("display","block")
-                console.log("tap");
-            } else {
-                $("#nav-menu").css("display","none")
-            }
-        })
+        
     }
+
 })
 
 $(window).resize(function(){
@@ -57,7 +73,6 @@ $(window).resize(function(){
             $(".hide-menu").css("display","block")
         })
     }
-    console.log(screenWidth);
 }
 
 )
@@ -157,14 +172,14 @@ function ShowHide(){
             recipe.removeClass("hover-class")
             recipe.find(".recipe-main-content").css({"max-height":"2000px","padding":"16px"})
             recipe.find(".close-recipe").css("display", "block")
-            recipe.find(".recipe-thumbnail").css("width","0")
+            recipe.find(".recipe-thumbnail").css({"height":"0","width":"0","min-height":"0"})
             recipe.find(".recipe-description-p").css("width","80%")
         }
         function hide(recipe){
             recipe.addClass("hover-class")
             recipe.find(".recipe-main-content").css({"max-height":"0px","padding":"0px"}) 
             recipe.find(".close-recipe").css("display", "none")
-            recipe.find(".recipe-thumbnail").css("width","250px")
+            recipe.find(".recipe-thumbnail").css({"width":"250px","min-height":"187px","height":"auto"})
             recipe.find(".recipe-description-p").css("width","auto")
         }
     })
@@ -173,7 +188,6 @@ function ShowHide(){
         var recipeId = $(e.target).closest(".bakery")
         var Id = $(e.target).closest("[id]").attr('id')
         //.closest will navigate up through the parents and find the first item that sattisfies the request 
-        console.log(Id);
         if (clickClass == "recipe-description-p" || clickClass == "recipe-title-h2") {
             //recipeId = e.target.parentNode.parentNode.parentNode.parentNode.id    //---Old Code---Vanilla Javascript---//  
             show(recipeId)
@@ -254,7 +268,6 @@ function FillLatest(collection, lang){
     var p = document.createElement("p")
     p.innerText = collection.description //dynamically give p the description
     var a = document.createElement("a")
-    //console.log(collection.name);
     if (lang == "ENG"){
         a.innerText = "Go to Recipe"
     } else {
@@ -276,7 +289,6 @@ function FillLatest(collection, lang){
 }
 
 function FillStarters(collection, lang){
-    console.log(collection.imageUrl);
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
     recipe.setAttribute("class","recipe hover-class")
@@ -293,7 +305,6 @@ function FillStarters(collection, lang){
     recipe_tab.appendChild(recipe_description) //append box contain recipe info
     var close_recipe = create("span")
     close_recipe.setAttribute("class","close-recipe")
-    console.log(lang);
     if (lang == "ENG") 
     {close_recipe.innerText = "close recipe" } 
     else {close_recipe.innerText = "chiudi ricetta" }
@@ -346,7 +357,6 @@ function FillStarters(collection, lang){
     }
 }
 function FillBakery(collection, lang){
-    console.log(collection.imageUrl);
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
     recipe.setAttribute("class","bakery hover-class")
@@ -363,7 +373,6 @@ function FillBakery(collection, lang){
     recipe_tab.appendChild(recipe_description) //append box contain recipe info
     var close_recipe = create("span")
     close_recipe.setAttribute("class","close-recipe")
-    console.log(lang);
     if (lang == "ENG") 
     {close_recipe.innerText = "close recipe" } 
     else {close_recipe.innerText = "chiudi ricetta" }
