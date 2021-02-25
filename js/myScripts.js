@@ -74,7 +74,7 @@ function addCrumb(){
 
 
 window.addEventListener("DOMContentLoaded",function(){
-    addCrumb()
+    //addCrumb()
     var lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
     
@@ -107,7 +107,7 @@ window.addEventListener("DOMContentLoaded",function(){
             PopulateMain(BakeryENG)
         }
     }
-    addCrumb()    
+    //addCrumb()    
 })
 
 $("#lang-ita").click(function(){
