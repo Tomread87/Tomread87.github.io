@@ -92,11 +92,11 @@ window.addEventListener("DOMContentLoaded",function(){
         PopulateMenu(NavMenuIta)
         if (crumb == "index") {
             PopulateIndex(LatestITA, "ITA") //compile for index-html only
-        } else if (crumb == "starters") {
+        } /*else if (crumb == "starters") {
             PopulateMain(StartersITA) //compily for starters.html only 
         } else if (crumb == "bakery") {
             PopulateMain(BakeryITA)
-        }
+        }*/
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
         PopulateMenu(NavMenuEng)
