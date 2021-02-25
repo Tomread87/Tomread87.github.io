@@ -452,6 +452,6 @@ var BakeryENG = {
     },
 }
 
-/*Object.values(BakeryENG).forEach(val => {
-    console.log(val);
-})*/
+Object.values(BakeryENG).forEach(val => {
+    console.log(val.ingredients[0]);
+})

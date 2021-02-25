@@ -92,20 +92,20 @@ window.addEventListener("DOMContentLoaded",function(){
     if (lang == "ITA") { //if lang is italian compile italian
         PopulateMenu(NavMenuIta)
         if (crumb == "index") {
-            PopulateIndex(LatestITA, "ITA") //compile for index-html only
-        } /*else if (crumb == "starters") {
-            PopulateMain(StartersITA) //compily for starters.html only 
-        } else if (crumb == "bakery") {
+            PopulateIndex(LatestITA, lang) //compile for index-html only
+        } else if (crumb == "starters") {
+            PopulateStarters(StartersITA, lang) //compily for starters.html only 
+        } /*else if (crumb == "bakery") {
             PopulateMain(BakeryITA)
         }*/
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
         PopulateMenu(NavMenuEng)
         if (crumb == "index") { //compile for index-html only
-            PopulateIndex(LatestENG,"ENG")
-        } /*else if (crumb == "starters") { //compile for index-html only
-            PopulateMain(StartersENG)
-        } else if (crumb == "bakery") {
+            PopulateIndex(LatestENG, lang)
+        } else if (crumb == "starters") { //compile for index-html only
+            PopulateStarters(StartersENG, lang)
+        } /*else if (crumb == "bakery") {
             PopulateMain(BakeryENG)
         }*/
     }
@@ -235,32 +235,32 @@ function PopulateMenu(MenuLang){
 }
 
 //function that creates the div element for latest Recipe
-function PopulateLatest(object, lang){
+function PopulateLatest(collection, lang){
     var LatestContainer = document.createElement("div") //Container to put latest recipes in
     var recipeContainer = document.createElement("div") //Containerr for each recipe
     recipeContainer.setAttribute("class","recipe-container")
     var recipeImage = document.createElement("img") //image of recipe
     recipeImage.setAttribute("class","recipe-image")
-    recipeImage.setAttribute("src","./"+object.imageUrl) //dynamically set img src
+    recipeImage.setAttribute("src","./"+collection.imageUrl) //dynamically set img src
     var generalText = document.createElement("div") //Text are for recipe
     generalText.setAttribute("class","general-text-box")
     var recipeHead = document.createElement("div") //Header of recipe
     recipeHead.setAttribute("class","recipe-heading")
     var latestRecipeDate = document.createElement("span") //to ad date inside
-    latestRecipeDate.innerText = object.dateAdded //dynamically get date of recipy
+    latestRecipeDate.innerText = collection.dateAdded //dynamically get date of recipy
     latestRecipeDate.setAttribute("class","latest-recipe-date")
     var h2 = document.createElement("h2") 
-    h2.innerText = object.title //gdynamically give h2 a title
+    h2.innerText = collection.title //gdynamically give h2 a title
     var p = document.createElement("p")
-    p.innerText = object.description //dynamically give p the description
+    p.innerText = collection.description //dynamically give p the description
     var a = document.createElement("a")
-    //console.log(object.name);
+    //console.log(collection.name);
     if (lang == "ENG"){
         a.innerText = "Go to Recipe"
     } else {
         a.innerText = "Vai alla Ricetta"
     }
-    a.setAttribute("href",object.link) //dynamically set href to a tag
+    a.setAttribute("href",collection.link) //dynamically set href to a tag
 
     var TemplateContainer = document.getElementById("template-container")
 
@@ -274,12 +274,82 @@ function PopulateLatest(object, lang){
     generalText.appendChild(p)
     generalText.appendChild(a)
 }
-
+function PopulateRecipes(collection, lang){
+    console.log(collection.imageUrl);
+    var container = document.getElementById("template-container") //where we are going to append all the recipes
+    var recipe = create("div")
+    recipe.setAttribute("class","recipe hover-class")
+    container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
+    var recipe_tab = create("div")
+    recipe_tab.setAttribute("class","recipe-tab")
+    recipe.appendChild(recipe_tab)//appending the tab that will be seen all the time
+    var recipe_thumbnail = create("img")
+    recipe_thumbnail.setAttribute("class","recipe-thumbnail")
+    recipe_thumbnail.setAttribute("src","./"+collection.imageUrl) //set image src dynamically
+    recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
+    var recipe_description = create("div")
+    recipe_description.setAttribute("class","recipe-description")
+    recipe_tab.appendChild(recipe_description) //append box contain recipe info
+    var close_recipe = create("span")
+    close_recipe.setAttribute("class","close-recipe")
+    if (lang = "ENG") {close_recipe.innerText = "close recipe" } 
+    else {close_recipe.innerText = "chiudi ricetta" }
+    recipe_description.appendChild(close_recipe)//appending the link to close open recipes
+    var h2 = create("h2")
+    h2.setAttribute("class","recipe-title-h2")
+    h2.innerText = collection.title
+    recipe_description.appendChild(h2)
+    /*var recipe_description_text = create("div")
+    recipe_description_text.setAttribute("class","recipe-description-text")
+    recipe_description.appendChild(recipe_description_text)*/
+    var p1 = create("p")
+    p1.setAttribute("class","recipe-description-p")
+    p1.innerText = collection.description
+    recipe_description.appendChild(p1)//adding the short description
+    var recipe_main_content = create("div")
+    recipe_main_content.setAttribute("class","recipe-main-content")
+    recipe.appendChild(recipe_main_content)//second half of recipe that is hidden until clicked on
+    var recipe_ingr_and_img = create("div")
+    recipe_ingr_and_img.setAttribute("class","recipe-ingr-and-img")
+    recipe_main_content.appendChild(recipe_ingr_and_img) //text and image appended
+    var ingredients_list = create("div")
+    ingredients_list.setAttribute("class","ingredients-list")
+    recipe_ingr_and_img.appendChild(ingredients_list)
+    var h3 = create("h3")
+    if (lang = "ENG") {h3.innerText = "Ingredients"}
+    else {h3.innerText = "Ingredienti"}
+    ingredients_list.appendChild(h3)
+    var ul = create("ul")
+    for (var i = 0; i < collection.ingredients; i++){
+        var li = document.createElement("li")
+        li.innerText = collection.ingredients[i]
+        ul.appendChild(li)
+    }
+    ingredients_list.appendChild(ul) //all ingredients have been added now
+    var img = create(img)
+    img.setAttribute("src","./"+collection.imageUrl)
+    recipe_ingr_and_img.appendChild(img) //big picture added
+    var steps = create("div")
+    steps.setAttribute("class", "recipe-steps")
+    recipe_main_content.appendChild(steps)
+    var h3_steps = create("h3")
+    if (lang = "ENG") {
+        h3_steps.innerText = "Let's start Cooking!"
+    } else {
+        h3_steps.innerText = "Ai fornelli!"
+    }
+    steps.appendChild(h3_steps)
+    for (var i = 0; i < collection.steps; i++){
+        var p = create("p")
+        p.innerText(collection.steps[i])
+        steps.appendChild(p)
+    }
+}
 //function PopulateRecipe()
 
 
-function PopulateIndex(object , lang = "ENG"){
-    Object.values(object).forEach(val => {
+function PopulateIndex(collection , lang = "ENG"){
+    Object.values(collection).forEach(val => {
     PopulateLatest(val, lang)
     }) 
     if (lang == "ENG") {
@@ -290,6 +360,18 @@ function PopulateIndex(object , lang = "ENG"){
         $("#latest-header").text("Le Ultime Ricette")
     }
 }
+function PopulateStarters(collection, lang ="ENG"){
+    Object.values(collection).forEach(val => {
+        PopulateRecipes(val, lang)
+        }) 
+        if (lang == "ENG") {
+            $("#reach-us").text("Reach Us Also At")
+            $("#latest-header").text("Our Latest Recipes")
+        } else {
+            $("#reach-us").text("Ci Trovate Anche Su")
+            $("#latest-header").text("Le Ultime Ricette")
+        }
+}
 
 function RemoveChildrenOf(id){
     var parent = document.getElementById(id)
@@ -297,3 +379,54 @@ function RemoveChildrenOf(id){
         parent.removeChild(parent.firstChild)
     }
 }
+
+function create(element){
+    return document.createElement(element)    
+}
+
+
+/*
+<div class="recipe hover-class">               
+<div class="recipe-tab">
+    <div class="recipe-thumbnail" style="background-image: url({{imageUrl}});">
+    </div>
+    <div class="recipe-description">
+        <span class="close-recipe">close recipe</span>
+        <div class="recipe-title">
+                <h2 class="recipe-title-h2">{{title}}</h2>
+        </div>
+        <div class="recipe-description-text">
+            <p class="recipe-description-p" style="margin-bottom: 0;">{{description}}</p>
+        </div>
+
+    </div>
+</div>
+<div class="recipe-main-content">
+    <div class="recipe-ingr-and-img">
+        <div class="ingredients-list">
+            <h3>Ingredients</h3>
+            <ul>
+                {{#each ingredients}}
+                <li>{{this}}</li>
+                {{/each}}
+                <li>Spices:
+                    <ul>
+                        {{#each spices}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <img src="./{{imageUrl}}" alt="">
+    </div>
+
+    <div class="recipe-steps">
+        <h3>Let's Start Cooking</h3>
+        <br>
+        {{#each steps}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+</div>
+</div>*/

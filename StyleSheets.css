@@ -227,13 +227,13 @@ header .main{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .recipe-thumbnail {
-    min-width: 250px;
+    max-width: 250px;
     min-height: 168px;
-    /*height: auto;*/
     background-position: center;
     background-size: cover;
     border-radius: 10px 0 0 10px;
     transition: 0.5s;
+    object-fit: cover;
 }
 .recipe-main-content {
     margin: 16px;
