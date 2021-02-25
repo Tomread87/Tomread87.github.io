@@ -68,7 +68,7 @@ function addCrumb(){
     page = page[0]
     sessionStorage.setItem("Crumb",page)
     let crumb = sessionStorage.getItem("Crumb")
-    $("#"+crumb).css("border-bottom","solid 2px rgba(255, 70, 70)")
+    //$("#"+crumb).css("border-bottom","solid 2px rgba(255, 70, 70)")
 }
 
 //-*-*-*-*-*-*-*-* CODE TO CHOOSE LANGUAGE -*-*-*-*-*-*-*-*//
