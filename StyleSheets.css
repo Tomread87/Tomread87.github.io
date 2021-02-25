@@ -187,7 +187,7 @@ header .main{
     border-radius: 12px;
     margin: 36px;
     transition: 0.5s;
-    max-height: 168px;
+    /*max-height: 168px;*/
     overflow: hidden;
 }
 
@@ -196,18 +196,18 @@ header .main{
     flex-direction: row;
 }
 .recipe-description {
-
     justify-content: space-between;
-    margin: 10px 20px 16px 20px;
+    padding: 10px 20px 10px 20px;
     position: relative;
 }
-.recipe-description-text {
-    width: auto;
+.recipe-description-p{
+    margin-bottom: 0;
 }
 .close-recipe{
     position: absolute;
     right: 10px;
     display: none;
+    color: rgba(255, 70, 70);
 }
 .close-recipe:hover{
     cursor: pointer;
@@ -228,18 +228,19 @@ header .main{
 }
 .recipe-thumbnail {
     max-width: 250px;
-    min-height: 168px;
+    min-height: 187px;
     background-position: center;
     background-size: cover;
-    border-radius: 10px 0 0 10px;
     transition: 0.5s;
     object-fit: cover;
 }
 .recipe-main-content {
-    margin: 16px;
-    padding-bottom: 1px;
+    /*padding: 16px;
+    /*padding-bottom: 1px;*/
     /*display: none;*/
     transition: 0.5s;
+    overflow: hidden;
+    max-height: 0;
 }
 
 .video-container {
@@ -269,11 +270,11 @@ header .main{
     height: 100%;
 }
 /*---------- Bakery Styling  ----------*/
-.main-bakery {
+.main-bakery .bakery-page{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:center
+    justify-content:space-evenly
 }
 
 .bakery {
@@ -302,14 +303,14 @@ header .main{
 }
 
 .bakery img{
-    height: 250px;
+    /*height: 250px;*/
     object-fit: cover;
 }
 
 .bakery-tab {
     display: flex;
     flex-direction: column;
-    
+    max-height: 450px;
     overflow: hidden;
 }
 
@@ -319,12 +320,13 @@ header .main{
 }
 
 .bakery-thumbnail {
-    min-height: 168px;
-    /*height: auto;*/
+    /*min-height: 168px;*/
+    height: 200px;
     background-position: center;
     background-size: cover;
     border-radius: 10px 10px 0 0;
     transition: 0.5s;
+    object-fit: cover;
 }
 /*---------- Footer Styling  ----------*/
 footer {
@@ -444,15 +446,16 @@ footer {
         flex-direction: column;
         justify-content: center;
     }
-
+    .recipe-ingr-and-img{
+        flex-direction: column;
+    }
+    .recipe-ingr-and-img img{
+        width: 100%;
+    }
     .recipe-tab{
         flex-direction: column;
     }
-    /*.recipe-main-content{
-        height: 0%;
+    .recipe-thumbnail{
+        max-width: 100%;
     }
-
-    .recipe{
-        max-height: 400
-    }*/
 }

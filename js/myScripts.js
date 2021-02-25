@@ -18,6 +18,7 @@ window.addEventListener("scroll", function HideTopMenu(){
 $(document).ready(function(){
     var screenWidth = $(window).width()
     if (screenWidth <= 850){
+        
         $("#drop-down").mouseover(function(){
             $("#nav-menu").css("display","block")
             $("#button-menu").css({"background-color":"rgba(70, 70, 70)", "transition":"0.25s"})
@@ -25,6 +26,14 @@ $(document).ready(function(){
         $("#drop-down").mouseout(function(){
             $("#nav-menu").css("display","none")
             $("#button-menu").css({"background-color":"rgba(255, 70, 70)", "transition":"0.25s"})
+        })
+        $("button-menu").on("tap", function(){
+            if($("#nav-menu").attr("display") =="none") {
+                $("#nav-menu").css("display","block")
+                console.log("tap");
+            } else {
+                $("#nav-menu").css("display","none")
+            }
         })
     }
 })
@@ -95,9 +104,9 @@ window.addEventListener("DOMContentLoaded",function(){
             PopulateIndex(LatestITA, lang) //compile for index-html only
         } else if (crumb == "starters") {
             PopulateStarters(StartersITA, lang) //compily for starters.html only 
-        } /*else if (crumb == "bakery") {
-            PopulateMain(BakeryITA)
-        }*/
+        } else if (crumb == "bakery") {
+            PopulateBakery(BakeryITA, lang)
+        }
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
         PopulateMenu(NavMenuEng)
@@ -105,11 +114,12 @@ window.addEventListener("DOMContentLoaded",function(){
             PopulateIndex(LatestENG, lang)
         } else if (crumb == "starters") { //compile for index-html only
             PopulateStarters(StartersENG, lang)
-        } /*else if (crumb == "bakery") {
-            PopulateMain(BakeryENG)
-        }*/
+        } else if (crumb == "bakery") {
+            PopulateBakery(BakeryENG, lang)
+        }
     }
-    addCrumb()    
+    addCrumb()
+    ShowHide()    
 })
 
 $("#lang-ita").click(function(){
@@ -126,6 +136,9 @@ $("#lang-eng").click(function(){
 //---Old Code in comments below---Vanilla Javascript---//  
 //document.getElementById("sformato-carote").addEventListener("click", function GetElementInfo(e){alert("test")})
 
+$(document).ready(function(){
+    
+})
 function ShowHide(){
     $(".recipe").click(function GetElementInfo(e){
         var clickClass = e.target.className
@@ -142,29 +155,17 @@ function ShowHide(){
         }
         function show(recipe) {
             recipe.removeClass("hover-class")
-            recipe.css("max-height","2000px")
-            //.find will find the class that we are looking for among the children inside the div with id #recipeId
+            recipe.find(".recipe-main-content").css({"max-height":"2000px","padding":"16px"})
             recipe.find(".close-recipe").css("display", "block")
-            recipe.find(".recipe-thumbnail").css("min-width","0")
+            recipe.find(".recipe-thumbnail").css("width","0")
             recipe.find(".recipe-description-p").css("width","80%")
-            //---Old Code---Vanilla Javascript---//    
-            //document.getElementById(recipeId).childNodes[3].style.display = "block"
-            //document.getElementById(recipeId).childNodes[1].childNodes[1].style.display = "none"
-            //document.getElementById(recipeId).childNodes[1].childNodes[3].childNodes[1].style.display ="block"
-            //document.getElementById(recipeId).classList.remove("hover-class")
         }
         function hide(recipe){
             recipe.addClass("hover-class")
-            recipe.css("max-height", "168px") 
-            //.find will find the class that we are looking for among the children inside the div with id #recipeId
+            recipe.find(".recipe-main-content").css({"max-height":"0px","padding":"0px"}) 
             recipe.find(".close-recipe").css("display", "none")
-            recipe.find(".recipe-thumbnail").css("min-width","250px")
+            recipe.find(".recipe-thumbnail").css("width","250px")
             recipe.find(".recipe-description-p").css("width","auto")
-            //---Old Code---Vanilla Javascript---//    
-            //document.getElementById(recipeId).classList.add("hover-class")
-            //document.getElementById(recipeId).childNodes[3].style.display = "none"
-            //document.getElementById(recipeId).childNodes[1].childNodes[1].style.display = "block"
-            //document.getElementById(recipeId).childNodes[1].childNodes[3].childNodes[1].style.display ="none"
         }
     })
     $(".bakery").click(function GetElementInfo(e){
@@ -186,9 +187,10 @@ function ShowHide(){
         function show(recipe) {
             recipe.removeClass("hover-class")
             recipe.css({"max-width":"2000px","height":"auto"})
+            recipe.find(".recipe-main-content").css({"max-height":"2000px","padding":"16px"})
             //.find will find the class that we are looking for among the children inside the div with id #recipeId
             recipe.find(".close-recipe").css("display", "block")
-            recipe.find(".recipe-thumbnail").css("min-height","0")
+            recipe.find(".recipe-thumbnail").css("max-height","100px")
             recipe.find(".bakery-main-content").css("display","block")
             $(".bakery").not(recipe).hide()
         }
@@ -209,7 +211,6 @@ function ShowHide(){
         }
     })
 }
-ShowHide()
 
 //Navigation Menu Options Below
 var NavMenuEng = ["HOME","STARTERS & SIDES","MAINS","BAKERY","DESSERTS"]
@@ -233,9 +234,8 @@ function PopulateMenu(MenuLang){
     }
     navContainer.appendChild(ul)
 }
-
 //function that creates the div element for latest Recipe
-function PopulateLatest(collection, lang){
+function FillLatest(collection, lang){
     var LatestContainer = document.createElement("div") //Container to put latest recipes in
     var recipeContainer = document.createElement("div") //Containerr for each recipe
     recipeContainer.setAttribute("class","recipe-container")
@@ -274,7 +274,8 @@ function PopulateLatest(collection, lang){
     generalText.appendChild(p)
     generalText.appendChild(a)
 }
-function PopulateRecipes(collection, lang){
+
+function FillStarters(collection, lang){
     console.log(collection.imageUrl);
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
@@ -292,16 +293,15 @@ function PopulateRecipes(collection, lang){
     recipe_tab.appendChild(recipe_description) //append box contain recipe info
     var close_recipe = create("span")
     close_recipe.setAttribute("class","close-recipe")
-    if (lang = "ENG") {close_recipe.innerText = "close recipe" } 
+    console.log(lang);
+    if (lang == "ENG") 
+    {close_recipe.innerText = "close recipe" } 
     else {close_recipe.innerText = "chiudi ricetta" }
     recipe_description.appendChild(close_recipe)//appending the link to close open recipes
     var h2 = create("h2")
     h2.setAttribute("class","recipe-title-h2")
     h2.innerText = collection.title
     recipe_description.appendChild(h2)
-    /*var recipe_description_text = create("div")
-    recipe_description_text.setAttribute("class","recipe-description-text")
-    recipe_description.appendChild(recipe_description_text)*/
     var p1 = create("p")
     p1.setAttribute("class","recipe-description-p")
     p1.innerText = collection.description
@@ -316,41 +316,110 @@ function PopulateRecipes(collection, lang){
     ingredients_list.setAttribute("class","ingredients-list")
     recipe_ingr_and_img.appendChild(ingredients_list)
     var h3 = create("h3")
-    if (lang = "ENG") {h3.innerText = "Ingredients"}
+    if (lang == "ENG") {h3.innerText = "Ingredients"}
     else {h3.innerText = "Ingredienti"}
     ingredients_list.appendChild(h3)
     var ul = create("ul")
-    for (var i = 0; i < collection.ingredients; i++){
+    for (var i = 0; i < collection.ingredients.length; i++){
         var li = document.createElement("li")
         li.innerText = collection.ingredients[i]
         ul.appendChild(li)
     }
     ingredients_list.appendChild(ul) //all ingredients have been added now
-    var img = create(img)
+    var img = create("img")
     img.setAttribute("src","./"+collection.imageUrl)
     recipe_ingr_and_img.appendChild(img) //big picture added
     var steps = create("div")
     steps.setAttribute("class", "recipe-steps")
     recipe_main_content.appendChild(steps)
     var h3_steps = create("h3")
-    if (lang = "ENG") {
+    if (lang == "ENG") {
         h3_steps.innerText = "Let's start Cooking!"
     } else {
         h3_steps.innerText = "Ai fornelli!"
     }
     steps.appendChild(h3_steps)
-    for (var i = 0; i < collection.steps; i++){
+    for (var i = 0; i < collection.steps.length; i++){
         var p = create("p")
-        p.innerText(collection.steps[i])
+        p.innerText = collection.steps[i]
         steps.appendChild(p)
     }
 }
-//function PopulateRecipe()
+function FillBakery(collection, lang){
+    console.log(collection.imageUrl);
+    var container = document.getElementById("template-container") //where we are going to append all the recipes
+    var recipe = create("div")
+    recipe.setAttribute("class","bakery hover-class")
+    container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
+    var recipe_tab = create("div")
+    recipe_tab.setAttribute("class","bakery-tab")
+    recipe.appendChild(recipe_tab)//appending the tab that will be seen all the time
+    var recipe_thumbnail = create("img")
+    recipe_thumbnail.setAttribute("class","bakery-thumbnail")
+    recipe_thumbnail.setAttribute("src","./"+collection.imageUrl) //set image src dynamically
+    recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
+    var recipe_description = create("div")
+    recipe_description.setAttribute("class","recipe-description")
+    recipe_tab.appendChild(recipe_description) //append box contain recipe info
+    var close_recipe = create("span")
+    close_recipe.setAttribute("class","close-recipe")
+    console.log(lang);
+    if (lang == "ENG") 
+    {close_recipe.innerText = "close recipe" } 
+    else {close_recipe.innerText = "chiudi ricetta" }
+    recipe_description.appendChild(close_recipe)//appending the link to close open recipes
+    var h2 = create("h2")
+    h2.setAttribute("class","recipe-title-h2")
+    h2.innerText = collection.title
+    recipe_description.appendChild(h2)
+    var p1 = create("p")
+    p1.setAttribute("class","recipe-description-p")
+    p1.innerText = collection.description
+    recipe_description.appendChild(p1)//adding the short description
+    var recipe_main_content = create("div")
+    recipe_main_content.setAttribute("class","recipe-main-content bakery-main-content")
+    recipe.appendChild(recipe_main_content)//second half of recipe that is hidden until clicked on
+    var recipe_ingr_and_img = create("div")
+    recipe_ingr_and_img.setAttribute("class","recipe-ingr-and-img")
+    recipe_main_content.appendChild(recipe_ingr_and_img) //text and image appended
+    var ingredients_list = create("div")
+    ingredients_list.setAttribute("class","ingredients-list")
+    recipe_ingr_and_img.appendChild(ingredients_list)
+    var h3 = create("h3")
+    if (lang == "ENG") {h3.innerText = "Ingredients"}
+    else {h3.innerText = "Ingredienti"}
+    ingredients_list.appendChild(h3)
+    var ul = create("ul")
+    for (var i = 0; i < collection.ingredients.length; i++){
+        var li = document.createElement("li")
+        li.innerText = collection.ingredients[i]
+        ul.appendChild(li)
+    }
+    ingredients_list.appendChild(ul) //all ingredients have been added now
+    var img = create("img")
+    img.setAttribute("src","./"+collection.imageUrl)
+    recipe_ingr_and_img.appendChild(img) //big picture added
+    var steps = create("div")
+    steps.setAttribute("class", "recipe-steps")
+    recipe_main_content.appendChild(steps)
+    var h3_steps = create("h3")
+    if (lang == "ENG") {
+        h3_steps.innerText = "Let's start Cooking!"
+    } else {
+        h3_steps.innerText = "Ai fornelli!"
+    }
+    steps.appendChild(h3_steps)
+    for (var i = 0; i < collection.steps.length; i++){
+        var p = create("p")
+        p.innerText = collection.steps[i]
+        steps.appendChild(p)
+    }
+}
 
-
+//functions to call population
 function PopulateIndex(collection , lang = "ENG"){
     Object.values(collection).forEach(val => {
-    PopulateLatest(val, lang)
+    FillLatest(val, lang)
     }) 
     if (lang == "ENG") {
         $("#reach-us").text("Reach Us Also At")
@@ -362,7 +431,19 @@ function PopulateIndex(collection , lang = "ENG"){
 }
 function PopulateStarters(collection, lang ="ENG"){
     Object.values(collection).forEach(val => {
-        PopulateRecipes(val, lang)
+        FillStarters(val, lang)
+        }) 
+        if (lang == "ENG") {
+            $("#reach-us").text("Reach Us Also At")
+            $("#latest-header").text("Our Latest Recipes")
+        } else {
+            $("#reach-us").text("Ci Trovate Anche Su")
+            $("#latest-header").text("Le Ultime Ricette")
+        }
+}
+function PopulateBakery(collection, lang ="ENG"){
+    Object.values(collection).forEach(val => {
+        FillBakery(val, lang)
         }) 
         if (lang == "ENG") {
             $("#reach-us").text("Reach Us Also At")
@@ -383,50 +464,3 @@ function RemoveChildrenOf(id){
 function create(element){
     return document.createElement(element)    
 }
-
-
-/*
-<div class="recipe hover-class">               
-<div class="recipe-tab">
-    <div class="recipe-thumbnail" style="background-image: url({{imageUrl}});">
-    </div>
-    <div class="recipe-description">
-        <span class="close-recipe">close recipe</span>
-        <div class="recipe-title">
-                <h2 class="recipe-title-h2">{{title}}</h2>
-        </div>
-        <div class="recipe-description-text">
-            <p class="recipe-description-p" style="margin-bottom: 0;">{{description}}</p>
-        </div>
-
-    </div>
-</div>
-<div class="recipe-main-content">
-    <div class="recipe-ingr-and-img">
-        <div class="ingredients-list">
-            <h3>Ingredients</h3>
-            <ul>
-                {{#each ingredients}}
-                <li>{{this}}</li>
-                {{/each}}
-                <li>Spices:
-                    <ul>
-                        {{#each spices}}
-                        <li>{{this}}</li>
-                        {{/each}}
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <img src="./{{imageUrl}}" alt="">
-    </div>
-
-    <div class="recipe-steps">
-        <h3>Let's Start Cooking</h3>
-        <br>
-        {{#each steps}}
-        <p>{{this}}</p>
-        {{/each}}
-    </div>
-</div>
-</div>*/
