@@ -66,9 +66,9 @@ function addCrumb(){
     
     var page = window.location.pathname.split("/").pop().split(".")
     page = page[0]
-    sessionStorage.setItem("Crumb",page)
+    sessionStorage.setItem("Crumb", page)
     let crumb = sessionStorage.getItem("Crumb")
-    //$("#"+crumb).css("border-bottom","solid 2px rgba(255, 70, 70)")
+    $("#"+crumb).css("border-bottom","solid 2px rgba(255, 70, 70)")
 }
 
 //-*-*-*-*-*-*-*-* CODE TO CHOOSE LANGUAGE -*-*-*-*-*-*-*-*//
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded",function(){
         sessionStorage.setItem("Crumb","index")
         sessionStorage.setItem("Lang", "ENG")
         PopulateMenu(NavMenuEng)
-        $('#nav-menu-mobile').html(menuENG)
+        //$('#nav-menu-mobile').html(menuENG)
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
@@ -218,6 +218,9 @@ var NavLinks = ["index","starters","maindishes","bakery","desserts"]
 //function to change the language of the Menu
 function PopulateMenu(MenuLang){
     var navContainer = document.getElementById("nav-menu")
+    if (navContainer.firstChild) {
+        console.log("test");
+    }
     var ul = document.createElement("ul")
     ul.setAttribute("class","nav-menu")
 
