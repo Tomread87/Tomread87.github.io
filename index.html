@@ -29,15 +29,6 @@
                     <div id="drop-down">
                         <div id="button-menu">MENU</div>
                         <div id="nav-menu" class="hide-menu">
-                            <script id="menu-template" type="template/handlebars">
-                                <ul class="nav-menu">                       
-                                    <li><a id="index" href="index.html">{{home}}</a></li>
-                                    <li><a id="starters" href="starters.html">{{STARTERS}}</a></li>
-                                    <li><a id="maindishes" href="maindishes.html">{{MAINDISHES}}</a></li>
-                                    <li><a id="bakery" href="bakery.html">{{BAKERY}}</a></li>
-                                    <li><a id="desserts" href="desserts.html">{{DESSERTS}}</a></li>
-                                </ul>
-                            </script>
                         </div>                 
                     </div>
 
@@ -46,67 +37,12 @@
             </div>
         </header>
 <!-- Start of Main Content-->
-        <div class="main">
-<!-- Start of Carousel-->
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <div class="carousel-image" style="background-image: url('assets/chef-piruggi.png'); height: 400px;">
-                        </div>           
-                    </div>
-                    <div class="carousel-item" data-bs-interval="10000">
-                        <div class="carousel-image" style="background-image: url('assets/carousel2.jpg'); height: 400px;">
-                            <p>Delicious Breakfast</p>
-                        </div>           
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <div class="carousel-image" style="background-image: url('assets/carousel3.jpg'); height: 400px;">
-                            <p>Healthy Salads</p>
-                        </div>
-                    </div> 
-                    <div class="carousel-item">
-                        <div class="carousel-image" style="background-image: url('assets/carousel1.jpg'); height: 400px;">
-                            <p>Fragrant Bread</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </a>
-            </div>
-<!-- End of Carousel -->
-<!-- Start of Latest Recipes -->
-
-            <div id="latest-recipes">
-                <h2 style="margin-bottom: 32px;">Our Latest Recipes</h2>
-                <div id="main-content"></div>
-            </div>
-
-<!-- End of Latest Recipes -->
-
-<!-- Start of About us Section-->
-
-            <div id="about-us">
-                <img src="./assets/about-us-picture.jpg" alt="">
-                <article class="general-text-box">
-                    <h2>Chef Piruggi</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </article>
-            </div>
-
-<!-- Enf of About us Section-->
-
+        <div class="main" id="paste">
 
         </div>
+        <div id="nav-menu2"></div>
 <!-- End of Main Content-->
-
+        <button onclick="RemoveChildrenOf('paste')">Remove Children</button>
 <!-- Start of Footer -->
         <footer>
             <div class="footer-info-container">
@@ -134,24 +70,62 @@
             </div>
         </footer>
         <!-- Template Script Here-->
-        <script id="latest-recipes-template" type="template/handlebars">
-            <div class="recipe-container">
-                <div class="recipe-image" style="background-image: url('{{imageUrl}}');">
-                </div>
-                <div class="general-text-box">
-                    <div class="recipe-heading">
-                        <span class="latest-recipe-date">{{added}}: {{dateAdded}}</span>
-                        <h2>{{title}}</h2>
-                    </div>
-
-                    <p>{{description}}</p>
-                    <a href="{{link}}">Go to Recipe</a>
-                </div>
-            </div>
-        </script>
     
         </script>
         <!-- My script here-->
+        <script>
+            function PopulateDiv(object, lang){
+                var LatestContainer = document.createElement("div")
+                var recipeContainer = document.createElement("div")
+                recipeContainer.setAttribute("class","recipe-container")
+                var recipeImage = document.createElement("img")
+                recipeImage.setAttribute("class","recipe-image")
+                recipeImage.setAttribute("src","./"+object.imageUrl)
+                var generalText = document.createElement("div")
+                generalText.setAttribute("class","general-text-box")
+                var recipeHead = document.createElement("div")
+                recipeHead.setAttribute("class","recipe-heading")
+                var latestRecipeDate = document.createElement("span")
+                latestRecipeDate.innerText = object.dateAdded
+                latestRecipeDate.setAttribute("class","latest-recipe-date")
+                var h2 = document.createElement("h2")
+                h2.innerText = object.title
+                var p = document.createElement("p")
+                p.innerText = object.description
+                var a = document.createElement("a")
+                //console.log(object.name);
+                if (lang == "ENG"){
+                    a.innerText = "Go to Recipe"
+                }
+                a.setAttribute("href",object.link) 
+
+                var paste = document.getElementById("paste")
+
+                paste.appendChild(LatestContainer)
+                LatestContainer.appendChild(recipeContainer)
+                recipeContainer.appendChild(recipeImage)
+                recipeContainer.appendChild(generalText)
+                generalText.appendChild(recipeHead)
+                recipeHead.appendChild(latestRecipeDate)
+                recipeHead.appendChild(h2)
+                generalText.appendChild(p)
+                generalText.appendChild(a)
+            }
+            Object.values(LatestENG).forEach(val => {
+                var lang = "ENG"
+                PopulateDiv(val, lang)
+            })
+            function RemoveChildrenOf(id){
+                var parent = document.getElementById(id)
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild)
+                }
+            }
+
+            //function PopulateMenu()
+        </script>
+        
+
         <script src="./js/myScripts.js"></script>
     </body> 
 </html>

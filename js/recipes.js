@@ -424,9 +424,10 @@ var BakeryENG = {
     },
     Recipe_4:{
         LangSetup:{
+
             ingrL:"Ingredients",
             startL:"Let's Start Cooking!",
-            spicesL:"Spices"
+            spicesL:"Spices",
         },
         title:"Pumpkin Bread",
         imageUrl:"assets/recipes/bakery/pane-di-zucca.jpg",
@@ -450,3 +451,7 @@ var BakeryENG = {
         link: "bakery.html#Recipe_3"
     },
 }
+
+/*Object.values(BakeryENG).forEach(val => {
+    console.log(val);
+})*/

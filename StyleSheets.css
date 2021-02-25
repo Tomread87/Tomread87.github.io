@@ -151,9 +151,12 @@ header .main{
 }
 .recipe-image {
     min-width: 200px;
+    max-width:200px;
+    
     background-position: center;
     background-size: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    object-fit: cover;
 }
 .general-text-box{
     margin: 0 12px 0 12px;

@@ -62,12 +62,12 @@ $(window).resize(function(){
 
 
 //-*-*-*-*-*-*-*-* Handlebars.js -*-*-*-*-*-*-*-*//
-var srcMenu = document.getElementById("menu-template").innerHTML
-var templateMenu = Handlebars.compile(srcMenu)
+/*var srcMenu = document.getElementById("menu-template").innerHTML
+var templateMenu = Handlebars.compile(srcMenu)*/
 
-var menuENG = templateMenu({home:"HOME", STARTERS:"STARTERS & SIDES", MAINDISHES:"MAINS", BAKERY:"BAKERY", DESSERTS:"DESSERTS"})
+/*var menuENG = templateMenu({home:"HOME", STARTERS:"STARTERS & SIDES", MAINDISHES:"MAINS", BAKERY:"BAKERY", DESSERTS:"DESSERTS"})
 var menuITA = templateMenu({home:"HOME", STARTERS:"ANTIPASTI E CONTORNI", MAINDISHES:"PIATTI PRINCIPALI", BAKERY:"LIEVITATI", DESSERTS:"DESSERT"})
-
+*/
 if (window.location.href.indexOf("starters") > -1) {
     var srcRecipe = document.getElementById("recipe-template").innerHTML;
     var template = Handlebars.compile(srcRecipe)
@@ -109,24 +109,24 @@ window.addEventListener("DOMContentLoaded",function(){
     if (lang === null){ //if the lang is null load page in neglish
         sessionStorage.setItem("Crumb","index")
         sessionStorage.setItem("Lang", "ENG")
-        $('#nav-menu').html(menuENG)
+        PopulateMenu(NavMenuEng)
         $('#nav-menu-mobile').html(menuENG)
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
     
     if (lang == "ITA") { //if lang is italian compile italian
-        $('#nav-menu').html(menuITA)
-        if (crumb == "index") {
+        PopulateMenu(NavMenuIta)
+        /*if (crumb == "index") {
             PopulateMain(LatestITA) //compile for index-html only
         } else if (crumb == "starters") {
             PopulateMain(StartersITA) //compily for starters.html only 
         } else if (crumb == "bakery") {
             PopulateMain(BakeryITA)
-        }
+        }*/
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
-        $('#nav-menu').html(menuENG)
+        PopulateMenu(NavMenuEng)
         if (crumb == "index") { //compile for index-html only
             PopulateMain(LatestENG)
         } else if (crumb == "starters") { //compile for index-html only
@@ -249,3 +249,24 @@ function ShowHide(){
 }
 ShowHide()
 
+var NavMenuEng = ["HOME","STARTERS & SIDES","MAINS","BAKERY","DESSERTS"]
+var NavMenuIta = ["HOME","ANTIPASTI E CONTORNI","PRINCIPALI","LIEVITATI","DESSERT"]
+var NavLinks = ["index","starters","maindishes","bakery","desserts"]
+function PopulateMenu(MenuLang){
+    //RemoveChildrenof("nav-menu")
+    var navContainer = document.getElementById("nav-menu")
+    var ul = document.createElement("ul")
+    ul.setAttribute("class","nav-menu")
+
+    for (var i = 0; i < MenuLang.length; i++){
+        var li = document.createElement("li")
+        var a = document.createElement("a")
+        a.setAttribute("id",NavLinks[i])
+        a.setAttribute("href",NavLinks[i]+".html")
+        a.innerText = MenuLang[i]
+        li.appendChild(a)
+        ul.appendChild(li)
+    }
+    navContainer.appendChild(ul)
+}
+//PopulateMenu(NavMenuEng)
