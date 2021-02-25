@@ -66,6 +66,9 @@ function addCrumb(){
     
     var page = window.location.pathname.split("/").pop().split(".")
     page = page[0]
+    if (page == ""){
+        page = "index"
+    }
     sessionStorage.setItem("Crumb", page)
     let crumb = sessionStorage.getItem("Crumb")
     $("#"+crumb).css("border-bottom","solid 2px rgba(255, 70, 70)")
@@ -83,7 +86,6 @@ window.addEventListener("DOMContentLoaded",function(){
         sessionStorage.setItem("Crumb","index")
         sessionStorage.setItem("Lang", "ENG")
         PopulateMenu(NavMenuEng)
-        //$('#nav-menu-mobile').html(menuENG)
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
