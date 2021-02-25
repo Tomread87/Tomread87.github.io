@@ -29,15 +29,7 @@
                     <div id="drop-down">
                         <div id="button-menu">MENU</div>
                         <div id="nav-menu" class="hide-menu">
-                            <script id="menu-template" type="template/handlebars">
-                                <ul class="nav-menu">                       
-                                    <li><a id="index" href="index.html">{{home}}</a></li>
-                                    <li><a id="starters" href="starters.html">{{STARTERS}}</a></li>
-                                    <li><a id="maindishes" href="maindishes.html">{{MAINDISHES}}</a></li>
-                                    <li><a id="bakery" href="bakery.html">{{BAKERY}}</a></li>
-                                    <li><a id="desserts" href="desserts.html">{{DESSERTS}}</a></li>
-                                </ul>
-                            </script>
+                            <!-- Java Script Will Fill the Nav with the options accrodin to language-->
                         </div>                 
                     </div>
 
@@ -83,7 +75,7 @@
 <!-- Start of Latest Recipes -->
 
             <div id="latest-recipes">
-                <h2 style="margin-bottom: 32px;">Our Latest Recipes</h2>
+                <h2 style="margin-bottom: 32px;" id="latest-header">Our Latest Recipes</h2>
                 <div id="main-content">
                     <div id="template-container"></div>
                 </div>
@@ -122,7 +114,7 @@
                     </p>
                 </div>
                 <div class="footer-info-box">
-                    <h3>Reach Us Also At</h3>
+                    <h3 id="reach-us">Reach Us Also At</h3>
                     <div id="social-tab">
 
                         <a><img src="./assets/facebook-social.png" alt=""></a>
@@ -136,21 +128,6 @@
             </div>
         </footer>
         <!-- Template Script Here-->
-        <script id="latest-recipes-template" type="template/handlebars">
-            <div class="recipe-container">
-                <div class="recipe-image" style="background-image: url('{{imageUrl}}');">
-                </div>
-                <div class="general-text-box">
-                    <div class="recipe-heading">
-                        <span class="latest-recipe-date">{{added}}: {{dateAdded}}</span>
-                        <h2>{{title}}</h2>
-                    </div>
-
-                    <p>{{description}}</p>
-                    <a href="{{link}}">Go to Recipe</a>
-                </div>
-            </div>
-        </script>
     
         </script>
         <!-- My script here-->

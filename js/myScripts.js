@@ -66,7 +66,6 @@ function addCrumb(){
     
     var page = window.location.pathname.split("/").pop().split(".")
     page = page[0]
-    console.log(page);
     if (page == ""){
         page = "index"
     }
@@ -86,7 +85,6 @@ window.addEventListener("DOMContentLoaded",function(){
     if (lang === null){ //if the lang is null load page in neglish
         sessionStorage.setItem("Crumb","index")
         sessionStorage.setItem("Lang", "ENG")
-        PopulateMenu(NavMenuEng)
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
@@ -238,23 +236,23 @@ function PopulateMenu(MenuLang){
 
 //function that creates the div element for latest Recipe
 function PopulateLatest(object, lang){
-    var LatestContainer = document.createElement("div")
-    var recipeContainer = document.createElement("div")
+    var LatestContainer = document.createElement("div") //Container to put latest recipes in
+    var recipeContainer = document.createElement("div") //Containerr for each recipe
     recipeContainer.setAttribute("class","recipe-container")
-    var recipeImage = document.createElement("img")
+    var recipeImage = document.createElement("img") //image of recipe
     recipeImage.setAttribute("class","recipe-image")
-    recipeImage.setAttribute("src","./"+object.imageUrl)
-    var generalText = document.createElement("div")
+    recipeImage.setAttribute("src","./"+object.imageUrl) //dynamically set img src
+    var generalText = document.createElement("div") //Text are for recipe
     generalText.setAttribute("class","general-text-box")
-    var recipeHead = document.createElement("div")
+    var recipeHead = document.createElement("div") //Header of recipe
     recipeHead.setAttribute("class","recipe-heading")
-    var latestRecipeDate = document.createElement("span")
-    latestRecipeDate.innerText = object.dateAdded
+    var latestRecipeDate = document.createElement("span") //to ad date inside
+    latestRecipeDate.innerText = object.dateAdded //dynamically get date of recipy
     latestRecipeDate.setAttribute("class","latest-recipe-date")
-    var h2 = document.createElement("h2")
-    h2.innerText = object.title
+    var h2 = document.createElement("h2") 
+    h2.innerText = object.title //gdynamically give h2 a title
     var p = document.createElement("p")
-    p.innerText = object.description
+    p.innerText = object.description //dynamically give p the description
     var a = document.createElement("a")
     //console.log(object.name);
     if (lang == "ENG"){
@@ -262,7 +260,7 @@ function PopulateLatest(object, lang){
     } else {
         a.innerText = "Vai alla Ricetta"
     }
-    a.setAttribute("href",object.link) 
+    a.setAttribute("href",object.link) //dynamically set href to a tag
 
     var TemplateContainer = document.getElementById("template-container")
 
@@ -280,10 +278,17 @@ function PopulateLatest(object, lang){
 //function PopulateRecipe()
 
 
-function PopulateIndex(object ,lang){
+function PopulateIndex(object , lang = "ENG"){
     Object.values(object).forEach(val => {
     PopulateLatest(val, lang)
-    })
+    }) 
+    if (lang == "ENG") {
+        $("#reach-us").text("Reach Us Also At")
+        $("#latest-header").text("Our Latest Recipes")
+    } else {
+        $("#reach-us").text("Ci Trovate Anche Su")
+        $("#latest-header").text("Le Ultime Ricette")
+    }
 }
 
 function RemoveChildrenOf(id){
