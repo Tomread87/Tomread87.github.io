@@ -61,6 +61,7 @@ $(window).resize(function(){
 })*/
 
 //this functions leaves stores a value in sessionStorage so that the user can see which page he is currently at
+
 function addCrumb(){
     
     var page = window.location.pathname.split("/").pop().split(".")
@@ -74,7 +75,7 @@ function addCrumb(){
 
 
 window.addEventListener("DOMContentLoaded",function(){
-    //addCrumb()
+    addCrumb()
     var lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
     
@@ -101,13 +102,13 @@ window.addEventListener("DOMContentLoaded",function(){
         PopulateMenu(NavMenuEng)
         if (crumb == "index") { //compile for index-html only
             PopulateIndex(LatestENG,"ENG")
-        } else if (crumb == "starters") { //compile for index-html only
+        } /*else if (crumb == "starters") { //compile for index-html only
             PopulateMain(StartersENG)
         } else if (crumb == "bakery") {
             PopulateMain(BakeryENG)
-        }
+        }*/
     }
-    //addCrumb()    
+    addCrumb()    
 })
 
 $("#lang-ita").click(function(){
