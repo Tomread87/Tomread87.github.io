@@ -52,34 +52,6 @@ $(window).resize(function(){
 }
 
 )
-/*window.addEventListener('resize', function(event){
-    var screenWidth = window.innerWidth;
-
-
-})*/
-
-
-
-
-//-*-*-*-*-*-*-*-* Handlebars.js -*-*-*-*-*-*-*-*//
-/*var srcMenu = document.getElementById("menu-template").innerHTML
-var templateMenu = Handlebars.compile(srcMenu)*/
-
-/*var menuENG = templateMenu({home:"HOME", STARTERS:"STARTERS & SIDES", MAINDISHES:"MAINS", BAKERY:"BAKERY", DESSERTS:"DESSERTS"})
-var menuITA = templateMenu({home:"HOME", STARTERS:"ANTIPASTI E CONTORNI", MAINDISHES:"PIATTI PRINCIPALI", BAKERY:"LIEVITATI", DESSERTS:"DESSERT"})
-*/
-if (window.location.href.indexOf("starters") > -1) {
-    var srcRecipe = document.getElementById("recipe-template").innerHTML;
-    var template = Handlebars.compile(srcRecipe)
-} else if (window.location.href.indexOf("index") > -1) {
-    var srcLatest = document.getElementById("latest-recipes-template").innerHTML    
-    var template = Handlebars.compile(srcLatest);
-} else if (window.location.href.indexOf("index") > -1) {
-
-} else if (window.location.href.indexOf("bakery") > -1) {
-    var srcBakery = document.getElementById("bakery-template").innerHTML    
-    var template = Handlebars.compile(srcBakery);
-}
 
 //-*-*-*-*-*-*-*-* CODE TO CREATE BREADCRUMB -*-*-*-*-*-*-*-*//
 
@@ -117,18 +89,18 @@ window.addEventListener("DOMContentLoaded",function(){
     
     if (lang == "ITA") { //if lang is italian compile italian
         PopulateMenu(NavMenuIta)
-        /*if (crumb == "index") {
-            PopulateMain(LatestITA) //compile for index-html only
+        if (crumb == "index") {
+            PopulateIndex(LatestITA, "ITA") //compile for index-html only
         } else if (crumb == "starters") {
             PopulateMain(StartersITA) //compily for starters.html only 
         } else if (crumb == "bakery") {
             PopulateMain(BakeryITA)
-        }*/
+        }
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
         PopulateMenu(NavMenuEng)
         if (crumb == "index") { //compile for index-html only
-            PopulateMain(LatestENG)
+            PopulateIndex(LatestENG,"ENG")
         } else if (crumb == "starters") { //compile for index-html only
             PopulateMain(StartersENG)
         } else if (crumb == "bakery") {
@@ -147,18 +119,6 @@ $("#lang-eng").click(function(){
     location.reload()   
 })
 
-
-//function to populate various pages with recipes
-function PopulateMain(category){
-    let main = document.getElementById("main-content")
-    for (var recipe in category) {
-        const nodeRec = document.createElement("div")
-        nodeRec.setAttribute("id", category[recipe].title)
-        nodeRec.innerHTML = template(category[recipe])
-        main.appendChild(nodeRec)
-    }
-    ShowHide()
-}
 
 //-*-*-*-*-*-*-*-* CODE TO SHOW AND HIDE RECIPES -*-*-*-*-*-*-*-*//
 //---Old Code in comments below---Vanilla Javascript---//  
@@ -249,11 +209,13 @@ function ShowHide(){
 }
 ShowHide()
 
+//Navigation Menu Options Below
 var NavMenuEng = ["HOME","STARTERS & SIDES","MAINS","BAKERY","DESSERTS"]
 var NavMenuIta = ["HOME","ANTIPASTI E CONTORNI","PRINCIPALI","LIEVITATI","DESSERT"]
 var NavLinks = ["index","starters","maindishes","bakery","desserts"]
+
+//function to change the language of the Menu
 function PopulateMenu(MenuLang){
-    //RemoveChildrenof("nav-menu")
     var navContainer = document.getElementById("nav-menu")
     var ul = document.createElement("ul")
     ul.setAttribute("class","nav-menu")
@@ -269,4 +231,60 @@ function PopulateMenu(MenuLang){
     }
     navContainer.appendChild(ul)
 }
-//PopulateMenu(NavMenuEng)
+
+//function that creates the div element for latest Recipe
+function PopulateLatest(object, lang){
+    var LatestContainer = document.createElement("div")
+    var recipeContainer = document.createElement("div")
+    recipeContainer.setAttribute("class","recipe-container")
+    var recipeImage = document.createElement("img")
+    recipeImage.setAttribute("class","recipe-image")
+    recipeImage.setAttribute("src","./"+object.imageUrl)
+    var generalText = document.createElement("div")
+    generalText.setAttribute("class","general-text-box")
+    var recipeHead = document.createElement("div")
+    recipeHead.setAttribute("class","recipe-heading")
+    var latestRecipeDate = document.createElement("span")
+    latestRecipeDate.innerText = object.dateAdded
+    latestRecipeDate.setAttribute("class","latest-recipe-date")
+    var h2 = document.createElement("h2")
+    h2.innerText = object.title
+    var p = document.createElement("p")
+    p.innerText = object.description
+    var a = document.createElement("a")
+    //console.log(object.name);
+    if (lang == "ENG"){
+        a.innerText = "Go to Recipe"
+    } else {
+        a.innerText = "Vai alla Ricetta"
+    }
+    a.setAttribute("href",object.link) 
+
+    var TemplateContainer = document.getElementById("template-container")
+
+    TemplateContainer.appendChild(LatestContainer)
+    LatestContainer.appendChild(recipeContainer)
+    recipeContainer.appendChild(recipeImage)
+    recipeContainer.appendChild(generalText)
+    generalText.appendChild(recipeHead)
+    recipeHead.appendChild(latestRecipeDate)
+    recipeHead.appendChild(h2)
+    generalText.appendChild(p)
+    generalText.appendChild(a)
+}
+
+//function PopulateRecipe()
+
+
+function PopulateIndex(object ,lang){
+    Object.values(object).forEach(val => {
+    PopulateLatest(val, lang)
+    })
+}
+
+function RemoveChildrenOf(id){
+    var parent = document.getElementById(id)
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild)
+    }
+}
