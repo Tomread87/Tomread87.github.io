@@ -9,16 +9,15 @@ var mediaWidth = 770
 window.addEventListener("scroll", function HideTopMenu() {
     var header = document.getElementById("header")
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos + 25) {
+    if (prevScrollpos > currentScrollPos) {
         header.style.top = "0"
-        console.log(tapped);
         if (tapped) {
-            $("#nav-menu").fadeIn()
+            $("#nav-menu").removeClass("invisible")
         }
     } else if (prevScrollpos < currentScrollPos) {
         header.style.top = "-96px"
         if ($(window).width() <= mediaWidth) {
-            $("#nav-menu").fadeOut()
+            $("#nav-menu").addClass("invisible")
         }
 
     }
@@ -29,13 +28,14 @@ window.addEventListener("scroll", function HideTopMenu() {
 
 $(document).ready(function () {
     //start of touch listener
+    
     document.getElementById("button-menu").addEventListener("touchstart", function () {
 
         if ($("#nav-menu").hasClass("invisible")) {
-            console.log("test");
             $("#nav-menu").removeClass("invisible")
             $("#button-menu").css({ "background-color": "rgba(70, 70, 70)", "transition": "0.25s" })
             tapped = true
+            $("#nav-menu").fadeIn()
         } else if ($("#nav-menu").css("display") == "block") {
             $("#nav-menu").addClass("invisible")
             $("#button-menu").css({ "background-color": "rgba(255, 70, 70)", "transition": "0.25s" })
@@ -74,7 +74,6 @@ $(window).resize(function() {
         MouseOverFunc()
     } 
     if (screenWidth > mediaWidth) {
-        console.log("true");
         $("#nav-menu").removeClass("invisible")
     }
 })
