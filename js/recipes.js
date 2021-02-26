@@ -218,7 +218,7 @@ var MainsITA = {
     Recipe_1:{
         title:"Polpette",
         imageUrl:"assets/recipes/mains/meatballs.jpg",
-        imageAlt:"Piatto pieno di polpette bruciacchiate in modo battuto adagiato su un letto di insalata",
+        imageAlt:"Piatto pieno di polpette bruciacchiate adagiate su un letto di insalata",
         description:"Le polpette sono una ricetta semplice da realizzare e molto gustosa: questi teneri bocconcini di carne macinata aromatizzati con provola, parmigiano, uovo e prezzemolo non possono davvero mancare dal menu!",
 
         ingredients:["500 grammi di carne macinata", "50 grammi di Parmigiano grattugiato", "3 grammi di sale", "50 grammi di provola affumicata", "130 grammi di pane vecchio", "2 uova", "3 grammi di pepe nero", "1 rametto di Prezzemolo"],

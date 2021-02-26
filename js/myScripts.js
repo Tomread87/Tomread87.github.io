@@ -31,9 +31,9 @@ $(document).ready(function () {
     //start of touch listener
     document.getElementById("button-menu").addEventListener("touchstart", function () {
 
-        if ($("#nav-menu").css("display") == "none") {
+        if ($("#nav-menu").hasClass("invisible")) {
             console.log("test");
-            $("#nav-menu").addClass("visible")
+            $("#nav-menu").removeClass("invisible")
             $("#button-menu").css({ "background-color": "rgba(70, 70, 70)", "transition": "0.25s" })
             tapped = true
         } else if ($("#nav-menu").css("display") == "block") {
@@ -78,8 +78,6 @@ $(window).resize(function() {
         $("#nav-menu").removeClass("invisible")
     }
 })
-
-
 
 //-*-*-*-*-*-*-*-* CODE TO CREATE BREADCRUMB -*-*-*-*-*-*-*-*//
 //this functions leaves stores a value in sessionStorage so that the user can see which page he is currently at
@@ -169,14 +167,14 @@ function ShowHide() {
             recipe.find(".recipe-main-content").css({ "max-height": "2000px", "padding": "16px" })
             recipe.find(".close-recipe").css("display", "block")
             recipe.find(".recipe-thumbnail").css({ "height": "0", "width": "0", "min-height": "0" })
-            recipe.find(".recipe-description").css({"padding-top": "20px"})
+            
         }
         function hide(recipe) {
             recipe.addClass("hover-class")
             recipe.find(".recipe-main-content").css({ "max-height": "0px", "padding": "0px" })
             recipe.find(".close-recipe").css("display", "none")
             recipe.find(".recipe-thumbnail").css({ "width": "auto", "min-height": "187px", "height": "auto" })
-            recipe.find(".recipe-description-p").css("width", "auto")
+            
         }
     })
     $(".bakery").click(function GetElementInfo(e) {
@@ -378,6 +376,9 @@ function FillBakery(collection, lang) {
     p1.setAttribute("class", "recipe-description-p")
     p1.innerText = collection.description
     recipe_description.appendChild(p1)//adding the short description
+    var hide_bottom = create("div")
+    hide_bottom.setAttribute("class","after-description")
+    recipe_tab.appendChild(hide_bottom)//this is the div that will hide the overscroll
     var recipe_main_content = create("div")
     recipe_main_content.setAttribute("class", "recipe-main-content bakery-main-content")
     recipe.appendChild(recipe_main_content)//second half of recipe that is hidden until clicked on
