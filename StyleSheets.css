@@ -18,6 +18,8 @@ body{
     cursor: pointer;
 }
 
+
+
 /*---------- Everything header goes here ----------*/
 header {
     border-bottom: solid 1px rgba(210, 210, 210);
@@ -55,10 +57,6 @@ header .main{
     color: rgba(255, 255, 255);
 }
 
-#nav-menu{
-    display: block;
-}
-
 .nav-menu {
     margin-top: 12px;
     margin-block-end: 0em;
@@ -76,8 +74,7 @@ header .main{
 
 .nav-menu li a{
     text-decoration: none;
-    color: rgba(70, 70, 70, 1);
-    
+    color: rgba(70, 70, 70, 1);    
 }
 
 
@@ -235,9 +232,6 @@ header .main{
     object-fit: cover;
 }
 .recipe-main-content {
-    /*padding: 16px;
-    /*padding-bottom: 1px;*/
-    /*display: none;*/
     transition: 0.5s;
     overflow: hidden;
     max-height: 0;
@@ -334,6 +328,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 24px;
 }
 .footer-info-container{
     max-width: 1138px;
@@ -372,7 +367,7 @@ footer {
     }
 
 }
-@media screen and (max-width: 850px){
+@media screen and (max-width: 770px){
     #drop-down{
         display: flex;
         flex-direction: column;
@@ -387,7 +382,6 @@ footer {
 
     #nav-menu{
         position: absolute;
-        display: none;
         background-color: rgba(255, 255,255,0.75);
         margin-left: 0;
         padding: 6px;
@@ -441,6 +435,9 @@ footer {
     .general-text-box{
         margin-top: 12px;
     }
+    .close-recipe {
+        top: 0px;
+    }
 
     .footer-info-container{
         flex-direction: column;
@@ -465,4 +462,11 @@ footer {
     .general-text-box {
         margin: 0;
     }
+
 }
+#visible {
+    display: block
+}
+
+#invisible {display: none;}
+
