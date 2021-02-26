@@ -78,12 +78,6 @@ $(window).resize(function(){
 )
 
 //-*-*-*-*-*-*-*-* CODE TO CREATE BREADCRUMB -*-*-*-*-*-*-*-*//
-
-/*$("#nav-menu").click(function(e){
-    e.target.id
-    sessionStorage.setItem("Crumb", e.target.id)
-})*/
-
 //this functions leaves stores a value in sessionStorage so that the user can see which page he is currently at
 
 function addCrumb(){
@@ -121,6 +115,8 @@ window.addEventListener("DOMContentLoaded",function(){
             PopulateStarters(StartersITA, lang) //compily for starters.html only 
         } else if (crumb == "bakery") {
             PopulateBakery(BakeryITA, lang)
+        } else if (crumb == "maindishes") {
+            PopulateMains(MainsITA, lang)
         }
     } 
     if (lang == "ENG") {//if lang is in english compile inglish
@@ -131,6 +127,8 @@ window.addEventListener("DOMContentLoaded",function(){
             PopulateStarters(StartersENG, lang)
         } else if (crumb == "bakery") {
             PopulateBakery(BakeryENG, lang)
+        } else if (crumb == "maindishes") {
+            PopulateMains(MainsENG, lang)
         }
     }
     addCrumb()
@@ -151,9 +149,6 @@ $("#lang-eng").click(function(){
 //---Old Code in comments below---Vanilla Javascript---//  
 //document.getElementById("sformato-carote").addEventListener("click", function GetElementInfo(e){alert("test")})
 
-$(document).ready(function(){
-    
-})
 function ShowHide(){
     $(".recipe").click(function GetElementInfo(e){
         var clickClass = e.target.className
@@ -287,8 +282,7 @@ function FillLatest(collection, lang){
     generalText.appendChild(p)
     generalText.appendChild(a)
 }
-
-function FillStarters(collection, lang){
+function FillRecipe(collection, lang){
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
     recipe.setAttribute("class","recipe hover-class")
@@ -425,7 +419,7 @@ function FillBakery(collection, lang){
     }
 }
 
-//functions to call population
+//functions to call population that will fill the pages with the appropiate recipes
 function PopulateIndex(collection , lang = "ENG"){
     Object.values(collection).forEach(val => {
     FillLatest(val, lang)
@@ -440,7 +434,19 @@ function PopulateIndex(collection , lang = "ENG"){
 }
 function PopulateStarters(collection, lang ="ENG"){
     Object.values(collection).forEach(val => {
-        FillStarters(val, lang)
+        FillRecipe(val, lang)
+        }) 
+        if (lang == "ENG") {
+            $("#reach-us").text("Reach Us Also At")
+            $("#latest-header").text("Our Latest Recipes")
+        } else {
+            $("#reach-us").text("Ci Trovate Anche Su")
+            $("#latest-header").text("Le Ultime Ricette")
+        }
+}
+function PopulateMains(collection, lang ="ENG"){
+    Object.values(collection).forEach(val => {
+        FillRecipe(val, lang)
         }) 
         if (lang == "ENG") {
             $("#reach-us").text("Reach Us Also At")

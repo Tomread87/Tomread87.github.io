@@ -2,6 +2,109 @@
 
 //All Recipes are taken from my families cookbooks
 
+//Latest Recipes found in Main
+var LatestITA = {
+    Recipe_1:{
+        added:"Aggiunta il",
+        title:"Sformato di Carote",
+        imageUrl:"assets/recipes/starters/Sformato-di-carote.jpg",
+        description:"Lo sformato di carote è un piatto colorato che ho scelto di preparare in piccole cocottine monoporzione. Per prepararlo servono praticamente ingredienti che difficilmente mancano in casa, carote, uova, parmigiano e con l'aggiunta di un po' di noce moscata che serve a dare quel tocco di sapore in più.",
+        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
+            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
+            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
+            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
+        ],
+        dateAdded:"18-02-2021",
+        link: "starters.html#Recipe_1"
+    },
+    Recipe_2:{
+        added:"Aggiunta il",
+        title:"Muffin Salati",
+        imageUrl:"assets/recipes/starters/Muffin-salati.jpg",
+        description:"I muffin salati sono perfetti per tutte le occasioni, potete utilizzarli come aperitivo,  a cena o pranzo al posto del pane e della pizza, potete facilmente trasportarli al mare, in gita, pic nic fuori porta! Ideali per una merenda genuina e sana anche per bambini; sono perfetti per buffet e feste di ogni tipo! E voi? che gusto preferite?",
+        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
+            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
+            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
+            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
+        ],
+        dateAdded:"23-02-2021",
+        link: "starters.html#Recipe_2"
+    },
+    Recipe_3:{
+        added:"Aggiunta il",
+        title:"Barchette di Pane e Uova al Forno",
+        imageUrl:"assets/recipes/starters/pane-ripieno.jpg",
+        description:"Le barchette di pane ripiene sono una ricetta golosa e saporita, ottima come contorno o servita ad un aperitivo. Sono semplici da preparare: basterà realizzare delle barchette di pane utilizzando dei gustosi panini ai cereali, scavati al loro interno e farciti con un ripieno a base di verdure, formaggio e prosciutto.",
+        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
+            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
+            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
+            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
+        ],
+        dateAdded:"20-02-2021",
+        link: "starters.html#Recipe_3"
+    }
+}
+var LatestENG = {
+    Recipe_1:{
+        added:"Added on",
+        title:"Carrot Flan",
+        imageUrl:"assets/recipes/starters/Sformato-di-carote.jpg",
+        description:"Carrot flan is a colorful dish that I have chosen to prepare in small single-portion casseroles. To prepare it you practically need ingredients that are hardly missing at home, carrots, eggs, parmesan and with the addition of a little nutmeg which serves to give that extra touch of flavor.",
+        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
+            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
+            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
+            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
+        ],
+        dateAdded:"19-02-2021",
+        link: "starters.html#Recipe_1"
+    },
+    Recipe_2:{
+        added:"Added on",
+        title:"Savory Muffins",
+        imageUrl:"assets/recipes/starters/Muffin-salati.jpg",
+        description:"Savory muffins are perfect for all occasions, you can use them as an aperitif, at dinner or lunch instead of bread and pizza, you can easily transport them to the sea, on a trip, picnic out of town! Ideal for a genuine and healthy snack even for children; they are perfect for buffets and parties of all kinds! And you? what flavor do you prefer?",
+        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
+            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
+            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
+            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
+        ],
+        dateAdded:"13-02-2021",
+        link: "starters.html#Recipe_2"
+    },
+    Recipe_3:{
+        added:"Added on",
+        title:"Boats of Bread and Baked Eggs",
+        imageUrl:"assets/recipes/starters/pane-ripieno.jpg",
+        imageAlt:"",
+        description:"Stuffed bread boats are a delicious and tasty recipe, excellent as a side dish or served with an aperitif. They are simple to prepare: just make bread boats using tasty cereal sandwiches, hollowed out and stuffed with a filling based on vegetables, cheese and ham.",
+        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
+        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        steps:[
+            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
+            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
+            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
+            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
+        ],
+        dateAdded:"20-02-2021",
+        link:"starters.html#Recipe_3"
+    }
+}
+
 //Starter recipes found in starter.html
 var StartersITA = {
     Recipe_1:{
@@ -110,126 +213,94 @@ var StartersENG = {
         link:"starters.html#Recipe_3"
     }
 }
-
-//Latest Recipes found in Main
-var LatestITA = {
+//Maindishes recipes found in maindishes.html
+var MainsITA = {
     Recipe_1:{
-        added:"Aggiunta il",
-        title:"Sformato di Carote",
-        imageUrl:"assets/recipes/starters/Sformato-di-carote.jpg",
-        description:"Lo sformato di carote è un piatto colorato che ho scelto di preparare in piccole cocottine monoporzione. Per prepararlo servono praticamente ingredienti che difficilmente mancano in casa, carote, uova, parmigiano e con l'aggiunta di un po' di noce moscata che serve a dare quel tocco di sapore in più.",
-        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        title:"Polpette",
+        imageUrl:"assets/recipes/mains/meatballs.jpg",
+        imageAlt:"Piatto pieno di polpette bruciacchiate in modo battuto adagiato su un letto di insalata",
+        description:"Le polpette sono una ricetta semplice da realizzare e molto gustosa: questi teneri bocconcini di carne macinata aromatizzati con provola, parmigiano, uovo e prezzemolo non possono davvero mancare dal menu!",
+
+        ingredients:["500 grammi di carne macinata", "50 grammi di Parmigiano grattugiato", "3 grammi di sale", "50 grammi di provola affumicata", "130 grammi di pane vecchio", "2 uova", "3 grammi di pepe nero", "1 rametto di Prezzemolo"],
         steps:[
-            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
-            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
-            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
-            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
+            'Start slicing the stale bread. Remove the crust and cut the crumb into cubes, then place it in a mixer together with the chopped parsley and the thyme leaves.',
+            'Operate the mixer until the mixture is sandy and homogeneous. Slice and coarsely chop the provolone.',
+            'Place the meat, the minced bread and the provolone in a large pan, add the grated Parmesan cheese and finally the lightly beaten eggs.',
+            'Season with salt and pepper then start kneading with your hands until you get a compact dough, which you have to leave to rest in the refrigerator for 30 minutes covered with cling film.',
+            'After the necessary time, remove the block of meat from the refrigerator, wet your hands and start dividing the dough into portions of about 20 g: shape each on the palm of your hand to obtain 44 meatballs of the same size and then place them on a lined tray with transparent film.',
+            'Put plenty of breadcrumbs in a bowl and pass each meatball, turning it with the help of a fork for even breading. Let them all rest on the tray, trying to distance them slightly from each other. Meanwhile, bring the oil for frying to a temperature that does not exceed 170-180 °.',
+            'When it is hot to the right point, with a slotted spoon dip 2-3 meatballs at a time to keep the oil temperature from getting too low, cook a few minutes (2-3 minutes will be enough) until golden brown, then transfer the cooked meatballs on absorbent paper just long enough to remove the excess oil.',
+            'Meatballs are ready, serve hot!',              
         ],
-        dateAdded:"18-02-2021",
-        link: "starters.html#Recipe_1"
+        dateAdded:"26-02-2021",
+        link: "maindishes.html#Recipe_1"
     },
     Recipe_2:{
-        added:"Aggiunta il",
-        title:"Muffin Salati",
-        imageUrl:"assets/recipes/starters/Muffin-salati.jpg",
-        description:"I muffin salati sono perfetti per tutte le occasioni, potete utilizzarli come aperitivo,  a cena o pranzo al posto del pane e della pizza, potete facilmente trasportarli al mare, in gita, pic nic fuori porta! Ideali per una merenda genuina e sana anche per bambini; sono perfetti per buffet e feste di ogni tipo! E voi? che gusto preferite?",
-        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        title:"Crema di Zucca",
+        imageUrl:"assets/recipes/mains/pumpkin_soup.jpg",
+        imageAlt:"Primo piano di pane croccante mentre viene pucciato in una crema di zucca densa e cremosa in una ciotola di smalto bianco rustico.",
+        description:"Questa è una Crema di zucca classica e facile a base di zucca fresca che è molto veloce da preparare. Densa, cremosa e saporita, questa è LA ricetta della zuppa di zucca che preparerai ora e per sempre!",
+
+        ingredients:["1 kig di Zucca","1 litro di Brodo Vegetale","1 Pizzico di Pepe Nero","60 G Olio extra vergine d'oliva","! pizzico Noce Moscata","200g Patate","80g Cipolle Bianche","1 pizzico di sale","! pizzicco di cannelal in polvere"],
         steps:[
-            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
-            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
-            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
-            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
+            'Per preparare la crema di zucca iniziate preparando il brodo vegetale. Poi passate alla pulizia della zucca. Tagliatela a fette ed eliminate sia la buccia esterna che i semi interni; a questo punto dovrete ricavare 600 g di polpa,  quindi tagliatela a cubetti.',
+            'Pelate le patate e tagliatele anche queste a cubetti. Mondate la cipolla, tritatela finemente quindi trasferitela in un tegame con l’olio e lasciatela imbiondire a fuoco dolce.',
+            'Una volta che la cipolla avrà cambiato colore unite anche la zucca e le patate. Aggiungete anche una parte del brodo fino a coprire tutte le verdure, il resto verrà aggiunto successivamente.',
+            'Aggiustate di sale e di pepe . Lasciate cuocere a fuoco dolce per 25-30 minuti 11, aggiungendo altro brodo di tanto in tanto. Una volta che le verdure saranno cotte, spegnete il fuoco e frullate il tutto con un mixer ad immersione, fino ad ottenere una crema liscia ed omogenea. Quindi aggiungete la cannella, la noce moscata e mescolate il tutto. La vostra crema di zucca è ormai pronta! ',
+            'Per preparare dei gustosi crostini di accompagnamento tagliate il pane a cubetti non troppo piccolie disponeteli su una teglia foderata con carta forno. Irrorateli con l’olio, cuoceteli per circa 5 minuti in forno preriscaldato in modalità grill, quindi sfornateli. Servite la crema di zucca in una ciotola da zuppa aggiungendo i crostini dorati in superficie.',             
         ],
-        dateAdded:"23-02-2021",
-        link: "starters.html#Recipe_2"
+        dateAdded:"26-02-2021",
+        link: "maindishes.html#Recipe_2"
     },
-    Recipe_3:{
-        added:"Aggiunta il",
-        title:"Barchette di Pane e Uova al Forno",
-        imageUrl:"assets/recipes/starters/pane-ripieno.jpg",
-        description:"Le barchette di pane ripiene sono una ricetta golosa e saporita, ottima come contorno o servita ad un aperitivo. Sono semplici da preparare: basterà realizzare delle barchette di pane utilizzando dei gustosi panini ai cereali, scavati al loro interno e farciti con un ripieno a base di verdure, formaggio e prosciutto.",
-        ingredients:["150 grammi of grated carrots","20 grammi of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
-        steps:[
-            "a) Far saltare in padella: cipolla, carota gratuggiata con l'olio extra vergine d'oliva per qualche minuti. Aggiugnere un bicchiere d'acqua e lasciare cuocere finchè non sarà completamente assorbita",
-            "b) Condire le carote con olio, pepe, prezzemolo, peperoncino a piacere",
-            "c) mischiare latte vegetale e farina di ceci, versare il composto sulle carote a fuoco spento",
-            "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
-        ],
-        dateAdded:"20-02-2021",
-        link: "starters.html#Recipe_3"
-    }
 }
-var LatestENG = {
+var MainsENG = {
     Recipe_1:{
-        added:"Added on",
-        title:"Carrot Flan",
-        imageUrl:"assets/recipes/starters/Sformato-di-carote.jpg",
-        description:"Carrot flan is a colorful dish that I have chosen to prepare in small single-portion casseroles. To prepare it you practically need ingredients that are hardly missing at home, carrots, eggs, parmesan and with the addition of a little nutmeg which serves to give that extra touch of flavor.",
-        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
+        title:"Meatballs",
+        imageUrl:"assets/recipes/mains/meatballs.jpg",
+        imageAlt:"Platter full of beatfully charred meatballs lying on top of a bed of salad",
+        description:"Meatballs are a simple recipe to make and very tasty: these tender bites of minced meat flavored with provolone, parmesan, egg and parsley cannot really be missing from the menu!",
+
+        ingredients:["500 grams Ground Beef","50 grams grated Parmigiano","3 grams Salt","50 grams Smoked Provola","130 grams Old Bread","2 Eggs","3 grams Black Pepper","1 Sprig of Parsley"],
         steps:[
-            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
-            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
-            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
-            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
+            'Start slicing the stale bread. Remove the crust and cut the crumb into cubes, then place it in a mixer together with the chopped parsley and the thyme leaves.',
+            'Operate the mixer until the mixture is sandy and homogeneous. Slice and coarsely chop the provolone.',
+            'Place the meat, the minced bread and the provolone in a large pan, add the grated Parmesan cheese and finally the lightly beaten eggs.',
+            'Season with salt and pepper then start kneading with your hands until you get a compact dough, which you have to leave to rest in the refrigerator for 30 minutes covered with cling film.',
+            'After the necessary time, remove the block of meat from the refrigerator, wet your hands and start dividing the dough into portions of about 20 g: shape each on the palm of your hand to obtain 44 meatballs of the same size and then place them on a lined tray with transparent film.',
+            'Put plenty of breadcrumbs in a bowl and pass each meatball, turning it with the help of a fork for even breading. Let them all rest on the tray, trying to distance them slightly from each other. Meanwhile, bring the oil for frying to a temperature that does not exceed 170-180 °.',
+            'When it is hot to the right point, with a slotted spoon dip 2-3 meatballs at a time to keep the oil temperature from getting too low, cook a few minutes (2-3 minutes will be enough) until golden brown, then transfer the cooked meatballs on absorbent paper just long enough to remove the excess oil.',
+            'Meatballs are ready, serve hot!',           
         ],
-        dateAdded:"19-02-2021",
-        link: "starters.html#Recipe_1"
+        dateAdded:"26-02-2021",
+        link: "maindishes.html#Recipe_1"
     },
     Recipe_2:{
-        added:"Added on",
-        title:"Savory Muffins",
-        imageUrl:"assets/recipes/starters/Muffin-salati.jpg",
-        description:"Savory muffins are perfect for all occasions, you can use them as an aperitif, at dinner or lunch instead of bread and pizza, you can easily transport them to the sea, on a trip, picnic out of town! Ideal for a genuine and healthy snack even for children; they are perfect for buffets and parties of all kinds! And you? what flavor do you prefer?",
-        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
-        steps:[
-            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
-            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
-            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
-            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
-        ],
-        dateAdded:"13-02-2021",
-        link: "starters.html#Recipe_2"
-    },
-    Recipe_3:{
-        added:"Added on",
-        title:"Boats of Bread and Baked Eggs",
-        imageUrl:"assets/recipes/starters/pane-ripieno.jpg",
-        imageAlt:"",
-        description:"Stuffed bread boats are a delicious and tasty recipe, excellent as a side dish or served with an aperitif. They are simple to prepare: just make bread boats using tasty cereal sandwiches, hollowed out and stuffed with a filling based on vegetables, cheese and ham.",
-        ingredients:["150 gr of grated carrots","20 gr of onions","1 celery stalk","1/2 cup of Soja milk","Spices:","extra virgin oil","1 cup of water"],
-        spices:["nutmeg","parsley","chili pepper","salt","pepper"],
-        steps:[
-            "a) Sauté: onion, grated carrot with extra virgin olive oil for a few minutes. Add a glass of water and let it cook until completely absorbed",
-            "b) Season the carrots with oil, pepper, parsley, chilli to taste",
-            "c) mix vegetable milk and chickpea flour, pour the mixture over the carrots over the heat off",
-            "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
-        ],
-        dateAdded:"20-02-2021",
-        link:"starters.html#Recipe_3"
-    }
-}
+        title:"Pumpkin cream",
+        imageUrl:"assets/recipes/mains/pumpkin_soup.jpg",
+        imageAlt:"Close up of crusty bread as it is dipped into a thick, creamy pumpkin cream in a white chinese bowl.",
+        description:"This is a classic and easy Pumpkin Cream made from fresh pumpkin that is very quick to make. Thick, creamy and flavorful, this is the pumpkin soup recipe you will make now and forever!",
 
+        ingredients:["1 kg of Pumpkin", "1 liter of Vegetable Broth", "1 Pinch of Black Pepper", "60 grams Extra Virgin Olive Oil", "1 pinch Nutmeg", "200g Potatoes", "80grams White Onions "," 1 pinch of salt ","1 Pinch of cannelal powder "],
+        steps:[
+            'To prepare the pumpkin cream, start by preparing the vegetable broth. Then move on to cleaning the pumpkin. Cut it into slices and remove both the external peel and the internal seeds; at this point you will need to obtain 600 g of pulp, then cut it into cubes. ',
+            'Peel the potatoes and cut these into cubes too. Peel the onion, chop it finely then transfer it to a pan with oil and let it brown over low heat. ',
+            'Once the onion has changed color, add the pumpkin and potatoes. Also add a part of the broth until all the vegetables are covered, the rest will be added later. ',
+            'Season with salt and pepper. Cook over low heat for 25-30 minutes 11, adding more broth from time to time. Once the vegetables are cooked, turn off the heat and blend everything with an immersion blender, until you get a smooth and homogeneous cream. Then add the cinnamon, nutmeg and mix everything. Your pumpkin cream is now ready! ',
+            'To prepare tasty accompanying croutons, cut the bread into not too small cubes and arrange them on a baking sheet lined with parchment paper. Sprinkle them with oil, cook them for about 5 minutes in a preheated oven in grill mode, then take them out of the oven. Serve the pumpkin cream in a soup bowl adding the golden croutons to the top. ',         
+        ],
+        dateAdded:"26-02-2021",
+        link: "maindishes.html#Recipe_2"
+    },
+}
 //Bakery Recepies found in main-bakery class
 var BakeryITA = {
     Recipe_1:{
-        LangSetup:{
-            ingrL:"Ingredienti",
-            startL:"Ai Fornelli!",
-            spicesL:"Spezie"
-        },
         title:"Focaccia Semplice",
         imageUrl:"assets/recipes/bakery/focaccia.jpg",
         imageAlt:"focaccia fragrante illuminata da raggi di sole provenienti da una finestra",
         description:"Semplice ricetta per fare della focaccia deliziosa. Sarà così buona che non dovrete più andare dal panettiere a comprarla!",
-        ingredLang:"Ingredients",
-        ingredients:["400gr Farina","360gr Acqua","40g Olio","6 a 8gr di Sale", "4gr Zucchero","7gr lievito disidrattato"],
-        spices:[],
 
+        ingredients:["400gr Farina","360gr Acqua","40g Olio","6 a 8gr di Sale", "4gr Zucchero","7gr lievito disidrattato"],
         steps:[
             'Sciogliere il lievito nell’acqua a temperature ambiente, aggiungere lo zucchero e mescolare.',
             'Aggiungere l’olio e la farina in una ciottola e mescolare fino a quando la farina non sarà assorbita.',
