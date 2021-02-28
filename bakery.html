@@ -44,7 +44,23 @@
         </div>
     </header>
     <!-- Start of Main -->
+
     <div class="main main-bakery" id="main-content">
+        <div class="search-container">
+            <div class="search-items">
+                <h3>Search</h3>
+                <input id="search-bar" type="text">
+                <h3>By</h3>
+                <select id="filter-menu" name="">
+                    <option value="recipe_name">Recipe Name</option>
+                    <option value="ingredients">Ingredients</option>
+                    <!-- <option value="tags">#Tags</option> Might be developed in future--> 
+                    
+                  </select>
+            </div>
+            <img src="./assets/bon_appetit.png" alt="">
+
+        </div>
         <!-- Recipe Template-->
         <div id="template-container" class="bakery-page">
             <!-- All REcipes Wil Be appended here, below is the html code of the recipes-->
@@ -126,6 +142,8 @@
 
     <!-- My script here-->
     <script src="./js/myScripts.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>

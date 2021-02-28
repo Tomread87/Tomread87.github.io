@@ -19,6 +19,7 @@
         
         <header id="header">
             <div class="main" >
+
                 <img id="logo" src="./assets/chef-piruggi-watermark.png" height="80" alt="logo contaning the initials of Chef Piruggi">
                 <div class="top-right-menu">
                     <ul class="nav-menu  lang">
@@ -39,6 +40,21 @@
         </header>
 <!-- Start of Main -->
 <div class="main" id="main-content">
+    <div class="search-container">
+        <div class="search-items">
+            <h3>Search</h3>
+            <input id="search-bar" type="text">
+            <h3>By</h3>
+            <select id="filter-menu" name="">
+                <option value="recipe_name">Recipe Name</option>
+                <option value="ingredients">Ingredients</option>
+                <!-- <option value="tags">#Tags</option> Might be developed in future--> 
+                
+              </select>
+        </div>
+        <img src="./assets/bon_appetit.png" alt="">
+
+    </div>
     <div id="template-container"></div>
 <!-- Handlebars with Populate this with alle the recipes-->
 

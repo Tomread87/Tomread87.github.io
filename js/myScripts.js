@@ -1,11 +1,11 @@
 //-*-*-*-*-*-*-*-* Function to hide and show top menu on scroll -*-*-*-*-*-*-*-*//
-//Code found, modified and adpated from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-
 //we add some important variables here
-var prevScrollpos = window.pageYOffset;
 var tapped = false
 var mediaWidth = 770
 
+
+//Code found, modified and adpated from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+var prevScrollpos = window.pageYOffset;
 window.addEventListener("scroll", function HideTopMenu() {
     var header = document.getElementById("header")
     var currentScrollPos = window.pageYOffset;
@@ -24,11 +24,10 @@ window.addEventListener("scroll", function HideTopMenu() {
     prevScrollpos = currentScrollPos
 })
 
-//code to show and hide navigation menu on mobile devices
-
+//Code to show and hide navigation menu on mobile devices
 $(document).ready(function () {
     //start of touch listener
-    
+
     document.getElementById("button-menu").addEventListener("touchstart", function () {
 
         if ($("#nav-menu").hasClass("invisible")) {
@@ -54,9 +53,111 @@ $(document).ready(function () {
     }
 })
 
-function MouseOverFunc(){
+//function to search and Show only the Recipes we want to see
+function SearchBar() {
+    var recipeList = [];
+    var ingList = []
+    var searchBar = document.getElementById("search-bar"); //get searchbar id
+    SearchByRecipeName()
 
-    $("#drop-down").mouseover(function () {            
+    $('#filter-menu').on('change', function () {
+        
+        searchBar.value = ""
+        selection = $('#filter-menu option:selected').val()
+        if (selection == "recipe_name") {
+            SearchByRecipeName()
+        } else if (selection == "ingredients") {
+            SearchByIngredients()
+        }
+
+
+    })
+
+    function SearchByRecipeName() {
+        searched_val = document.getElementsByClassName("recipe-title-h2");
+        for (var i = 0; i < searched_val.length; i++) {
+            var recipeName = searched_val[i].innerHTML; //for each h3 we trasform 
+            recipeName = recipeName.toLowerCase();
+            recipeList.push(recipeName);
+        }
+
+
+        searchBar.addEventListener('keyup', function () { //add listener to search bar
+            var text = searchBar.value; //gets value in the search bar
+            text = text.toLowerCase(); //makes value lowercase
+            for (var i = 0; i < searched_val.length; i++) { //scroll through all classes h3
+                //var recipeName = searched_val[i].innerHTML;//assign recipename the [ith] class h3
+                //recipeList.push(recipeName);//push the value of each h3 into an arraycalled RecipeList
+                var element = $(searched_val[i]).closest(".bakery")//this is to select the correct card to show or 
+                if (element.length == 0) {
+                    element = $(searched_val[i]).closest(".recipe")//if .baery is not present use .recipe
+                }
+                if (recipeList[i].indexOf(text) < 0) {  //checks id any part of the string contains text in the search bar              
+                    element.css("display", "none");
+                } else {
+                    //searched_val[i].style.display = 'Block'
+                    element.css("display", "block")
+                }
+            }
+
+
+        })
+    }
+    function SearchByIngredients() {
+        var all_ingredients_list = document.getElementsByClassName("ingredients-list");
+        searchBar.addEventListener('keyup', function () {
+            var text = searchBar.value; //gets value in the search bar
+            text = text.toLowerCase(); //makes value lowercase
+            for (var eachCard = 0; eachCard < all_ingredients_list.length; eachCard++) {
+                var UL = all_ingredients_list[eachCard].getElementsByTagName("UL")[0] //get the first and olny ul
+                //we are in card 1
+                var present = 0
+                //get all li
+                ingli = UL.getElementsByTagName("li") //get all li in that UL
+
+                ingList = []
+
+                for (j = 0; j < ingli.length; j++) { //crate array of all ingredients of card1
+                    var ingName = ingli[j].innerHTML
+                    ingName = ingName.toLowerCase()
+                    ingList.push(ingName)
+
+                }
+                //console.log(ingList);
+
+                for (y = 0; y < ingList.length; y++) {//check for value
+                    if (ingList[y].indexOf(text) > 0) {  //checks id any part of the string contains text in the search bar              
+                        //console.log(ingList[y]);
+                        present++
+                    }
+                }
+                //hide element that is not present
+                var element = $(UL).closest(".bakery")
+                if (element.length == 0) {
+                    element = $(UL).closest(".recipe")//if .bakery is not present use .recipe
+                }
+                if (present < 1 && text != "") {
+                    element.css("display", "none")
+                } else {
+                    element.css("display", "block")
+                }
+                //var element = $(UL[i]).closest(".bakery")
+                //element.css("display","none")
+
+            }
+        })
+    }
+    //creates a list of all the cards h3
+    /*;*/
+}
+
+
+
+
+
+function MouseOverFunc() {
+
+    $("#drop-down").mouseover(function () {
         $("#nav-menu").removeClass("invisible")
         $("#button-menu").css({ "background-color": "rgba(70, 70, 70)", "transition": "0.25s" })
     })
@@ -65,14 +166,14 @@ function MouseOverFunc(){
         $("#button-menu").css({ "background-color": "rgba(255, 70, 70)", "transition": "0.25s" })
     })
 
-} 
-$(window).resize(function() {    
+}
+$(window).resize(function () {
     screenWidth = $(window).width() + 17
     $("#drop-down").off() //resets the listener so that ti doesn't bug when chagning screen resolution
     if (screenWidth <= mediaWidth) {
         $("#nav-menu").addClass("invisible")
         MouseOverFunc()
-    } 
+    }
     if (screenWidth > mediaWidth) {
         $("#nav-menu").removeClass("invisible")
     }
@@ -98,6 +199,7 @@ function addCrumb() {
 
 window.addEventListener("DOMContentLoaded", function () {
     addCrumb()
+
     var lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
 
@@ -120,7 +222,7 @@ window.addEventListener("DOMContentLoaded", function () {
             PopulateMains(MainsITA, lang)
         }
     }
-    if (lang == "ENG") {//if lang is in english compile inglish
+    if (lang == "ENG") {//if lang is in english compile in English
         PopulateMenu(NavMenuEng)
         if (crumb == "index") { //compile for index-html only
             PopulateIndex(LatestENG, lang)
@@ -134,6 +236,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     addCrumb()
     ShowHide()
+    if (crumb != "index") { SearchBar() }
 })
 
 $("#lang-ita").click(function () {
@@ -157,7 +260,7 @@ function ShowHide() {
         if (clickClass == "close-recipe") {
             //recipeId = e.target.parentNode.parentNode.parentNode.id   //---Old Code---Vanilla Javascript---//  /
             hide(recipeId)
-        } else { 
+        } else {
             show(recipeId)
         }
 
@@ -166,14 +269,17 @@ function ShowHide() {
             recipe.find(".recipe-main-content").css({ "max-height": "2000px", "padding": "16px" })
             recipe.find(".close-recipe").css("display", "block")
             recipe.find(".recipe-thumbnail").css({ "height": "0", "width": "0", "min-height": "0" })
-            
+            $(".bakery").not(recipe).hide()
+
         }
         function hide(recipe) {
             recipe.addClass("hover-class")
             recipe.find(".recipe-main-content").css({ "max-height": "0px", "padding": "0px" })
             recipe.find(".close-recipe").css("display", "none")
             recipe.find(".recipe-thumbnail").css({ "width": "auto", "min-height": "187px", "height": "auto" })
-            
+            setTimeout(function () {
+                $(".bakery").not(recipe).show()
+            }, 500)
         }
     })
     $(".bakery").click(function GetElementInfo(e) {
@@ -199,6 +305,7 @@ function ShowHide() {
             recipe.find(".close-recipe").css("display", "block")
             recipe.find(".recipe-thumbnail").css("max-height", "100px")
             recipe.find(".bakery-main-content").css("display", "block")
+            recipe.find(".after-description").css("display", "none")
             $(".bakery").not(recipe).hide()
         }
         function hide(recipe) {
@@ -209,6 +316,7 @@ function ShowHide() {
             recipe.find(".recipe-thumbnail").css("min-width", "240px")
             recipe.find(".recipe-description-p").css("width", "auto")
             recipe.find(".bakery-main-content").hide()
+            recipe.find(".after-description").css("display", "block")
             //recipe.css("transtion","0")
 
             setTimeout(function () {
@@ -376,7 +484,7 @@ function FillBakery(collection, lang) {
     p1.innerText = collection.description
     recipe_description.appendChild(p1)//adding the short description
     var hide_bottom = create("div")
-    hide_bottom.setAttribute("class","after-description")
+    hide_bottom.setAttribute("class", "after-description")
     recipe_tab.appendChild(hide_bottom)//this is the div that will hide the overscroll
     var recipe_main_content = create("div")
     recipe_main_content.setAttribute("class", "recipe-main-content bakery-main-content")
