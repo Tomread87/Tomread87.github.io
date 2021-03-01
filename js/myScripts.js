@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
 
-    if (lang === null) { //if the lang is null load page in neglish
+    if (lang === null) { //if the lang is null load page go to index
         if (crumb != "index") {            
             window.location.replace("index.html")
         }
@@ -211,9 +211,6 @@ window.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("Lang", "ENG")
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
-        console.log(crumb);
-
-
     }
 
     if (lang == "ITA") { //if lang is italian compile italian
