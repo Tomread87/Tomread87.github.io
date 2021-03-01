@@ -222,6 +222,8 @@ window.addEventListener("DOMContentLoaded", function () {
             PopulateBakery(BakeryITA, lang)
         } else if (crumb == "maindishes") {
             PopulateMains(MainsITA, lang)
+        } else if (crumb == "desserts") {
+            PopulateBakery(DessertITA, lang)
         }
     }
     if (lang == "ENG") {//if lang is in english compile in English
@@ -234,6 +236,8 @@ window.addEventListener("DOMContentLoaded", function () {
             PopulateBakery(BakeryENG, lang)
         } else if (crumb == "maindishes") {
             PopulateMains(MainsENG, lang)
+        } else if (crumb == "desserts") {
+            PopulateBakery(DessertENG, lang)
         }
     }
     addCrumb()

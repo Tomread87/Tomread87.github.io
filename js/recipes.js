@@ -306,7 +306,7 @@ var MainsENG = {
         tags: [],
     },
 }
-//Bakery Recepies found in main-bakery class
+//Bakery Recepies found in main-bakery class in bakery.html page
 var BakeryITA = {
     Recipe_1: {
         title: "Focaccia Semplice",
@@ -419,7 +419,7 @@ var BakeryITA = {
 
         ],
         dateAdded: "24-02-2021",
-        link: "bakery.html#Recipe_3", 
+        link: "bakery.html#Recipe_3",
         tags: [],
     },
 }
@@ -541,6 +541,100 @@ var BakeryENG = {
         ],
         dateAdded: "24-02-2021",
         link: "bakery.html#Recipe_3",
+        tags: [],
+    },
+}
+//Dessert Recipes found in main-bakery class in dessert.html page
+var DessertITA = {
+    Recipe_1: {
+        title: "Cookies al Cioccolato",
+        imageUrl: "assets/recipes/desserts/chocolate_cookies.jpg",
+        imageAlt: "tre cookies al cioccolato stesi su un canovaccio bianco",
+        description: "Quando si ha fame o si è semplicemente golosi, cosa c'è di meglio di un buon biscotto al cioccolato?! Con questa ricetta vegana anche le persona intolleranti al lattte si potranno godere questa prelibatezza",
+
+        ingredients: ["250gr farina", "5gr lievito chimico", "4gr bicarbonato di sodio", "3gr sale fino", "75gr zucchero di canna", "75gr zucchero bianco", "75gr olio extra vergine d'oliva", "38ml acqua", "300gr bottoni di cioccolato fondente"],
+        steps: [
+            'Mischiare farina e bicarbonato di sodio, liveito e sale. Aggiungere i bottoni di cioccolato.',
+            "In un'altra ciottola mischiare lo zucchero, l'olio e l'acqua per circa 2 minuti finchè non si è sciolto tutto lo zucchero.",
+            "Combianre le farine con il liquido e lavorarli insieme (non eccessivamente).",
+            "Posizionare il composto in palline separate fra loro su della carta da forno. Mettere nel freezer per 30 minuti o 24hr in frigo.",
+            "Cuocere per 14-17 minuti finchè dorati a 180℃. Una volta cotti lasciare rafreddare e goderseli!"
+        ],
+        dateAdded: "24-02-2021",
+        link: "desserts.html#Recipe_1",
+        tags: [],
+    },
+    Recipe_2: {
+        title: "Torta Rovesciata all'Ananas",
+        imageUrl: "assets/recipes/desserts/pineapple_cake.jpg",
+        imageAlt: "Una fetta di torta elevata dal piatto con una forchetta, sotto alla fetta c'è la torta intera ancora uttta da mangiare",
+        description: "Succede che qualche volta si ha voglia di qualcosa di esotico. Questa ricetta vegana vi porterà a conoscere tutta la dolcezza e il gusto dell'ananas",
+
+        ingredients: [
+            "una scatola d'ananas la sciroppata",
+            "250 grammi farina ",
+            "80 grammi zucchero",
+            "60 ml olio vegetale ",
+            "una bustina di lievito per dolci ",
+            "un cucchiaio colmo di aceto di mele ",
+            "qualche cucchiaio di cocco grattugiato ",
+        ],
+        steps: [
+            "mescolare l'olio vegetale lo sciroppo il latte vegetale con lo zucchero. ",
+            "setacciare la farina e lievito nel composto liquido. ",
+            "sistemare le fette d'ananas sul fondo di una tortiera e infornare per 10 minuti per far caramellare le fette. ",
+            "tagliare a pezzetti l'ananas aggiungere al composto. In comprare l'aceto di mele, mescolare bene e far riposare per 10 minuti.",
+            "sfornare la tortiera e versare il composto sulle fette caramellate. Informare nuovamente per circa 30 minuti a 180 °. Sfornare e una volta fredda spargere del cocco grattugiato sopra la torta. "
+        ],
+        dateAdded: "01-03-2021",
+        link: "desserts.html#Recipe_2",
+        tags: [],
+    },
+
+}
+var DessertENG = {
+    Recipe_1: {
+        title: "Chocolate Cookies",
+        imageUrl: "assets/recipes/desserts/chocolate_cookies.jpg",
+        imageAlt: "three chocolate cookies spread out on a white tea towel",
+        description: "When you are hungry or simply greedy, what could be better than a good chocolate biscuit ?! With this vegan recipe, even people who are intolerant to milk can enjoy this delicacy",
+
+        ingredients: ["250gr flour", "5gr chemical yeast", "4gr sodium bicarbonate", "3gr fine salt", "75gr cane sugar", "75gr white sugar", "75gr extra virgin olive oil", "38ml water ", " 300gr dark chocolate buttons "],
+        steps: [
+            'Mix flour and baking soda, baking powder and salt. Add the chocolate buttons. ',
+            "In another bowl mix the sugar, oil and water for about 2 minutes until all the sugar has dissolved.",
+            "Combine the flours with the liquid and work them together (not excessively).",
+            "Place the mixture into separate balls on some parchment paper. Place in the freezer for 30 minutes or 24hr in the fridge.",
+            "Cook for 14-17 minutes until golden at 180 ℃. Once cooked, let them cool and enjoy!"
+        ],
+        dateAdded: "24-02-2021",
+        link: "desserts.html#Recipe_1",
+        tags: [],
+    },
+    Recipe_2: {
+        title: "Pineapple Cake",
+        imageUrl: "assets/recipes/desserts/pineapple_cake.jpg",
+        imageAlt: "A slice of cake raised off the plate with a fork, under the slice is the whole cake still uneaten",
+        description: "It happens that sometimes you want something exotic. This vegan recipe will bring you to know all the sweetness and taste of pineapple",
+
+        ingredients: [
+            "a tin of pineapple in syrup",
+            "250 grams flour",
+            "80 grams of sugar",
+            "60 ml vegetable oil",
+            "a sachet of baking powder",
+            "a spoonful of apple cider vinegar",
+            "a few tablespoons of grated coconut",
+        ],
+        steps: [
+            "mix the vegetable oil the syrup the vegetable milk with the sugar.",
+            "sift the flour and yeast into the liquid mixture.",
+            "Arrange the pineapple slices on the bottom of a pan and bake for 10 minutes to caramelize the slices.",
+            "chop the pineapple add to the mixture. In buy apple cider vinegar, mix well and let it rest for 10 minutes.",
+            "Remove from the oven and pour the mixture over the caramelized slices. Bake again for about 30 minutes at 180 °. Remove from the oven and once cold sprinkle some grated coconut on top of the cake."
+        ],
+        dateAdded: "01-03-2021",
+        link: "desserts.html#Recipe_2",
         tags: [],
     },
 }
