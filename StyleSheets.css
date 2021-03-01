@@ -485,9 +485,7 @@ footer {
     }
     .recipe-container{
         flex-direction: column;
-    }
-    .recipe-image{
-        min-height: 150px;
+        justify-content: space-between;
     }
     .latest-recipe-date{
         font-size: 0.8em;
@@ -519,7 +517,8 @@ footer {
         max-width: 100%;
     }
     .recipe-image {
-        margin: 0 12px 0 12px;
+        min-height: 150px;
+        margin: 0 12px 8px 12px;
         max-width: 100%;
     }
     .general-text-box {
