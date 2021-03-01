@@ -208,7 +208,7 @@ window.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("Lang", "ENG")
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
-        window.location.replace('index.html')
+        window.location.replace()
     }
 
     if (lang == "ITA") { //if lang is italian compile italian
@@ -300,7 +300,8 @@ function ShowHide() {
         }
         function show(recipe) {
             recipe.removeClass("hover-class")
-            recipe.css({ "max-width": "2000px", "height": "auto" })
+            recipe.css({"height": "auto" })
+            recipe.removeClass("bakMaxWidth")
             recipe.find(".recipe-main-content").css({ "max-height": "2000px", "padding": "16px" })
             //.find will find the class that we are looking for among the children inside the div with id #recipeId
             recipe.find(".close-recipe").css("display", "block")
@@ -311,19 +312,18 @@ function ShowHide() {
         }
         function hide(recipe) {
             recipe.addClass("hover-class")
-            recipe.css({ "max-width": "240px", "height": "450px" })
+            recipe.addClass("bakMaxWidth")
             //.find will find the class that we are looking for among the children inside the div with id #recipeId
             recipe.find(".close-recipe").hide()
-            recipe.find(".recipe-thumbnail").css("min-width", "240px")
+            //recipe.find(".recipe-thumbnail").css("min-width", "240px")
             recipe.find(".recipe-description-p").css("width", "auto")
             recipe.find(".bakery-main-content").hide()
             recipe.find(".after-description").css("display", "block")
             //recipe.css("transtion","0")
-
+            $(".bakery").not(recipe).show()
             setTimeout(function () {
-                $(".bakery").not(recipe).show()
-            }, 500)
-
+                
+            }, 100)
         }
     })
 }
@@ -459,7 +459,7 @@ function FillRecipe(collection, lang) {
 function FillBakery(collection, lang) {
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
-    recipe.setAttribute("class", "bakery hover-class")
+    recipe.setAttribute("class", "bakery hover-class bakMaxWidth")
     container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
     var recipe_tab = create("div")
     recipe_tab.setAttribute("class", "bakery-tab")

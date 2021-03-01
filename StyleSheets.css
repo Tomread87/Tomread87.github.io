@@ -7,6 +7,7 @@ body{
 }
 
 .main {
+    width:100%;
     max-width: 1138px;
     margin-top: 8px;
     margin-left: auto;
@@ -98,6 +99,7 @@ header .main{
 /*---------- Searchbox Styling here ----------*/
 
 .search-container {
+    width: 100%;
     padding: 20px;
     background-color: rgba(255, 70, 70);
     display: flex;
@@ -319,9 +321,11 @@ header .main{
     margin: 16px;
     transition: 0.5s;
     overflow: hidden;
-    max-width: 240px;
     height: 450px;
     position: relative;
+}
+.bakMaxWidth{
+    max-width: 240px
 }
 
 .after-description {
@@ -472,11 +476,8 @@ footer {
     .recipe, .bakery{
         margin: 24px 36px 24px 36px
     }
-    .bakery {
-        max-width: 100%
-    }
-    .bakery img{
-        max-width: 100%
+    .bakMaxWidth {
+        max-width: 100%;
     }
     .recipe-container{
         flex-direction: column;
