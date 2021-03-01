@@ -208,6 +208,7 @@ window.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("Lang", "ENG")
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
+        window.location.replace('index.html')
     }
 
     if (lang == "ITA") { //if lang is italian compile italian

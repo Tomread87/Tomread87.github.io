@@ -115,18 +115,25 @@ header .main{
 }
 .search-container h3{
     margin-top: 2px;
-    margin-right: 8px;
     margin-bottom: 0;
 }
 
-.search-container input, select{
-    border-radius: 8px;
-    margin-right: 8px;
+.search-container select, input{
+    margin-left: 8px;
     max-height: 34px;
+    border-radius: 8px;
+}
+.filter-input{
+    border: solid 1px;
+    margin-left: 8px;;
 }
 
 .search-container img{
     height: 36px;
+}
+
+#magnify {
+    display: none;
 }
 
 
@@ -462,10 +469,13 @@ footer {
 
 @media screen and (max-width: 540px) {
     .recipe, .bakery{
-        margin: 24px 8px 24px 8px
+        margin: 24px 36px 24px 36px
     }
     .bakery {
-        max-width: 280px;
+        max-width: 100%
+    }
+    .bakery img{
+        max-width: 100%
     }
     .recipe-container{
         flex-direction: column;
@@ -509,25 +519,39 @@ footer {
     .general-text-box {
         margin: 0;
     }
-    .search-container input {
-        width: 30%;
-    }
     .search-container h3{
         font-size: 1.2em;
     }
     .search-container select{
-        font-size: 00.8em;
+        font-size: 0.8em;
     }
 
     .search-container {
         padding: 10px;
+        max-width: 100%
     }
     .video-container {
         width: 100%;
         left: 0;
     }
+    .filter-input {
+        width: 42%
+    }
 
 }
 
+@media screen and (max-width: 410px) {
+    .search-container h3 {
+        display: none;
+    }
+    #magnify{
+        display: block;
+        height: 30px;
+    }
+    #logo {
+        width: 30%;
+        height: 30%;
+    }
+}
 #invisible {display: none;}
 
