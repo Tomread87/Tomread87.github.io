@@ -399,6 +399,7 @@ function FillRecipe(collection, lang) {
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
     recipe.setAttribute("class", "recipe hover-class")
+    recipe.setAttribute("id", collection.title)
     container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
     var recipe_tab = create("div")
     recipe_tab.setAttribute("class", "recipe-tab")
@@ -466,6 +467,7 @@ function FillBakery(collection, lang) {
     var container = document.getElementById("template-container") //where we are going to append all the recipes
     var recipe = create("div")
     recipe.setAttribute("class", "bakery hover-class bakMaxWidth")
+    recipe.setAttribute("id", collection.title)
     container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
     var recipe_tab = create("div")
     recipe_tab.setAttribute("class", "bakery-tab")

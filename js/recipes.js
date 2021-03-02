@@ -18,7 +18,7 @@ var LatestITA = {
             "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
         ],
         dateAdded: "18-02-2021",
-        link: "starters.html#Recipe_1",
+        link: "starters.html#.Sformato di Carote",
         tags: [],
     },
     Recipe_2: {
@@ -35,7 +35,7 @@ var LatestITA = {
             "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
         ],
         dateAdded: "23-02-2021",
-        link: "starters.html#Recipe_2",
+        link: "starters.html#Muffin Salati",
         tags: [],
     },
     Recipe_3: {
@@ -52,7 +52,7 @@ var LatestITA = {
             "d) Distribuire il compost ben mischiato in 4 pirofile unte e infornare per circa 20 minuti a 180℃"
         ],
         dateAdded: "20-02-2021",
-        link: "starters.html#Recipe_3",
+        link: "starters.html#Barchette di Pane e Uova al Forno",
         tags: [],
     }
 }
@@ -71,7 +71,7 @@ var LatestENG = {
             "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
         ],
         dateAdded: "19-02-2021",
-        link: "starters.html#Recipe_1",
+        link: "starters.html#Carrot Flan",
         tags: [],
     },
     Recipe_2: {
@@ -88,7 +88,7 @@ var LatestENG = {
             "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
         ],
         dateAdded: "13-02-2021",
-        link: "starters.html#Recipe_2",
+        link: "starters.html#Savory Muffins",
         tags: [],
     },
     Recipe_3: {
@@ -106,7 +106,7 @@ var LatestENG = {
             "d) Distribute the well-mixed compost in 4 greased oven dishes and bake for about 20 minutes at 180 ℃"
         ],
         dateAdded: "20-02-2021",
-        link: "starters.html#Recipe_3",
+        link: "starters.html#Boats of Bread and Baked Eggs",
         tags: [],
     }
 }
