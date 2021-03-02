@@ -20,7 +20,6 @@ body{
 }
 
 
-
 /*---------- Everything header goes here ----------*/
 header {
     border-bottom: solid 1px rgba(210, 210, 210);
@@ -35,6 +34,15 @@ header {
     /*top: 0;*/
     z-index: 2;
     transition: 0.5s;
+}
+
+#logo{
+    height: 68px;
+}
+
+#logo:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 header .main{
@@ -59,7 +67,7 @@ header .main{
 }
 
 .nav-menu {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-block-end: 0em;
 }
 
@@ -158,20 +166,25 @@ header .main{
     left: 20%;
     width:60%;
     height: 40%;
-    border: solid 3px white;
+    border: solid 3px rgba(255, 255, 255);
     text-align: center;
     font-size: 2.5em;
     padding-top: 4%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     font-weight: 500;
 }
 
 .carousel-image p:hover {
     color: rgba(255, 70, 70);
     background-color: rgba(255, 255, 255, 0.9);
-    border: solid 3px black;
+    border: solid 3px rgba(255, 70, 70);
     transition: 0.2s;
     cursor: pointer
+}
+
+.carousel-item a{    
+    text-decoration: none;
+    color: rgba(0, 0, 0);
 }
 
 /*---------- latest-recipes styling starts here  ----------*/
@@ -206,9 +219,7 @@ header .main{
     justify-content: space-between;
 }
 
-.recipe-text a{
-    color: rgba(255, 70, 70);;
-}
+
 
 /*---------- About Us ----------*/
 #about-us{
@@ -414,6 +425,10 @@ footer {
 
 }
 @media screen and (max-width: 770px){
+    #logo {
+        height: 68px;
+    }
+
     #drop-down{
         display: flex;
         flex-direction: column;
@@ -429,9 +444,10 @@ footer {
     #nav-menu{
         position: absolute;
         background-color: rgba(255, 255,255,0.75);
+        
         margin-left: 0;
         padding: 6px;
-        top:88px;
+        top:76px;
         right:20px        
     }
     #nav-menu li{
@@ -451,7 +467,7 @@ footer {
         color: white;
     }
 
-    #nav-menu .nav-menu{
+    #nav-menu, .nav-menu{
         text-align: right;
         margin-top: 0;
         padding-left: 0;
@@ -549,10 +565,10 @@ footer {
         display: block;
         height: 30px;
     }
-    #logo {
+    /*#logo {
         width: 30%;
         height: 30%;
-    }
+    }*/
 }
 #invisible {display: none;}
 
