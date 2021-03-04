@@ -382,9 +382,7 @@ function FillLatest(collection, lang) {
         a.innerText = "Vai alla Ricetta"
     }
     a.setAttribute("href", collection.link) //dynamically set href to a tag
-
     var TemplateContainer = document.getElementById("template-container")
-
     TemplateContainer.appendChild(LatestContainer)
     LatestContainer.appendChild(recipeContainer)
     recipeContainer.appendChild(recipeImage)
@@ -595,3 +593,51 @@ function RemoveChildrenOf(id) {
 function create(element) {
     return document.createElement(element)
 }
+
+//my carousel function here
+function Carousel(timer, fadetime) {
+    var index = 1
+    let images = document.getElementsByClassName("inside-img").length
+    var next = document.getElementsByClassName("next")[0] //gets the next button from carousel
+    var prev = document.getElementsByClassName("prev")[0] //get the previous button from carousel
+    //we had listeners for the buttons
+    next.addEventListener("click", function () {
+        FadeImages(500)       
+    })
+    prev.addEventListener("click", function () {
+        FadeImagesPrev(500)       
+    })
+    //we add functions below
+    function FadeImages(fadetime) {
+        if (index >= images) {              
+            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
+            $(".inside-img:nth-of-type(1)").fadeIn(fadetime)
+            index = 1 ;
+        } else {
+            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
+            $(".inside-img:nth-of-type("+(index+1)+")").fadeIn(fadetime);
+            index++ 
+        }
+    }
+    function FadeImagesPrev(fadetime) {
+        if (index <= 1) {
+            index = images
+            $(".inside-img:nth-of-type(1)").fadeOut(fadetime);
+            $(".inside-img:nth-of-type("+index+")").fadeIn(fadetime)
+        } else {
+            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
+            $(".inside-img:nth-of-type("+(index-1)+")").fadeIn(fadetime)
+            index--
+        }
+    }
+    function FadeTimer(timer, fadetime) {
+        setTimeout(function () {               
+            FadeImages(fadetime)                
+            FadeTimer(timer, fadetime)
+        },
+            timer)
+    }
+    //FadeTimer(timer, fadetime)
+}
+
+Carousel(6000, 1000)
