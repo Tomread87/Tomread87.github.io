@@ -637,7 +637,7 @@ function Carousel(timer, fadetime) {
         },
             timer)
     }
-    //FadeTimer(timer, fadetime)
+    FadeTimer(timer, fadetime)
 }
 
 Carousel(6000, 1000)
