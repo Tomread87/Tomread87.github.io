@@ -422,6 +422,38 @@ var BakeryITA = {
         link: "bakery.html#Recipe_3",
         tags: [],
     },
+    Recipe_5: {
+        LangSetup: {
+            ingrL: "Ingredienti",
+            startL: "Ai Fornelli!",
+            spicesL: "Spezie"
+        },
+        title: "Pane Rustico",
+        imageUrl: "assets/recipes/bakery/pane-rustico.jpg",
+        imageAlt: "Pane rustico tagliato in due pezzi e adagiato su un tagliere di bamboo",
+        description: "il pane rustico è un pane semplicissimo da fare che richiede una lunga lievitazione. Questa lievitazione però darà al pane un sapore e una consistenza impossibile da resistere. Con un po' di olio extra vergine o della nutella questo pane da il meglio di se",
+        ingredients: ["400 grammi di farina bianca","10 grammi di sale fino","1-2 grammi di lievito di birra","260 ml di acqua tiepida","1 cucchiaino di olio d'oliva"],
+        spices: [],
+
+        steps: [
+            "In una tazzina con poca acqua tiepida e pochissimo zucchero mischiate il lievito secco di birra.",
+            "Intanto che il liveito si risveglia, in una ciotola capiente mettete la farina e il sale. Mescolate bene, aggiungete l'acqua tiepida, l'acqua con il lievito e l'olio d'oliva.",
+            "Mescolate il tutto molto bene finchè non avrete un impasto umido, omogeneo e ancora parecchio appiccicoso.",
+            "Lasciate l'impasto riposare per 15 minuti nella ciotola, coprendola con un panno asciutto. Dopo 15 minuti dovrete fare delle piege all'impasto.",
+            "Per fare le piege all'impasto, bagnate le mani con dell'acquam e poi dovete prendere con due mani un lembo dell'impasto, tirarlo per formare una specie di coperta e con questa coprire l'impasto.",
+            "Immaginate l'impasto come un quadrato e fate una coperta con cui coprirlo per ogni lato.",
+            "Finite le pieghe lasciate riposare nella ciotola coperta per 15 minuti. Dovrete fare delle pieghe al pane 4 volte in tutto, ogni volta ricordatevi di far riposare l'impasto 15 minuti.",
+            "Quando avete finito di fare tutte e 4 le pieghe potete lasciare l'impasto riposare per 12 in una stanza temperatura ambiente e non a diretto contatto con i raggi del sole.",
+            "12 ore dopo noterete che l'impasto sarà cresciuto molto e sarà bello pieno d'aria. Mettete della farina su un tavolo di lavoro e versateci sopra l'impasto. Per staccare l'impasto dalla ciotola mettete della farina lungo il perimetro dell'impasto che è a contatto con la ciottola e delicatamente con la mano infarianta separate l'impasto dalla ciotola",
+            "Con l'impasto sgonfiato sul tavolo di lavoro infarinatelo per bene e delicatamente formatelo in una palla. Questo impasto verrà lasciato a riposare un'altra ora dentro una ciotola infarinata. 15 minuti prima dell scadere dell'ora accednete il forno a 240gradi e metteci dentro una casseruola con coperchio.",
+            "Allo scadere dell'ora togliete la casseruola calda dal forno e metteteci direttametne dentro l'impasto. Rimettete la casseruola con il coperchio nel forno e lasciate cuocere per 35 minuti",
+            "Allo scadere dei 35 minuti, lasciate la casseruola nel forno per altri 10 minuti ma senza copercchio. Questo permetterà al pane di diventare bello croccante.",
+            "Una volta cotto per 45 minuti toglietelo dal forno e lasciatelo riposare su di un tagliere. Appena la golosità avrà il sopravvento tagliatevi una fetta e buon appetito."
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_5",
+        tags: [],
+    },
 }
 var BakeryENG = {
     Recipe_1: {
@@ -541,6 +573,38 @@ var BakeryENG = {
         ],
         dateAdded: "24-02-2021",
         link: "bakery.html#Recipe_3",
+        tags: [],
+    },
+    Recipe_5: {
+        LangSetup: {
+            ingrL: "Ingredienti",
+            startL: "Ai Fornelli!",
+            spicesL: "Spezie"
+        },
+        title: "Rustic Bread",
+        imageUrl: "assets/recipes/bakery/pane-rustico.jpeg",
+        imageAlt: "Rustic bread cut into two pieces and placed on a bamboo cutting board",
+        description: "Rustic bread is a very simple bread to make that requires a long raising time. This raising time, however, will give the bread a flavor and texture that is impossible to resist. With a little extra virgin olive oil or Nutella, this bread gives its best",
+        ingredients: ["400 grams of white flour", "10 grams of fine salt", "1-2 grams of brewer's yeast", "260 ml of warm water", "1 teaspoon of olive oil"],
+        spices: [],
+
+        steps: [
+            "In a cup with a little warm water and very little sugar, mix the dry brewer's yeast.",
+            "While the liveito wakes up, put the flour and salt in a large bowl. Mix well, add the warm water, the water with the yeast and the olive oil.",
+            "Mix everything very well until you have a moist, homogeneous and still very sticky mixture.",
+            "Let the dough rest for 15 minutes in the bowl, covering it with a dry cloth. After 15 minutes you will have to make folds of the dough.",
+            "To make the dough pie, wet your hands with acquam and then you have to take a flap of the dough with both hands, pull it to form a kind of blanket and with this cover the dough.",
+            "Imagine the dough as a square and make a blanket with which to cover it on each side.",
+            "Once the folds are finished, let it rest in the covered bowl for 15 minutes. You will have to fold the bread 4 times in total, each time remember to let the dough rest for 15 minutes.",
+            "When you have finished making all 4 folds you can leave the dough to rest for 12 in a room at room temperature and not in direct contact with the sun's rays.",
+            "12 hours later you will notice that the dough will have grown a lot and will be full of air. Put some flour on a work table and pour the dough over it. To detach the dough from the bowl, put some flour along the perimeter of the dough that is in contact with the bowl and gently with your hand infarianta separate the dough from the bowl ",
+            "With the deflated dough on the work table, flour it well and gently shape it into a ball. This dough will be left to rest for another hour in a floured bowl. 15 minutes before the hour is up, turn on the oven to 240 degrees and put it in in a saucepan with lid. ",
+            "At the end of the hour, remove the hot saucepan from the oven and put the dough directly in it. Put the saucepan with the lid back into the oven and let it cook for 35 minutes",
+            "After 35 minutes, leave the saucepan in the oven for another 10 minutes but without the lid. This will allow the bread to become nice and crunchy.",
+            "Once cooked for 45 minutes, take it out of the oven and let it rest on a cutting board. As soon as your sweet tooth takes over, cut yourself a slice and enjoy your meal."
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_5",
         tags: [],
     },
 }

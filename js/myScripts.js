@@ -545,6 +545,7 @@ function PopulateIndex(collection, lang = "ENG") {
         $("#reach-us").text("Ci Trovate Anche Su")
         $("#latest-header").text("Le Ultime Ricette")
     }
+    Carousel(6000, 1000) //we start the Carosuel function here
 }
 function PopulateStarters(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
@@ -640,4 +641,3 @@ function Carousel(timer, fadetime) {
     FadeTimer(timer, fadetime)
 }
 
-Carousel(6000, 1000)
