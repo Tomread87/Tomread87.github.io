@@ -582,7 +582,7 @@ var BakeryENG = {
             spicesL: "Spezie"
         },
         title: "Rustic Bread",
-        imageUrl: "assets/recipes/bakery/pane-rustico.jpeg",
+        imageUrl: "assets/recipes/bakery/pane-rustico.jpg",
         imageAlt: "Rustic bread cut into two pieces and placed on a bamboo cutting board",
         description: "Rustic bread is a very simple bread to make that requires a long raising time. This raising time, however, will give the bread a flavor and texture that is impossible to resist. With a little extra virgin olive oil or Nutella, this bread gives its best",
         ingredients: ["400 grams of white flour", "10 grams of fine salt", "1-2 grams of brewer's yeast", "260 ml of warm water", "1 teaspoon of olive oil"],
