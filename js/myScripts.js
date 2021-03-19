@@ -204,6 +204,7 @@ function LightDark(){
         $(".after-description").addClass("dark-after-description")
         $("#dark-mode img").css("height","24px")
         $("#light-mode img").css("height","16px")
+
     }
     if (mode == "light") {
         $("body").removeClass("darkmode")
