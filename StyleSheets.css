@@ -476,15 +476,18 @@ footer {
     width: auto;
 }
 
-
-
 #social-tab{
     min-width: 220px;
     display: flex;
     justify-content: space-between;
+    
 }
-    #social-tab img{height: 50px;}
-    #social-tab img:hover{cursor: pointer;}
+#social-tab img{
+    max-height: 50px;
+    margin-right: 6px;
+
+}
+#social-tab img:hover{cursor: pointer;}
 
 /*---------- DARK MODE, "Anakin Skywalker Was Weak. I Destroyed Him" ----------*/
 
@@ -629,6 +632,16 @@ footer {
         flex-direction: column;
         justify-content: center;
     }
+
+    .footer-info-box {
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    #social-tab {
+        justify-content: center;
+    }
+
     .recipe-description {
         padding-top: 22px;
     }
