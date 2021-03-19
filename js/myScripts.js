@@ -276,11 +276,14 @@ window.addEventListener("DOMContentLoaded", function () {
         $("#search-bar").attr("placeholder","Search for...")
     }
     $("#dark-mode").click(function(){
+        $("#dark-mode img").css("height","24px")
+        $("#light-mode img").css("height","18px")
         sessionStorage.setItem("Mode","dark")
         LightDark()
     })
     $("#light-mode").click(function(){
-        $("#light-mode img").css("height","12px")
+        $("#light-mode img").css("height","24px")
+        $("#dark-mode img").css("height","18px")
         sessionStorage.setItem("Mode","light")
         LightDark()
     })
