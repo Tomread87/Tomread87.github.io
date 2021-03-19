@@ -83,14 +83,14 @@ header .main{
     font-size: 1.2em;
 }
 
-.nav-menu li a{
+.nav-menu-a-tags{
     text-decoration: none;
-    color: rgba(70, 70, 70, 1);    
+    color: rgba(70, 70, 70, 1);
 }
 
-
-.nav-menu li a:hover{
+.nav-menu-a-tags:hover{
     text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    color: rgba(70, 70, 70, 1);
 }
 
 .lang {
@@ -102,9 +102,19 @@ header .main{
     height: 24px;
     margin-top: -4px;
 }
-.nav-menu li:hover{
+.nav-menu-a-tags:hover{
     cursor: pointer;
     border-bottom: solid 2px rgba(255, 70, 70);
+}
+#dark-mode {
+    filter: brightness(85%);
+}
+#light-mode {
+    filter: brightness(25%);
+}
+.light-dark:hover {
+    filter: brightness(50%);
+    cursor: pointer;
 }
 /*---------- Searchbox Styling here ----------*/
 
@@ -148,7 +158,6 @@ header .main{
 #magnify {
     display: none;
 }
-
 
 /*---------- Carousel Styling starts here ----------*/
 .carousel-container {
@@ -221,25 +230,30 @@ header .main{
     text-decoration: none;
     cursor: pointer;
     position: absolute;
-    top: 45%;
+    top: 40%;
     width: auto;
     z-index: 4;
-    padding: 16px;
-    color: rgb(180, 180, 180);
+    padding: 14px 22px 18px 12px;
+    color: rgba(255, 255, 255,0.7);
     font-weight: 400;
     font-size: 36px;
     transition: 0.4s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 50% 50% 0;
     user-select: none;
+
 }
 
 .prev:hover, .next:hover {
-    color: white;
-    background-color: rgba(80, 80, 80, 0.5);
+    color: rgba(255, 70, 70);
+    transition: 0.2s;
+    background-color: rgba(250, 250, 250, 0.5);
+    
 }
 
 .next {
     right: 0;
+    border-radius: 50% 0 0 50%;
+    padding: 14px 12px 18px 22px;
 }
 
 /*---------- latest-recipes styling starts here  ----------*/
@@ -462,6 +476,27 @@ footer {
     #social-tab img{height: 50px;}
     #social-tab img:hover{cursor: pointer;}
 
+/*---------- DARK MODE, "Anakin Skywalker Was Weak. I Destroyed Him" ----------*/
+
+.darkmode{
+    color: rgb(255, 255, 255);
+    background-color: rgb(150, 150, 150);
+    /*transition: 0.5s;*/
+}
+.darkHeader{/*it's funny becasue it's like dath vader*/
+    background-color: rgb(100, 100, 100);
+}
+.darkModeText {
+    color:white;
+}
+
+.darkModeText:hover {
+    color: white;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/*---------- Responsice CCSS starts here ----------*/
+
 @media screen and (max-width: 1090px){
     #about-us{
         flex-direction: column;
@@ -526,10 +561,12 @@ footer {
         text-align: right;
         margin-top: 0;
         padding-left: 0;
+        color: rgba(70, 70, 70, 1);
     }
 
     #button-menu{
-        margin-left:120px;
+        position: absolute;
+        right: 0;
         display: block;
         text-align: center;
     }
@@ -621,10 +658,11 @@ footer {
         display: block;
         height: 30px;
     }
-    /*#logo {
-        width: 30%;
-        height: 30%;
-    }*/
+    .nav-menu li{
+        margin-left: 5px;
+    }
 }
+
+
 #invisible {display: none;}
 

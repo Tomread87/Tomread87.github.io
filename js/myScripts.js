@@ -4,6 +4,7 @@ var tapped = false
 var mediaWidth = 770
 
 
+
 //Code found, modified and adpated from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 var prevScrollpos = window.pageYOffset;
 window.addEventListener("scroll", function HideTopMenu() {
@@ -43,13 +44,37 @@ $(document).ready(function () {
     })
     //end of touch listener
 
-    $("#logo").click(function () { window.location = "index.html" })
+    $("#logo").click(function () { window.location = "index.html" }) //click on logo to go back to home
 
     //screen adjustment code
     screenWidth = $(window).width() + 17
     if (screenWidth <= mediaWidth) {
         $("#nav-menu").addClass("invisible")
         MouseOverFunc()
+    }
+})
+
+function MouseOverFunc() {//mouse 
+
+    $("#drop-down").mouseover(function () {
+        $("#nav-menu").removeClass("invisible")
+        $("#button-menu").css({ "background-color": "rgba(70, 70, 70)", "transition": "0.25s" })
+    })
+    $("#drop-down").mouseout(function () {
+        $("#nav-menu").addClass("invisible")
+        $("#button-menu").css({ "background-color": "rgba(255, 70, 70)", "transition": "0.25s" })
+    })
+
+}
+$(window).resize(function () {
+    screenWidth = $(window).width() + 17
+    $("#drop-down").off() //resets the listener so that ti doesn't bug when chagning screen resolution
+    if (screenWidth <= mediaWidth) {
+        $("#nav-menu").addClass("invisible")
+        MouseOverFunc()
+    }
+    if (screenWidth > mediaWidth) {
+        $("#nav-menu").removeClass("invisible")
     }
 })
 
@@ -103,6 +128,7 @@ function SearchBar() {
 
         })
     }
+
     function SearchByIngredients() {
         var all_ingredients_list = document.getElementsByClassName("ingredients-list");
         searchBar.addEventListener('keyup', function () {
@@ -152,38 +178,10 @@ function SearchBar() {
 }
 
 
-
-
-
-function MouseOverFunc() {
-
-    $("#drop-down").mouseover(function () {
-        $("#nav-menu").removeClass("invisible")
-        $("#button-menu").css({ "background-color": "rgba(70, 70, 70)", "transition": "0.25s" })
-    })
-    $("#drop-down").mouseout(function () {
-        $("#nav-menu").addClass("invisible")
-        $("#button-menu").css({ "background-color": "rgba(255, 70, 70)", "transition": "0.25s" })
-    })
-
-}
-$(window).resize(function () {
-    screenWidth = $(window).width() + 17
-    $("#drop-down").off() //resets the listener so that ti doesn't bug when chagning screen resolution
-    if (screenWidth <= mediaWidth) {
-        $("#nav-menu").addClass("invisible")
-        MouseOverFunc()
-    }
-    if (screenWidth > mediaWidth) {
-        $("#nav-menu").removeClass("invisible")
-    }
-})
-
 //-*-*-*-*-*-*-*-* CODE TO CREATE BREADCRUMB -*-*-*-*-*-*-*-*//
 //this functions leaves stores a value in sessionStorage so that the user can see which page he is currently at
 
 function addCrumb() {
-
     var page = window.location.pathname.split("/").pop().split(".")
     page = page[0]
     if (page == "") {
@@ -194,21 +192,43 @@ function addCrumb() {
     $("#" + crumb).css("border-bottom", "solid 2px rgba(255, 70, 70)")
 }
 
-//-*-*-*-*-*-*-*-* CODE TO CHOOSE LANGUAGE -*-*-*-*-*-*-*-*//
+//-*-*-*-*-*-*-*-* Change Light and Dark Mode for accessibility -*-*-*-*-*-*-*-*//
 
+function LightDark(){
+    let mode = sessionStorage.getItem("Mode")
+    if (mode == "dark") {
+        $("body").addClass("darkmode")
+        $("header").addClass("darkHeader")
+        $("a").addClass("darkModeText")
+        $(".recipe, .bakery").addClass("darkHeader")
+    }
+    if (mode == "light") {
+        $("body").removeClass("darkmode")
+        $("header").removeClass("darkHeader")
+        $("a").removeClass("darkModeText")
+        $(".recipe, .bakery").removeClass("darkHeader")
+    }
+
+
+}
+
+
+//-*-*-*-*-*-*-*-* CODE TO LOAD APPROPRIATE CONTENT AFTER DOM LOADED -*-*-*-*-*-*-*-*//
 
 window.addEventListener("DOMContentLoaded", function () {
     addCrumb()
-
-    var lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
+    /*if (sessionStorage.getItem("Mode") == null) {
+        sessionStorage.setItem("Mode","light")
+    }*/
+    let lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
-
     if (lang === null) { //if the lang is null load page go to index
         if (crumb != "index") {            
             window.location.replace("index.html")
         }
         sessionStorage.setItem("Crumb", "index")
         sessionStorage.setItem("Lang", "ENG")
+        sessionStorage.setItem("Mode","light")
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
@@ -241,6 +261,15 @@ window.addEventListener("DOMContentLoaded", function () {
             PopulateBakery(DessertENG, lang)
         }
     }
+    $("#dark-mode").click(function(){
+        sessionStorage.setItem("Mode","dark")
+        LightDark()
+    })
+    $("#light-mode").click(function(){
+        sessionStorage.setItem("Mode","light")
+        LightDark()
+    })
+    LightDark()
     addCrumb()
     ShowHide()
     if (crumb != "index") { SearchBar() }
@@ -341,15 +370,17 @@ var NavLinks = ["index", "starters", "maindishes", "bakery", "desserts"]
 
 //function to change the language of the Menu
 function PopulateMenu(MenuLang) {
-    var navContainer = document.getElementById("nav-menu")
-    var ul = document.createElement("ul")
-    ul.setAttribute("class", "nav-menu")
+    var navContainer = document.getElementById("nav-menu") //get the navigation menu
+    var ul = document.createElement("ul") 
+    ul.setAttribute("class", "nav-menu") 
 
-    for (var i = 0; i < MenuLang.length; i++) {
+    for (var i = 0; i < MenuLang.length; i++) {//loop to populate ul tag with li tags
         var li = document.createElement("li")
+        
         var a = document.createElement("a")
         a.setAttribute("id", NavLinks[i])
         a.setAttribute("href", NavLinks[i] + ".html")
+        a.setAttribute("class","nav-menu-a-tags")       
         a.innerText = MenuLang[i]
         li.appendChild(a)
         ul.appendChild(li)
