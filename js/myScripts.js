@@ -201,12 +201,14 @@ function LightDark(){
         $("header").addClass("darkHeader")
         $("a").addClass("darkModeText")
         $(".recipe, .bakery").addClass("darkHeader")
+        $(".after-description").addClass("dark-after-description")
     }
     if (mode == "light") {
         $("body").removeClass("darkmode")
         $("header").removeClass("darkHeader")
         $("a").removeClass("darkModeText")
         $(".recipe, .bakery").removeClass("darkHeader")
+        $(".after-description").removeClass("dark-after-description")
     }
 
 
@@ -246,6 +248,13 @@ window.addEventListener("DOMContentLoaded", function () {
         } else if (crumb == "desserts") {
             PopulateBakery(DessertITA, lang)
         }
+        $(".footer-info-box h3:first-child").text("Trovateci Anche Su")
+        $(".search-items h3").text("Filtra per")
+        $("#filter-menu option:first-child").text("Nome Ricetta")
+        $("#filter-menu option:nth-child(2)").text("Ingredienti")
+        $("#search-bar").attr("placeholder","ricerca...")
+        //$("#filter-menu option").text("Nome Ricetta")
+
     }
     if (lang == "ENG") {//if lang is in english compile in English
         PopulateMenu(NavMenuEng)
@@ -260,6 +269,11 @@ window.addEventListener("DOMContentLoaded", function () {
         } else if (crumb == "desserts") {
             PopulateBakery(DessertENG, lang)
         }
+        $(".footer-info-box h3:first-child").text("Find us Also Here")
+        $(".search-items h3").text("Search by")
+        $("#filter-menu option:first-child").text("Recipe Name")
+        $("#filter-menu option:nth-child(2)").text("Ingredients")
+        $("#search-bar").attr("placeholder","Search for...")
     }
     $("#dark-mode").click(function(){
         sessionStorage.setItem("Mode","dark")
@@ -386,6 +400,8 @@ function PopulateMenu(MenuLang) {
         ul.appendChild(li)
     }
     navContainer.appendChild(ul)
+    //change language of various elements of the DOM depending on language choice
+
 }
 //function that creates the div element for latest Recipe
 function FillLatest(collection, lang) {

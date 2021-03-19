@@ -39,6 +39,7 @@ header {
 
 #logo{
     height: 68px;
+    border-radius: 5px;
 }
 
 #logo:hover{
@@ -107,13 +108,13 @@ header .main{
     border-bottom: solid 2px rgba(255, 70, 70);
 }
 #dark-mode {
-    filter: brightness(85%);
+    filter: brightness(80%);
 }
 #light-mode {
-    filter: brightness(25%);
+   margin-left: 4px;
 }
 .light-dark:hover {
-    filter: brightness(50%);
+    filter: contrast(60%);
     cursor: pointer;
 }
 /*---------- Searchbox Styling here ----------*/
@@ -472,7 +473,11 @@ footer {
 
 }
 
-#social-tab{min-width: 220px}
+#social-tab{
+    min-width: 220px;
+    display: flex;
+    justify-content: space-between;
+}
     #social-tab img{height: 50px;}
     #social-tab img:hover{cursor: pointer;}
 
@@ -493,6 +498,16 @@ footer {
 .darkModeText:hover {
     color: white;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.4);
+}
+.dark-after-description {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(100,100,100, 1) 70%);
+    width: 100%;
+    height: 5em;
 }
 
 /*---------- Responsice CCSS starts here ----------*/
