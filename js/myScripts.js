@@ -202,6 +202,8 @@ function LightDark(){
         $("a").addClass("darkModeText")
         $(".recipe, .bakery").addClass("darkHeader")
         $(".after-description").addClass("dark-after-description")
+        $("#dark-mode img").css("height","24px")
+        $("#light-mode img").css("height","16px")
     }
     if (mode == "light") {
         $("body").removeClass("darkmode")
@@ -209,6 +211,8 @@ function LightDark(){
         $("a").removeClass("darkModeText")
         $(".recipe, .bakery").removeClass("darkHeader")
         $(".after-description").removeClass("dark-after-description")
+        $("#light-mode img").css("height","24px")
+        $("#dark-mode img").css("height","16px")
     }
 
 
@@ -276,14 +280,12 @@ window.addEventListener("DOMContentLoaded", function () {
         $("#search-bar").attr("placeholder","Search for...")
     }
     $("#dark-mode").click(function(){
-        $("#dark-mode img").css("height","24px")
-        $("#light-mode img").css("height","18px")
+
         sessionStorage.setItem("Mode","dark")
         LightDark()
     })
     $("#light-mode").click(function(){
-        $("#light-mode img").css("height","24px")
-        $("#dark-mode img").css("height","18px")
+
         sessionStorage.setItem("Mode","light")
         LightDark()
     })
