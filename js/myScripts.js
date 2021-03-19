@@ -280,6 +280,7 @@ window.addEventListener("DOMContentLoaded", function () {
         LightDark()
     })
     $("#light-mode").click(function(){
+        $("#light-mode img").css("height","12px")
         sessionStorage.setItem("Mode","light")
         LightDark()
     })

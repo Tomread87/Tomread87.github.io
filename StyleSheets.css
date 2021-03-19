@@ -470,8 +470,13 @@ footer {
 
 .footer-info-box p{
     margin-block-end: 0em;
-
 }
+
+.footer img{
+    width: auto;
+}
+
+
 
 #social-tab{
     min-width: 220px;
