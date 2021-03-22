@@ -160,15 +160,25 @@ var StartersITA = {
         dateAdded: "20-02-2021",
         link: "starters.html#Recipe_3",
         tags: [],
+    },
+    Recipe_4: {
+        title: "Insalata Caprese",
+        imageUrl: "assets/recipes/starters/caprese-salad.jpg",
+        imageAlt: "stupenda insalata caprese su un piatto",
+        description: "L'insalata caprese è un'insalata semplice ed elegante che consiste nell'alternare fette di pomodori succosi e maturi a mozzarella cremosa. Le foglie di basilico fresco sono cosparse sopra la preparazione e il piatto viene condito con olio d'oliva e aceto balsamico prima di essere condito con sale e pepe.",
+        ingredients: ["4 pomodori", "1 mozzarella", "basilico fresco", "olio d'oliva", "aceto balsamico", "sale e pepe"],
+        steps: [
+
+            "Affetta ogni pomodoro in fette spesse 1 cm dall'alto verso il basso. Guarnire con la mozzarella a fette e le foglie di basilico su un piatto da portata. Aggiungere sale e pepe a piacere.",
+            "Condisci l'insalata con olio e aceto balsamico appena prima di servire."
+        ],
+        dateAdded: "22-03-2021",
+        link: "starters.html#Recipe_4",
+        tags: [],
     }
 }
 var StartersENG = {
     Recipe_1: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Lets Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Carrot Flan",
         imageUrl: "assets/recipes/starters/Sformato-di-carote.jpg",
         description: "Carrot flan is a colorful dish that I have chosen to prepare in small single-portion casseroles. To prepare it you practically need ingredients that are hardly missing at home, carrots, eggs, parmesan and with the addition of a little nutmeg which serves to give that extra touch of flavor.",
@@ -183,11 +193,6 @@ var StartersENG = {
         dateAdded: "19-02-2021"
     },
     Recipe_2: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Lets Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Savory Muffins",
         imageUrl: "assets/recipes/starters/Muffin-salati.jpg",
         description: "Savory muffins are perfect for all occasions, you can use them as an aperitif, at dinner or lunch instead of bread and pizza, you can easily transport them to the sea, on a trip, picnic out of town! Ideal for a genuine and healthy snack even for children; they are perfect for buffets and parties of all kinds! And you? what flavor do you prefer?",
@@ -202,11 +207,6 @@ var StartersENG = {
         dateAdded: "13-02-2021"
     },
     Recipe_3: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Lets Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Boats of Bread and Baked Eggs",
         imageUrl: "assets/recipes/starters/pane-ripieno.jpg",
         description: "Stuffed bread boats are a delicious and tasty recipe, excellent as a side dish or served with an aperitif. They are simple to prepare: just make bread boats using tasty cereal sandwiches, hollowed out and stuffed with a filling based on vegetables, cheese and ham.",
@@ -220,6 +220,20 @@ var StartersENG = {
         ],
         dateAdded: "20-02-2021",
         link: "starters.html#Recipe_3",
+        tags: [],
+    },
+    Recipe_4: {
+        title: "Caprese Salad",
+        imageUrl: "assets/recipes/starters/caprese-salad.jpg",
+        imageAlt: "beautiful caprese salad on a plate",
+        description: "Caprese Salad is a plain and elegant salad that consists of alternating slices of juicy, ripe tomatoes and creamy mozzarella. Fresh basil leaves are sprinkled on top, and the dish is drizzled with olive oil and balsamic vinegar before being seasoned with salt and pepper.",
+        ingredients: ["4 tomatoes", "1 Mozzarella", "Fresh Basil", "Olive Oil", "Balsamic Vinegar", "Salt and Pepper"],
+        steps: [
+            'Slice each tomato into 1cm thick slices from top to bottom. Top with the sliced mozzarella and basil leaves on a serving plate. Add salt and pepper to taste.',
+            'Drizzle the salad with oil just before serving.'
+        ],
+        dateAdded: "22-03-2021",
+        link: "starters.html#Recipe_4",
         tags: [],
     }
 }
