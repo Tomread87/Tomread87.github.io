@@ -357,6 +357,7 @@ header .main{
     transition: 0.5s ease;
     height: auto;
     left: 0px;
+    justify-content: left;
 }
 
 .recipe {
@@ -646,6 +647,11 @@ footer {
     .bakMaxWidth {
         max-width: 320px;
     }
+
+    .dessMinWidth {
+        min-width: 280px
+    }
+
     .recipe-container{
         flex-direction: column;
         justify-content: space-between;
@@ -711,6 +717,11 @@ footer {
     }
     .filter-input {
         width: 42%
+    }
+
+    .next-dessert, .prev-dessert {
+        font-size: 22px;
+        padding: 6px;
     }
 
 }

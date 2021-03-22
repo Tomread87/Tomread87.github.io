@@ -603,7 +603,7 @@ function FillBakery(collection, lang) {
 function FillDesserts(collection, lang) {
     var container = document.getElementById("desserts-template-container") //where we are going to append all the recipes
     var recipe = create("div")
-    recipe.setAttribute("class", "bakery hover-class bakMaxWidth")
+    recipe.setAttribute("class", "bakery hover-class bakMaxWidth dessMinWidth")
     recipe.setAttribute("id", collection.title)
     container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
     var recipe_tab = create("div")
@@ -800,7 +800,7 @@ function RecipeCarousel() {
                 }
                 else {
                     //console.log("swipe");
-                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*20 + "px"
+                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*10 + "px"
                 }
             } else {
                 let leftCheck = leftnext - xDiff*20
@@ -809,7 +809,7 @@ function RecipeCarousel() {
                 }
                 else {
                     console.log("swipe");
-                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*20 + "px"
+                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*10 + "px"
                 }
             }
         }
