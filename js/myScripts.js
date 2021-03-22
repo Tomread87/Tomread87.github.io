@@ -432,6 +432,7 @@ function FillLatest(collection, lang) {
     var recipeImage = document.createElement("img") //image of recipe
     recipeImage.setAttribute("class", "recipe-image")
     recipeImage.setAttribute("src", "./" + collection.imageUrl) //dynamically set img src
+    recipeImage.setAttribute("alt", collection.imageAlt) //dynamically set img alt src
     var generalText = document.createElement("div") //Text are for recipe
     generalText.setAttribute("class", "general-text-box")
     var recipeHead = document.createElement("div") //Header of recipe
@@ -473,6 +474,7 @@ function FillRecipe(collection, lang) {
     var recipe_thumbnail = create("img")
     recipe_thumbnail.setAttribute("class", "recipe-thumbnail")
     recipe_thumbnail.setAttribute("src", "./" + collection.imageUrl) //set image src dynamically
+    recipe_thumbnail.setAttribute("alt", collection.imageAlt) //set alt of image src dynamically
     recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
     var recipe_description = create("div")
     recipe_description.setAttribute("class", "recipe-description")
@@ -512,6 +514,7 @@ function FillRecipe(collection, lang) {
     ingredients_list.appendChild(ul) //all ingredients have been added now
     var img = create("img")
     img.setAttribute("src", "./" + collection.imageUrl)
+    img.setAttribute("alt", collection.imageAlt) //set alt of image src dynamically
     recipe_ingr_and_img.appendChild(img) //big picture added
     var steps = create("div")
     steps.setAttribute("class", "recipe-steps")
@@ -541,6 +544,7 @@ function FillBakery(collection, lang) {
     var recipe_thumbnail = create("img")
     recipe_thumbnail.setAttribute("class", "bakery-thumbnail")
     recipe_thumbnail.setAttribute("src", "./" + collection.imageUrl) //set image src dynamically
+    recipe_thumbnail.setAttribute("alt", collection.imageAlt)
     recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
     var recipe_description = create("div")
     recipe_description.setAttribute("class", "recipe-description")
@@ -583,6 +587,7 @@ function FillBakery(collection, lang) {
     ingredients_list.appendChild(ul) //all ingredients have been added now
     var img = create("img")
     img.setAttribute("src", "./" + collection.imageUrl)
+    img.setAttribute("alt", collection.imageAlt)
     recipe_ingr_and_img.appendChild(img) //big picture added
     var steps = create("div")
     steps.setAttribute("class", "recipe-steps")
@@ -612,6 +617,7 @@ function FillDesserts(collection, lang) {
     var recipe_thumbnail = create("img")
     recipe_thumbnail.setAttribute("class", "bakery-thumbnail")
     recipe_thumbnail.setAttribute("src", "./" + collection.imageUrl) //set image src dynamically
+    recipe_thumbnail.setAttribute("alt", collection.imageAlt) //set image alt dynamically
     recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
     var recipe_description = create("div")
     recipe_description.setAttribute("class", "recipe-description")
@@ -654,6 +660,7 @@ function FillDesserts(collection, lang) {
     ingredients_list.appendChild(ul) //all ingredients have been added now
     var img = create("img")
     img.setAttribute("src", "./" + collection.imageUrl)
+    img.setAttribute("alt", collection.imageAlt) //set image alt dynamically
     recipe_ingr_and_img.appendChild(img) //big picture added
     var steps = create("div")
     steps.setAttribute("class", "recipe-steps")
