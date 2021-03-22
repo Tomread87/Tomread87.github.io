@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-    <title>Chef Piruggi's Recipes, Bakery</title>
-    <link rel="icon" href="./assets/favicon.ico">
-    <link rel="stylesheet" href="StyleSheets.css">
-    <meta name="description" content="Delicious Recipes">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Ivo Teruggi">
-    <meta name="keywords" content="cooking, recipes, good food, vegan">
-    <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="js/recipes.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH8VX0X1YC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WH8VX0X1YC');
-    </script>
-</head>
+    <head>
+        <title>Chef Piruggi's Recipes, Starters</title>
+        <link rel="icon" href="./assets/favicon.ico">
+        <meta name="description" content="Delicious Recipes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ivo Teruggi">
+        <meta name="keywords" content="cooking, recipes, good food, vegan">
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="js/recipes.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH8VX0X1YC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+    
+            gtag('config', 'G-WH8VX0X1YC');
+        </script>
+        <link rel="stylesheet" href="StyleSheets.css"> <!-- loaded last so that I am sure my css will overlap bootstrap's-->
+    </head>
 
 <body>
 
@@ -37,8 +37,10 @@
                 alt="logo contaning the initials of Chef Piruggi">
             <div class="top-right-menu">
                 <ul class="nav-menu  lang">
-                    <li id="dark-mode" ><img class="light-dark" src="./assets/dark-mode.png" alt="dark mode button" ></li>
-                    <li id="light-mode"><a><img class="light-dark" src="./assets/light-mode.png" alt="light mode button"></a></li>
+                    <li>
+                        <img id="dark-mode" class="light-dark" src="./assets/dark-mode.png" alt="dark mode button" >
+                        <img id="light-mode" class="light-dark" src="./assets/light-mode.png" alt="light mode button">
+                    </li>
                     <li id="lang-ita"><a class="nav-menu-a-tags">ITA</a><img src="./assets/italy-flag.png" alt="italian flag emoji"></li>
                     <li id="lang-eng"><a class="nav-menu-a-tags">ENG</a><img src="./assets/uk-flag.png" alt="england flag emoji"></li>
                 </ul>
@@ -57,6 +59,10 @@
     <!-- Start of Main -->
 
     <div class="main main-bakery" id="main-content">
+        <div id="page-title" style=" background-image: url('./assets/bakery.jpg');">
+            <h1 >BAKERY</h1>
+        </div>
+
         <div class="search-container">
             <div class="search-items">
                 <img src="./assets/lente.png" id="magnify" alt="">
@@ -73,15 +79,15 @@
 
         </div>
         <!-- Recipe Template-->
-        <div id="template-container" class="bakery-page">
+        <div>
+             <div id="template-container" class="bakery-page">
             <!-- All REcipes Wil Be appended here, below is the as example html code of the recipes-->
-            <div class="bakery hover-class bakMaxWidth">
+            <!--div class="bakery hover-class bakMaxWidth">
                 <div class="bakery-tab"><img class="bakery-thumbnail" src="./assets/recipes/bakery/brioche.jpg"
                         alt="three brown brioches dusted with sugar">
                     <div class="recipe-description"><span class="close-recipe">close recipe</span>
                         <h2 class="recipe-title-h2">Vegan Brioche</h2>
-                        <p class="recipe-description-p">Brioche is a delicious sweet bread made that you can eat for
-                            breakfast or even as a snack. This recioe of brioche will assist you in making it vegan</p>
+                        <p class="recipe-description-p">Brioche is a delicious sweet bread made that you can eat for breakfast or even as a snack. This recioe of brioche will assist you in making it vegan</p>
                     </div>
                     <div class="after-description"></div>
                 </div>
@@ -91,11 +97,11 @@
                             <h3>Ingredients</h3>
                             <ul>
                                 <li>150gr Manitoba flour</li>
-                                <li>3100gr Flour</li>
+                                <li>310gr Flour</li>
                                 <li>60gr Sugar</li>
                                 <li>125ml Water</li>
                                 <li>30ml Oil</li>
-                                <li>1/2 sppon dry yeast</li>
+                                <li>1/2 spoon dry yeast</li>
                                 <li>1 spoon salt</li>
                             </ul>
                         </div><img src="./assets/recipes/bakery/brioche.jpg"
@@ -113,9 +119,11 @@
                         <p>Bake the brioche doughs in an oven at 180℃ for 15 minutes</p>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
+        </div>
+       
     <!-- End of Main -->
     <!-- Start of Footer -->
     <footer>

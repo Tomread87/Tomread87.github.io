@@ -4,7 +4,6 @@
 <head>
     <title>Chef Piruggi's Recipes, Starters</title>
     <link rel="icon" href="./assets/favicon.ico">
-    <link rel="stylesheet" href="StyleSheets.css">
     <meta name="description" content="Delicious Recipes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Ivo Teruggi">
@@ -27,6 +26,7 @@
 
         gtag('config', 'G-WH8VX0X1YC');
     </script>
+    <link rel="stylesheet" href="StyleSheets.css"> <!-- loaded last so that I am sure my css will overlap bootstrap's-->
 </head>
 
 <body>
@@ -37,8 +37,10 @@
                 alt="logo contaning the initials of Chef Piruggi">
             <div class="top-right-menu">
                 <ul class="nav-menu  lang">
-                    <li id="dark-mode" ><img class="light-dark" src="./assets/dark-mode.png" alt="dark mode button" ></li>
-                    <li id="light-mode"><a><img class="light-dark" src="./assets/light-mode.png" alt="light mode button"></a></li>
+                    <li>
+                        <img id="dark-mode" class="light-dark" src="./assets/dark-mode.png" alt="dark mode button" >
+                        <img id="light-mode" class="light-dark" src="./assets/light-mode.png" alt="light mode button">
+                    </li>
                     <li id="lang-ita"><a class="nav-menu-a-tags">ITA</a><img src="./assets/italy-flag.png" alt="italian flag emoji"></li>
                     <li id="lang-eng"><a class="nav-menu-a-tags">ENG</a><img src="./assets/uk-flag.png" alt="england flag emoji"></li>
                 </ul>
@@ -56,6 +58,9 @@
     </header>
     <!-- Start of Main -->
     <div class="main" id="main-content">
+        <div id="page-title" style="background-image: url('./assets/starters.jpg');">
+            <h1 >STARTERS AND SIDE DISHES</h1>
+        </div>        
         <div class="search-container">
             <div class="search-items">
                 <img src="./assets/lente.png" id="magnify" alt="">

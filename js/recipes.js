@@ -432,7 +432,7 @@ var BakeryITA = {
         imageUrl: "assets/recipes/bakery/pane-rustico.jpg",
         imageAlt: "Pane rustico tagliato in due pezzi e adagiato su un tagliere di bamboo",
         description: "il pane rustico è un pane semplicissimo da fare che richiede una lunga lievitazione. Questa lievitazione però darà al pane un sapore e una consistenza impossibile da resistere. Con un po' di olio extra vergine o della nutella questo pane da il meglio di se",
-        ingredients: ["400 grammi di farina bianca","10 grammi di sale fino","1-2 grammi di lievito di birra","260 ml di acqua tiepida","1 cucchiaino di olio d'oliva"],
+        ingredients: ["400 grammi di farina bianca", "10 grammi di sale fino", "1-2 grammi di lievito di birra", "260 ml di acqua tiepida", "1 cucchiaino di olio d'oliva"],
         spices: [],
 
         steps: [
@@ -454,14 +454,34 @@ var BakeryITA = {
         link: "bakery.html#Recipe_5",
         tags: [],
     },
+    Recipe_6: {
+        title: "Brioche Vegane",
+        imageUrl: "assets/recipes/bakery/brioche.jpg",
+        imageAlt: "tre brioches deliziose spolverate di zucchero",
+        description: "La brioche è un delizioso pane dolce che puoi mangiare a colazione o anche come spuntino. Questa ricetta di brioche ti aiuterà a renderla vegana",
+        ingredients: ["150gr farina Manitoba",
+            "310gr di farina",
+            "60gr di zucchero",
+            "125 ml di acqua",
+            "30ml di olio",
+            "1/2 cucchiaio di lievito secco",
+            "1 cucchiaio di sale",],
+        spices: [],
+
+        steps: [
+            "Fare l'impasto mescolando 50gr di farina + 45ml di acqua + il lievito. Mescolare bene e una volta che l'impasto è pronto lasciarlo lievitare fino al triplo di volume",
+            "Aggiungete lo zucchero, la farina rimanente e l'acqua. Mescolate. Ora potete aggiungere l'olio e il sale e lavorare la pasta",
+            "Lasciate lievitare l'impasto per almeno 4 ore",
+            "Formare l'impasto in piccole palline o nella forma che preferisci. Ogni pezzo dovrebbe essere di 50gr e lasciarli lievitare fino al doppio",
+            "Cuocere gli impasti brioche in forno a 180 ℃ per 15 minuti",
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_6",
+        tags: [],
+    },
 }
 var BakeryENG = {
     Recipe_1: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Lets Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Easy Focaccia",
         imageUrl: "assets/recipes/bakery/focaccia.jpg",
         imageAlt: "fragrant focaccia illuminated by rays of the sun coming from a window",
@@ -486,11 +506,6 @@ var BakeryENG = {
         tags: [],
     },
     Recipe_2: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Let's Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Genoese Focaccia",
         imageUrl: "assets/recipes/bakery/focaccia-genovese.jpg",
         imageAlt: "Three slices of Genoese focaccia stacked on a paper napkin, beautifully cooked with a golden top crust",
@@ -519,11 +534,6 @@ var BakeryENG = {
         tags: [],
     },
     Recipe_3: {
-        LangSetup: {
-            ingrL: "Ingredients",
-            startL: "Let's Start Cooking!",
-            spicesL: "Spices"
-        },
         title: "Soft Bread Loaf",
         imageUrl: "assets/recipes/bakery/pane-soffice-cassetta.jpg",
         imageAlt: "Superb loaf resting on a wooden cutting board",
@@ -547,12 +557,6 @@ var BakeryENG = {
         tags: [],
     },
     Recipe_4: {
-        LangSetup: {
-
-            ingrL: "Ingredients",
-            startL: "Let's Start Cooking!",
-            spicesL: "Spices",
-        },
         title: "Pumpkin Bread",
         imageUrl: "assets/recipes/bakery/pane-di-zucca.jpg",
         imageAlt: "Superb loaf of pumpkin pan resting on a wooden cutting board with a slice already cut ready to eat",
@@ -576,11 +580,6 @@ var BakeryENG = {
         tags: [],
     },
     Recipe_5: {
-        LangSetup: {
-            ingrL: "Ingredienti",
-            startL: "Ai Fornelli!",
-            spicesL: "Spezie"
-        },
         title: "Rustic Bread",
         imageUrl: "assets/recipes/bakery/pane-rustico.jpg",
         imageAlt: "Rustic bread cut into two pieces and placed on a bamboo cutting board",
@@ -605,6 +604,31 @@ var BakeryENG = {
         ],
         dateAdded: "11-3-2021",
         link: "bakery.html#Recipe_5",
+        tags: [],
+    },
+    Recipe_6: {
+        title: "Vegan Brioche",
+        imageUrl: "assets/recipes/bakery/brioche.jpg",
+        imageAlt: "three brown brioches dusted with sugar",
+        description: "Brioche is a delicious sweet bread made that you can eat for breakfast or even as a snack. This recioe of brioche will assist you in making it vegan",
+        ingredients: ["150gr Manitoba flour",
+            "310gr Flour",
+            "60gr Sugar",
+            "125ml Water",
+            "30ml Oil",
+            "1/2 spoon dry yeast",
+            "1 spoon salt",],
+        spices: [],
+
+        steps: [
+            "Make the dough by mixing 50gr of flour + 45ml water + the yeast. Mix thouroughly and once the dough is ready let it raise till triple in volume",
+            "Add sugar, the remaning flour and water. Mix. Now you can add the oil and salt and work the dough",
+            "Let the dough rise for at least 4 hours",
+            "Shape the dough in small balls or a shape you like. Each pieace should be of 50gr and let them rise till double in size",
+            "Bake the brioche doughs in an oven at 180℃ for 15 minutes",
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_6",
         tags: [],
     },
 }
@@ -652,6 +676,57 @@ var DessertITA = {
         ],
         dateAdded: "01-03-2021",
         link: "desserts.html#Recipe_2",
+        tags: [],
+    },
+    //these recipes are for content and testing
+    Recipe_6: {
+        title: "Vegan Brioche",
+        imageUrl: "assets/recipes/bakery/brioche.jpg",
+        imageAlt: "three brown brioches dusted with sugar",
+        description: "Brioche is a delicious sweet bread made that you can eat for breakfast or even as a snack. This recioe of brioche will assist you in making it vegan",
+        ingredients: ["150gr Manitoba flour",
+            "310gr Flour",
+            "60gr Sugar",
+            "125ml Water",
+            "30ml Oil",
+            "1/2 spoon dry yeast",
+            "1 spoon salt",],
+        spices: [],
+
+        steps: [
+            "Make the dough by mixing 50gr of flour + 45ml water + the yeast. Mix thouroughly and once the dough is ready let it raise till triple in volume",
+            "Add sugar, the remaning flour and water. Mix. Now you can add the oil and salt and work the dough",
+            "Let the dough rise for at least 4 hours",
+            "Shape the dough in small balls or a shape you like. Each pieace should be of 50gr and let them rise till double in size",
+            "Bake the brioche doughs in an oven at 180℃ for 15 minutes",
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_6",
+        tags: [],
+    },
+    Recipe_7: {
+        title: "Vegan Brioche",
+        imageUrl: "assets/recipes/bakery/brioche.jpg",
+        imageAlt: "three brown brioches dusted with sugar",
+        description: "Brioche is a delicious sweet bread made that you can eat for breakfast or even as a snack. This recioe of brioche will assist you in making it vegan",
+        ingredients: ["150gr Manitoba flour",
+            "310gr Flour",
+            "60gr Sugar",
+            "125ml Water",
+            "30ml Oil",
+            "1/2 spoon dry yeast",
+            "1 spoon salt",],
+        spices: [],
+
+        steps: [
+            "Make the dough by mixing 50gr of flour + 45ml water + the yeast. Mix thouroughly and once the dough is ready let it raise till triple in volume",
+            "Add sugar, the remaning flour and water. Mix. Now you can add the oil and salt and work the dough",
+            "Let the dough rise for at least 4 hours",
+            "Shape the dough in small balls or a shape you like. Each pieace should be of 50gr and let them rise till double in size",
+            "Bake the brioche doughs in an oven at 180℃ for 15 minutes",
+        ],
+        dateAdded: "11-3-2021",
+        link: "bakery.html#Recipe_6",
         tags: [],
     },
 

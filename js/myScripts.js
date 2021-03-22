@@ -50,6 +50,7 @@ $(document).ready(function () {
     screenWidth = $(window).width() + 17
     if (screenWidth <= mediaWidth) {
         $("#nav-menu").addClass("invisible")
+        $("#nav-menu a").addClass("dark-li")
         MouseOverFunc()
     }
 })
@@ -71,10 +72,12 @@ $(window).resize(function () {
     $("#drop-down").off() //resets the listener so that ti doesn't bug when chagning screen resolution
     if (screenWidth <= mediaWidth) {
         $("#nav-menu").addClass("invisible")
+        $("#nav-menu a").addClass("dark-li")
         MouseOverFunc()
     }
     if (screenWidth > mediaWidth) {
         $("#nav-menu").removeClass("invisible")
+        $("#nav-menu a").removeClass("dark-li")
     }
 })
 
@@ -86,7 +89,7 @@ function SearchBar() {
     SearchByRecipeName()
 
     $('#filter-menu').on('change', function () {
-        
+
         searchBar.value = ""
         selection = $('#filter-menu option:selected').val()
         if (selection == "recipe_name") {
@@ -194,7 +197,7 @@ function addCrumb() {
 
 //-*-*-*-*-*-*-*-* Change Light and Dark Mode for accessibility -*-*-*-*-*-*-*-*//
 
-function LightDark(){
+function LightDark() {
     let mode = sessionStorage.getItem("Mode")
     if (mode == "dark") {
         $("body").addClass("darkmode")
@@ -202,8 +205,8 @@ function LightDark(){
         $("a").addClass("darkModeText")
         $(".recipe, .bakery").addClass("darkHeader")
         $(".after-description").addClass("dark-after-description")
-        $("#dark-mode img").css("height","24px")
-        $("#light-mode img").css("height","16px")
+        $("#dark-mode").css("height", "24px")
+        $("#light-mode").css("height", "16px")
 
     }
     if (mode == "light") {
@@ -212,8 +215,8 @@ function LightDark(){
         $("a").removeClass("darkModeText")
         $(".recipe, .bakery").removeClass("darkHeader")
         $(".after-description").removeClass("dark-after-description")
-        $("#light-mode img").css("height","24px")
-        $("#dark-mode img").css("height","16px")
+        $("#light-mode").css("height", "24px")
+        $("#dark-mode").css("height", "16px")
     }
 
 
@@ -230,12 +233,12 @@ window.addEventListener("DOMContentLoaded", function () {
     let lang = sessionStorage.getItem("Lang") //get the value of the Lang Key from the sessionStorage
     let crumb = sessionStorage.getItem("Crumb") //get the value of the Crumb Key from sessionStorage
     if (lang === null) { //if the lang is null load page go to index
-        if (crumb != "index") {            
+        if (crumb != "index") {
             window.location.replace("index.html")
         }
         sessionStorage.setItem("Crumb", "index")
         sessionStorage.setItem("Lang", "ENG")
-        sessionStorage.setItem("Mode","light")
+        sessionStorage.setItem("Mode", "light")
         lang = sessionStorage.getItem("Lang")
         crumb = sessionStorage.getItem("Crumb")
     }
@@ -251,13 +254,13 @@ window.addEventListener("DOMContentLoaded", function () {
         } else if (crumb == "maindishes") {
             PopulateMains(MainsITA, lang)
         } else if (crumb == "desserts") {
-            PopulateBakery(DessertITA, lang)
+            PopulateDesserts(DessertITA, lang)
         }
         $(".footer-info-box h3:first-child").text("Trovateci Anche Su")
         $(".search-items h3").text("Filtra per")
         $("#filter-menu option:first-child").text("Nome Ricetta")
         $("#filter-menu option:nth-child(2)").text("Ingredienti")
-        $("#search-bar").attr("placeholder","ricerca...")
+        $("#search-bar").attr("placeholder", "ricerca...")
         //$("#filter-menu option").text("Nome Ricetta")
 
     }
@@ -272,27 +275,28 @@ window.addEventListener("DOMContentLoaded", function () {
         } else if (crumb == "maindishes") {
             PopulateMains(MainsENG, lang)
         } else if (crumb == "desserts") {
-            PopulateBakery(DessertENG, lang)
+            PopulateDesserts(DessertENG, lang)
         }
         $(".footer-info-box h3:first-child").text("Find us Also Here")
         $(".search-items h3").text("Search by")
         $("#filter-menu option:first-child").text("Recipe Name")
         $("#filter-menu option:nth-child(2)").text("Ingredients")
-        $("#search-bar").attr("placeholder","Search for...")
+        $("#search-bar").attr("placeholder", "Search for...")
     }
-    $("#dark-mode").click(function(){
+    $("#dark-mode").click(function () {
 
-        sessionStorage.setItem("Mode","dark")
+        sessionStorage.setItem("Mode", "dark")
         LightDark()
     })
-    $("#light-mode").click(function(){
+    $("#light-mode").click(function () {
 
-        sessionStorage.setItem("Mode","light")
+        sessionStorage.setItem("Mode", "light")
         LightDark()
     })
     LightDark()
     addCrumb()
     ShowHide()
+    RecipeCarousel()
     if (crumb != "index") { SearchBar() }
 })
 
@@ -311,6 +315,8 @@ $("#lang-eng").click(function () {
 //document.getElementById("sformato-carote").addEventListener("click", function GetElementInfo(e){alert("test")})
 
 function ShowHide() {
+    var des_pos //position of our recipe carousel
+
     $(".recipe").click(function GetElementInfo(e) {
         var recipeId = $(e.target).closest(".recipe") //.closest will navigate up through the parents and find the first item that sattisfies the request 
         var clickClass = e.target.className
@@ -340,12 +346,14 @@ function ShowHide() {
         }
     })
     $(".bakery").click(function GetElementInfo(e) {
-        var clickClass = e.target.className
-        var recipeId = $(e.target).closest(".bakery")
-        var Id = $(e.target).closest("[id]").attr('id')
+        let clickClass = e.target.className
+        let recipeId = $(e.target).closest(".bakery")
+        let dessert_templateID = $("#desserts-template-container")
+        let buttons = $(".prev, .next")
         //.closest will navigate up through the parents and find the first item that sattisfies the request 
         if (clickClass == "recipe-description-p" || clickClass == "recipe-title-h2") {
             //recipeId = e.target.parentNode.parentNode.parentNode.parentNode.id    //---Old Code---Vanilla Javascript---//  
+
             show(recipeId)
         } else if (clickClass == "bakery-thumbnail") {
             //recipeId = e.target.parentNode.parentNode.id  //---Old Code---Vanilla Javascript---//  
@@ -354,9 +362,13 @@ function ShowHide() {
             //recipeId = e.target.parentNode.parentNode.parentNode.id   //---Old Code---Vanilla Javascript---//  /
             hide(recipeId)
         }
+
         function show(recipe) {
+            des_pos = parseFloat(dessert_templateID.css("left"))
+            buttons.css("display", "none")
+            dessert_templateID.css({ "left": "0px", "transition": "none" })
             recipe.removeClass("hover-class")
-            recipe.css({"height": "auto" })
+            recipe.css({ "height": "auto" })
             recipe.removeClass("bakMaxWidth")
             recipe.find(".recipe-main-content").css({ "max-height": "2000px", "padding": "16px" })
             //.find will find the class that we are looking for among the children inside the div with id #recipeId
@@ -367,6 +379,8 @@ function ShowHide() {
             $(".bakery").not(recipe).hide()
         }
         function hide(recipe) {
+            buttons.css("display", "block")
+            dessert_templateID.css({ "left": des_pos + "px", "transition": "0.5s ease" })
             recipe.addClass("hover-class")
             recipe.addClass("bakMaxWidth")
             //.find will find the class that we are looking for among the children inside the div with id #recipeId
@@ -378,7 +392,7 @@ function ShowHide() {
             //recipe.css("transtion","0")
             $(".bakery").not(recipe).show()
             setTimeout(function () {
-                
+
             }, 100)
         }
     })
@@ -392,16 +406,16 @@ var NavLinks = ["index", "starters", "maindishes", "bakery", "desserts"]
 //function to change the language of the Menu
 function PopulateMenu(MenuLang) {
     var navContainer = document.getElementById("nav-menu") //get the navigation menu
-    var ul = document.createElement("ul") 
-    ul.setAttribute("class", "nav-menu") 
+    var ul = document.createElement("ul")
+    ul.setAttribute("class", "nav-menu")
 
     for (var i = 0; i < MenuLang.length; i++) {//loop to populate ul tag with li tags
         var li = document.createElement("li")
-        
+
         var a = document.createElement("a")
         a.setAttribute("id", NavLinks[i])
         a.setAttribute("href", NavLinks[i] + ".html")
-        a.setAttribute("class","nav-menu-a-tags")       
+        a.setAttribute("class", "nav-menu-a-tags")
         a.innerText = MenuLang[i]
         li.appendChild(a)
         ul.appendChild(li)
@@ -586,57 +600,107 @@ function FillBakery(collection, lang) {
         steps.appendChild(p)
     }
 }
+function FillDesserts(collection, lang) {
+    var container = document.getElementById("desserts-template-container") //where we are going to append all the recipes
+    var recipe = create("div")
+    recipe.setAttribute("class", "bakery hover-class bakMaxWidth")
+    recipe.setAttribute("id", collection.title)
+    container.appendChild(recipe) //recipe is the main contianer for all info of eachr recipe
+    var recipe_tab = create("div")
+    recipe_tab.setAttribute("class", "bakery-tab")
+    recipe.appendChild(recipe_tab)//appending the tab that will be seen all the time
+    var recipe_thumbnail = create("img")
+    recipe_thumbnail.setAttribute("class", "bakery-thumbnail")
+    recipe_thumbnail.setAttribute("src", "./" + collection.imageUrl) //set image src dynamically
+    recipe_tab.appendChild(recipe_thumbnail) //image on left side of tab
+    var recipe_description = create("div")
+    recipe_description.setAttribute("class", "recipe-description")
+    recipe_tab.appendChild(recipe_description) //append box contain recipe info
+    var close_recipe = create("span")
+    close_recipe.setAttribute("class", "close-recipe")
+    if (lang == "ENG") { close_recipe.innerText = "close recipe" }
+    else { close_recipe.innerText = "chiudi ricetta" }
+    recipe_description.appendChild(close_recipe)//appending the link to close open recipes
+    var h2 = create("h2")
+    h2.setAttribute("class", "recipe-title-h2")
+    h2.innerText = collection.title
+    recipe_description.appendChild(h2)
+    var p1 = create("p")
+    p1.setAttribute("class", "recipe-description-p")
+    p1.innerText = collection.description
+    recipe_description.appendChild(p1)//adding the short description
+    var hide_bottom = create("div")
+    hide_bottom.setAttribute("class", "after-description")
+    recipe_tab.appendChild(hide_bottom)//this is the div that will hide the overscroll
+    var recipe_main_content = create("div")
+    recipe_main_content.setAttribute("class", "recipe-main-content bakery-main-content")
+    recipe.appendChild(recipe_main_content)//second half of recipe that is hidden until clicked on
+    var recipe_ingr_and_img = create("div")
+    recipe_ingr_and_img.setAttribute("class", "recipe-ingr-and-img")
+    recipe_main_content.appendChild(recipe_ingr_and_img) //text and image appended
+    var ingredients_list = create("div")
+    ingredients_list.setAttribute("class", "ingredients-list")
+    recipe_ingr_and_img.appendChild(ingredients_list)
+    var h3 = create("h3")
+    if (lang == "ENG") { h3.innerText = "Ingredients" }
+    else { h3.innerText = "Ingredienti" }
+    ingredients_list.appendChild(h3)
+    var ul = create("ul")
+    for (var i = 0; i < collection.ingredients.length; i++) {
+        var li = document.createElement("li")
+        li.innerText = collection.ingredients[i]
+        ul.appendChild(li)
+    }
+    ingredients_list.appendChild(ul) //all ingredients have been added now
+    var img = create("img")
+    img.setAttribute("src", "./" + collection.imageUrl)
+    recipe_ingr_and_img.appendChild(img) //big picture added
+    var steps = create("div")
+    steps.setAttribute("class", "recipe-steps")
+    recipe_main_content.appendChild(steps)
+    var h3_steps = create("h3")
+    if (lang == "ENG") {
+        h3_steps.innerText = "Let's start Cooking!"
+    } else {
+        h3_steps.innerText = "Ai fornelli!"
+    }
+    steps.appendChild(h3_steps)
+    for (var i = 0; i < collection.steps.length; i++) {
+        var p = create("p")
+        p.innerText = collection.steps[i]
+        steps.appendChild(p)
+    }
+}
+
 
 //functions to call population that will fill the pages with the appropiate recipes
 function PopulateIndex(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
         FillLatest(val, lang)
     })
-    if (lang == "ENG") {
-        $("#reach-us").text("Reach Us Also At")
-        $("#latest-header").text("Our Latest Recipes")
-    } else {
-        $("#reach-us").text("Ci Trovate Anche Su")
-        $("#latest-header").text("Le Ultime Ricette")
-    }
     Carousel(6000, 1000) //we start the Carosuel function here
 }
 function PopulateStarters(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
         FillRecipe(val, lang)
     })
-    if (lang == "ENG") {
-        $("#reach-us").text("Reach Us Also At")
-        $("#latest-header").text("Our Latest Recipes")
-    } else {
-        $("#reach-us").text("Ci Trovate Anche Su")
-        $("#latest-header").text("Le Ultime Ricette")
-    }
 }
 function PopulateMains(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
         FillRecipe(val, lang)
     })
-    if (lang == "ENG") {
-        $("#reach-us").text("Reach Us Also At")
-        $("#latest-header").text("Our Latest Recipes")
-    } else {
-        $("#reach-us").text("Ci Trovate Anche Su")
-        $("#latest-header").text("Le Ultime Ricette")
-    }
 }
 function PopulateBakery(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
         FillBakery(val, lang)
     })
-    if (lang == "ENG") {
-        $("#reach-us").text("Reach Us Also At")
-        $("#latest-header").text("Our Latest Recipes")
-    } else {
-        $("#reach-us").text("Ci Trovate Anche Su")
-        $("#latest-header").text("Le Ultime Ricette")
-    }
 }
+function PopulateDesserts(collection, lang = "ENG") {
+    Object.values(collection).forEach(val => {
+        FillDesserts(val, lang)
+    })
+}
+
 
 function RemoveChildrenOf(id) {
     var parent = document.getElementById(id)
@@ -657,41 +721,120 @@ function Carousel(timer, fadetime) {
     var prev = document.getElementsByClassName("prev")[0] //get the previous button from carousel
     //we had listeners for the buttons
     next.addEventListener("click", function () {
-        FadeImages(500)       
+        FadeImages(500)
     })
     prev.addEventListener("click", function () {
-        FadeImagesPrev(500)       
+        FadeImagesPrev(500)
     })
     //we add functions below
     function FadeImages(fadetime) {
-        if (index >= images) {              
-            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
+        if (index >= images) {
+            $(".inside-img:nth-of-type(" + index + ")").fadeOut(fadetime);
             $(".inside-img:nth-of-type(1)").fadeIn(fadetime)
-            index = 1 ;
+            index = 1;
         } else {
-            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
-            $(".inside-img:nth-of-type("+(index+1)+")").fadeIn(fadetime);
-            index++ 
+            $(".inside-img:nth-of-type(" + index + ")").fadeOut(fadetime);
+            $(".inside-img:nth-of-type(" + (index + 1) + ")").fadeIn(fadetime);
+            index++
         }
     }
     function FadeImagesPrev(fadetime) {
         if (index <= 1) {
             index = images
             $(".inside-img:nth-of-type(1)").fadeOut(fadetime);
-            $(".inside-img:nth-of-type("+index+")").fadeIn(fadetime)
+            $(".inside-img:nth-of-type(" + index + ")").fadeIn(fadetime)
         } else {
-            $(".inside-img:nth-of-type("+index+")").fadeOut(fadetime);
-            $(".inside-img:nth-of-type("+(index-1)+")").fadeIn(fadetime)
+            $(".inside-img:nth-of-type(" + index + ")").fadeOut(fadetime);
+            $(".inside-img:nth-of-type(" + (index - 1) + ")").fadeIn(fadetime)
             index--
         }
     }
     function FadeTimer(timer, fadetime) {
-        setTimeout(function () {               
-            FadeImages(fadetime)                
+        setTimeout(function () {
+            FadeImages(fadetime)
             FadeTimer(timer, fadetime)
         },
             timer)
     }
     FadeTimer(timer, fadetime)
+}
+
+//We create the scripts for the recipe carousel
+function RecipeCarousel() {
+    let container = document.getElementById("desserts-template-container")
+
+    //swipe code taken and adapted from stackoverflow
+    document.addEventListener('touchstart', handleTouchStart, false)
+    document.addEventListener('touchmove', handleTouchMove, false)
+
+    var xDown = null
+
+    function getTouches(evt) {
+        return evt.touches ||             // browser API
+            evt.originalEvent.touches; // jQuery
+    }
+
+    function handleTouchStart(evt) {
+        const firstTouch = getTouches(evt)[0];
+        xDown = firstTouch.clientX;
+    };
+
+    function handleTouchMove(evt) {
+        if (!xDown) {
+            return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var xDiff = xDown - xUp;
+
+        if (Math.abs(xDiff) != 0) {/*most significant*/
+            let divLength = $("#recipe-carousel").width()
+            let divLength2 = $("#desserts-template-container").width()
+            let diff = divLength - divLength2;
+            let leftnext = parseFloat(container.style.left)
+            console.log(leftnext, xDiff, diff);
+            if (xDiff > 0) {
+                let leftCheck = leftnext - xDiff*20
+                if (leftCheck <= diff) {
+                    container.style.left = diff + "px"
+                }
+                else {
+                    //console.log("swipe");
+                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*20 + "px"
+                }
+            } else {
+                let leftCheck = leftnext - xDiff*20
+                if (leftCheck >= 0) {
+                    container.style.left = 0 + "px"
+                }
+                else {
+                    console.log("swipe");
+                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*20 + "px"
+                }
+            }
+        }
+        /* reset values */
+        xDown = null;
+    };
+
+    $(".next-dessert").click(function () {
+        let divLength = $("#recipe-carousel").width()
+        let divLength2 = $("#desserts-template-container").width()
+        let diff = divLength - divLength2;
+        let leftnext = parseFloat(container.style.left)
+        let leftCheck = leftnext - 150
+        if (leftCheck <= diff) {
+            container.style.left = diff + "px"
+        } else { container.style.left = parseFloat(getComputedStyle(container).left) - 150 + "px" }
+
+    })
+    $(".prev-dessert").click(function () {
+        let leftprev = parseFloat(container.style.left)
+        let leftCheck = leftprev + 150
+        if (leftCheck >= 0) {
+            container.style.left = 0 + "px"
+        } else { container.style.left = parseFloat(getComputedStyle(container).left) + 150 + "px" }
+    })
+
 }
 
