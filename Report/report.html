@@ -1,0 +1,413 @@
+<head>
+    <title>Ivo Teruggi, LARGE COURSEWORK
+        BRIEFt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ivo Teruggi">
+    <meta charset="utf-8">
+    <style>
+        .report-container {
+            border: solid 1px black;
+            padding: 10px 20px 10px 20px;
+            margin-bottom: 22px;
+            color: black;
+            /**/
+            border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(70, 70, 70);
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: rgba(255, 70, 70);
+        }
+
+        .main {
+            width: 100%;
+            max-width: 1138px;
+            margin-top: 8px;
+            margin-right: auto;
+            margin-left: auto;            
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .side-by-side{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .inner-side{
+            width:  49%;
+            border: solid 1px rgb(70, 70, 70);
+            margin-top: 1.5em;
+            background-color: #ececec;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235f5f60' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        h4{
+            background-color: rgb(70, 70, 70);
+            margin-block-start: 0;
+            margin-block-end:0;
+            color: white;
+            padding: 5px
+        }
+
+        .mobile-wireframe{
+            border: solid 1px rgb(70, 70, 70);
+            width: 19.5%;
+            background-color: #ececec;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235f5f60' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        #backbutton{
+            margin-left: 80%;
+            width: 15%;
+            min-width: 100px;
+            position: sticky;
+            top: 10;
+            background-color: rgba(255, 70, 70, 0.5);
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        #backbutton a {
+            color: white;
+        }
+    </style>
+</head>
+
+<div class="main">
+    <h1>Large Coursework Brief</h1>
+    <div class="report-container">
+        <p><strong>Name:</strong> Ivo</p>
+        <p><strong>Surname</strong> Teruggi</p>
+        <p><strong>Date</strong> 30/05/2021</p>
+        <h3 id="table">Table of Contents</h3>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#inspiration">Inspiration</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#usability">Usability</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#evaluation1">Evaulation 1</a></li>
+            <li><a href="#evaluation2">Evaulation 2</a></li>
+            <li>
+                <a href="#appendices">Appendices</a>
+                <ul>
+                    <li><a href="#wireframes-desktop">Wireframes for Desktop</a></li>
+                    <li><a href="#wireframes-mobile">Wireframes for Small Screens</a></li>
+                    <li><a href="#mockups-desktop">Mockups for Desktop</a></li>
+                    <li><a href="#mockups-mobile">Mockups for Small Screens</a></li>
+                    </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <div id="backbutton"><a  href="#table">Back to Table of Contents</a></div>
+    <div class="report-container" id="introduction">
+        <h2>Introduction</h2>
+        <p>
+            The Website is a portal where my wife and I can share our most loved recipes.
+        </p>
+        <p>
+            Some of these recipes have been gathered through our years together and added in a little recipe book my
+            wife cherishes very much. When I was asked in the module to create an actual website, I thought that it was
+            the perfect occasion to bring all those recipes from the book to the web, so that we could share them with
+            friends and family.
+        </p>
+        <p>
+            When designing the website, I wanted to have a simple structure with a navigation Menu at the top and the
+            content underneath it. The website has a home page and then 4 pages categorized by meal type (starters, main
+            dishes, everything that is part of baking and desserts).
+        </p>
+        <p>
+            I wanted to make sure that my wife and I could upload new recipes easily, so when designing the website, I
+            created a template engine for the recipes. The recipes are found in a .js file called recipes.js and are
+            saved as Objects. To add or remove a recipe it's sufficient to modify that .js file. When the webpage is
+            loading it will load all the appropriate recipes from the file and the template engine in JavaScript will
+            create a card for each recipe.
+        </p>
+        <p>
+            Recipes are loaded in each page as cards having a picture, a title, and a description of the recipe. If you
+            click on the recipe card it will expand showing more in detail the ingredients and the steps to cook the
+            recipe. All of the pictures come from freestock images websites or have been taken with a camera from me.
+        </p>
+        <p>
+            At the bottom of the web page there is a standard footer. I followed my wife's preferences and chose a
+            palette of greys, coral and white colours.
+        </p>
+    </div>
+    <div class="report-container" id="inspiration">
+        <h2>Inspiration</h2>
+        <p>
+            My first inspiration would be my wife, she cooks amazing dishes for the whole family. Cooking is a great
+            passion of hers and you can feel a positive energy in the whole house whilst she is preparing anything in
+            the kitchen.
+        </p>
+        <p>
+            My second inspiration would be the guys at <a
+                href="https://sorted.club/">https://sorted.club/</a>https://sorted.club/. My wife and I watch their
+            videos on YouTube very often. Their website has a simple but fun structure, it was of inspiration when
+            designing mine.
+        </p>
+        <p>
+            My third inspiration would be a variety of other cooking and recipe websites. I did a lot of research to see
+            how the most viewed website on the web as of today are structured. Websites such as: <a
+                href="https://www.seriouseats.com/">https://www.seriouseats.com/</a>, <a
+                href="https://www.hotforfoodblog.com/">https://www.hotforfoodblog.com/</a> and <a
+                href="https://pinchofyum.com/">https://pinchofyum.com/</a> https://pinchofyum.com/ have all been of
+            inspiration.
+        </p>
+    </div>
+    <div class="report-container" id="accessibility">
+        <h2>Accessibility</h2>
+        <p>
+            When designing and developing my website I wanted to be sure that accessibility was taken into account. I
+            installed a chrome extension called "Screen Reader" (it can be found here <a
+                href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en). ">https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
+            </a>https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
+        </p>
+        <p>
+            This extension reads the content of a website and it's designed for people that are blind or have very
+            little vision. I tried to navigate my website with my eyes closed using the extension. If I got stuck on the
+            webpage I would change the design to make it more accessible.
+        </p>
+        <p>
+            Additionally I researched what makes a better alt text for images. I made sure that all recipe images have a
+            good alt text.
+        </p>
+        <p>
+            Finally I added a feature that can change the website to dark mode. This mode makes the background dark and
+            the text white so that people who have difficulties to read on white backgrounds can change nod to dark and
+            have a better experience.
+        </p>
+    </div>
+    <div class="report-container" id="usability">
+        <h2>Usability</h2>
+        <p>
+            I made sure that the website is both mobile and pc friendly. I took in consideration and studied the
+            responsiveness of the website. I made sure that all the media query would satisfy all possible, phones,
+            tablets and PC screen sizes. The cards and content of the website changes design according to the width of
+            the screen. Additionally on pc you have all the options to click, hover on links and cards while on mobile
+            devices I added touch features on certain pages (such as swiping cards left or right in the dessert.html
+            page).
+        </p>
+        <p>
+            I developed my website with an aesthetic and minimalist design. By choosing a predetermined colour palette
+            and using the recognizable card design, users should not find difficulty in browsing and searching what they
+            are looking for.
+        </p>
+        <p>
+            A third usability feature is a search bar at the top of each category. It can help user search for a
+            particular recipe title or it can filter the recipe's by ingredients.
+        </p>
+    </div>
+    <div class="report-container" id="learning">
+        <h2>Learning</h2>
+        <p>
+            JavaScript was one of the things I had to improve. To create the website in the way that I wanted, I wrote a
+            lot of lines of JavaScript. At the beginning my JavaScript code were not optimal. By reworking many times my
+            lines of code I have improved the quality of my code (hopefully).
+        </p>
+        <p>
+            I had to research and learn what are the basic accessibility fundamentals. It was mind opening, reading from
+            <a
+                href="https://www.w3.org/standards/webdesign/accessibility">https://www.w3.org/standards/webdesign/accessibility</a>,
+            how we design our websites can affect so many people. It's unfair that some people with disabilities would
+            not have the possibility to enjoy your website if you did not take accessibility into consideration.
+        </p>
+        <p>
+            Another thing that I had to improve was my CSS knowledge. CSS can be a very powerful tool to make your
+            website more dynamic. Whilst during the entirety of the module we learnt a lot about CSS, there are so many
+            tips and tricks that can be found online to make some amazing styles for your website.
+        </p>
+    </div>
+    <div class="report-container" id="evaluation1">
+        <h2>Evaluation I</h2>
+        <p>
+            I am very happy of how I managed to create a template in basic JavaScript that will get the information from
+            another .js file and then fill each page with the appropriate recipes. When designing the website, I wanted
+            to make sure I could give a text file to my wife that she could easily fill with new recipes. I would then
+            copy paste these recipes into the .js file called recipes.js. The first time I saw that the bakery page
+            added my first six recipes automatically it was an amazing feeling of achievement. I am looking forward into
+            the future to see how many recipes we will be able to add to the website.
+        </p>
+    </div>
+    <div class="report-container" id="evaluation2">
+        <h2>Evaluation II</h2>
+        <p>
+            One thing I am not too happy about is using stock images to complete the website. It's fundamental that you
+            have good media on your website. My wife and I cooked all the recipes that are on the website but we haven't
+            taken pictures of what we have cooked or the pictures are really not that good. I had to use free stock
+            images to make the website more beautiful to look at. It is difficult to take good pictures of the food you
+            prepare if you are not trained and if you don't have the right equipment. I am planning in the future to try
+            and put all original pictures taken from me on the website.
+        </p>
+    </div>
+    <div class="report-container" id="resources">
+        <h2>Resources</h2>
+        <p>
+            Here is a list of All the resources I used:
+        </p>
+        <ul>
+            <li>To write my code I used a software called "Visual Studio Code", it's a freeware source code editor.
+            </li>
+            <li>
+                To upload my changes and see how they actually worked online I used GitHub and hosted the website on my
+                personal page. By hosting on Github I could easily check both on desktop, tablet and phone how the
+                website looked. I could then make cahnges to my CSS to make everything work well.
+            </li>
+            <li>
+                I used the bootstrap library to help with some of the CSS and give me the fonts I like the most.
+            </li>
+            <li>
+                I used jQuery library for my JavaScript. It helped a lot to select and modify Items.
+            </li>
+            <li>
+                I have Google analytics connected to the website.
+                This is for future use once the website will go live after getting the grade for the assignment.
+            </li>
+            <li>
+                Most of the images on the website are taken from:
+                <ul>
+                    <li><a href="https://www.pexels.com/">https://www.pexels.com/</a></li>
+                    <li><a href="https://unsplash.com/">https://unsplash.com/</a></li>
+                    <li><a href="https://pixabay.com/">https://pixabay.com/</a></li>
+                    <li><a href="https://www.shutterstock.com/">https://www.shutterstock.com/</a></li>
+                </ul>
+            </li>
+            <li>I used a software for image editing called "GIMP", to modify pictures and create icons.</li>
+            <li>
+                I used YouTube to host a video created by my wife and I. I then embeded this video in the desserts page
+                into one of the recipe cards.
+            </li>
+            <li>To look for information for my Javascript and CSS I used the following websites:
+                <ul>
+                    <li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Learn">https://developer.mozilla.org/en-US/docs/Learn</a>
+                    </li>
+                    <li><a href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div class="report-container" id="appendices">
+        <h2>Appendices</h2>
+        <img src="site_map.jpg" alt="site map">
+        <h3 id="wireframes-desktop">Wireframes for Desktop Version</h3>
+        <h4>index.html</h4>
+        <img src="wireframe-index.jpg" alt="wireframe of the index page">
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>starters.html (all recipe cards closed)</h4>
+                <img src="wireframe-starters.jpg" alt="wireframe of the starters recipe page">
+            </div>
+            <div class="inner-side">
+                <h4>starters.html (Recipe card Open)</h4>
+                <img src="wireframe-starters-open.jpg" alt="wireframe of the starters page with a recipe card open">
+            </div>
+        </div>
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>maindishes.html (all recipe cards closed)</h4>
+                <img src="wireframe-mains.jpg" alt="wireframe of the maindishes page">
+            </div>
+            <div class="inner-side">
+                <h4>maindishes.html (recipe card open)</h4>
+                <img src="wireframe-mains-open.jpg" alt="wireframe of the maindishes page">
+            </div>
+        </div>
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>bakery.html (all recipe cards closed)</h4>
+                <img src="wireframe-bakery.jpg" alt="wireframe of the bakery page">
+            </div>
+            <div class="inner-side">
+                <h4>bakery.html (recipe card open)</h4>
+                <img src="wireframe-bakery-open.jpg" alt="wireframe of the bakery page">
+            </div>
+        </div>
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>desserts.html (all recipe cards closed)</h4>
+                <img src="wireframe-desserts.jpg" alt="wireframe of the desserts page">
+            </div>
+            <div class="inner-side">
+                <h4>desserts.html (recipe card open)</h4>
+                <img src="wireframe-desserts-open.jpg" alt="wireframe of the desserts page">
+            </div>
+        </div>
+        <h3 id="wireframes-mobile">Wireframes for Mobile Version</h3>
+        <div class="side-by-side">
+            <div class="mobile-wireframe">
+                <h4>index.html mobile</h4>
+                <img  src="wireframe-index-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>starters.html mobile</h4>
+                <img  src="wireframe-starters-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>maindishes.html mobile</h4>
+                <img  src="wireframe-mains-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>bakery.html mobile</h4>
+                <img  src="wireframe-bakery-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>desserts.html mobile</h4>
+                <img  src="wireframe-desserts-mobile.jpg" alt=""></div>           
+        </div>
+        <h3 id="mockups-desktop">Mockups of The Website, Desktop version</h3>
+        <h4>index.html</h4>
+        <img src="homepage.jpg" alt="">
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>starters.html</h4>
+                <img src="starters.jpg" alt="">
+            </div>
+            <div class="inner-side">
+                <h4>maindieshes.html</h4>
+                <img src="mains.jpg" alt="">
+            </div>
+        </div>
+        <div class="side-by-side">
+            <div class="inner-side">
+                <h4>bakery.html</h4>
+                <img src="bakery.jpg" alt="">
+            </div>
+            <div class="inner-side">
+                <h4>desserts.html</h4>
+                <img src="desserts.jpg" alt="">
+            </div>
+        </div>
+        <h3 id="mockups-mobile">Mockups of The Website, Small Screen</h3>
+        <div class="side-by-side">
+            <div class="mobile-wireframe">
+                <h4>index.html mobile</h4>
+                <img  src="homepage-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>starters.html mobile</h4>
+                <img  src="starters-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>maindishes.html mobile</h4>
+                <img  src="mains-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>bakery.html mobile</h4>
+                <img  src="bakery-mobile.jpg" alt=""></div>
+            <div class="mobile-wireframe">
+                <h4>desserts.html mobile</h4>
+                <img  src="desserts-mobile.jpg" alt=""></div>           
+        </div>
+
+    </div>
+</div>
