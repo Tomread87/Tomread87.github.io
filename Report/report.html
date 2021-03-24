@@ -1,6 +1,5 @@
 <head>
-    <title>Ivo Teruggi, LARGE COURSEWORK
-        BRIEFt</title>
+    <title>Ivo Teruggi, LARGE COURSEWORK BRIEF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Ivo Teruggi">
     <meta charset="utf-8">
@@ -10,7 +9,6 @@
             padding: 10px 20px 10px 20px;
             margin-bottom: 22px;
             color: black;
-            /**/
             border-radius: 8px;
         }
 
@@ -49,7 +47,7 @@
             border: solid 1px rgb(70, 70, 70);
             margin-top: 1.5em;
             background-color: #ececec;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235f5f60' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("diagonal-stripes.svg")
         }
 
         h4{
@@ -63,8 +61,7 @@
         .mobile-wireframe{
             border: solid 1px rgb(70, 70, 70);
             width: 19.5%;
-            background-color: #ececec;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235f5f60' fill-opacity='0.42' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("diagonal-stripes.svg")
         }
 
         #backbutton{
@@ -77,6 +74,10 @@
             text-decoration: none;
             text-align: center;
             margin-bottom: 22px;
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
         }
 
         #backbutton a {
@@ -98,8 +99,9 @@
             <li><a href="#accessibility">Accessibility</a></li>
             <li><a href="#usability">Usability</a></li>
             <li><a href="#learning">Learning</a></li>
-            <li><a href="#evaluation1">Evaulation 1</a></li>
-            <li><a href="#evaluation2">Evaulation 2</a></li>
+            <li><a href="#evaluation1">Evaluation 1</a></li>
+            <li><a href="#evaluation2">Evaluation 2</a></li>
+            <li><a href="#resources">Resources</a></li>
             <li>
                 <a href="#appendices">Appendices</a>
                 <ul>
@@ -119,138 +121,94 @@
             The Website is a portal where my wife and I can share our most loved recipes.
         </p>
         <p>
-            Some of these recipes have been gathered through our years together and added in a little recipe book my
-            wife cherishes very much. When I was asked in the module to create an actual website, I thought that it was
-            the perfect occasion to bring all those recipes from the book to the web, so that we could share them with
-            friends and family.
+            We have gathered most of these recipes throughout our years together and recorded them in a little recipe book that my wife cherishes very much. When I approached this module assignment to create a website, I thought that it was the perfect occasion to push forward a project we began a few months ago, whereby we create video-recipes,  and bring all those recipes from the book to the web, so that we could share them with friends and family.
         </p>
         <p>
-            When designing the website, I wanted to have a simple structure with a navigation Menu at the top and the
-            content underneath it. The website has a home page and then 4 pages categorized by meal type (starters, main
-            dishes, everything that is part of baking and desserts).
+            When designing the website, I wanted to have a simple structure with a navigation Menu at the top and the content underneath it. The website is composed of a home page and 4 pages categorized by meal type (starters, main dishes, baked goods and desserts) and at the bottom of the web page there is a standard footer. For what concern the colour choice, I followed my wife's preferences and used a palette of greys, coral and white colours.
         </p>
         <p>
-            I wanted to make sure that my wife and I could upload new recipes easily, so when designing the website, I
-            created a template engine for the recipes. The recipes are found in a .js file called recipes.js and are
-            saved as Objects. To add or remove a recipe it's sufficient to modify that .js file. When the webpage is
-            loading it will load all the appropriate recipes from the file and the template engine in JavaScript will
-            create a card for each recipe.
+            I wanted to make sure that my wife and I could upload new recipes easily, so when designing the website, I created a template engine for the recipes. The recipes are stored in a <i>.js</i> file called <i>recipes.js</i> and are saved as Objects. To add or remove a recipe it is sufficient to modify that <i>.js</i> file. As the webpage loads, it automatically loads all the relevant recipes from the file and the template engine in JavaScript creates a <i>Card</i> for each recipe.
         </p>
         <p>
-            Recipes are loaded in each page as cards having a picture, a title, and a description of the recipe. If you
-            click on the recipe card it will expand showing more in detail the ingredients and the steps to cook the
-            recipe. All of the pictures come from freestock images websites or have been taken with a camera from me.
-        </p>
-        <p>
-            At the bottom of the web page there is a standard footer. I followed my wife's preferences and chose a
-            palette of greys, coral and white colours.
+            These <i>Recipe Cards</i> are composed of a picture, a title and a description of the recipe. When clicking on the recipe card, it will expand detailing the ingredients and the steps to prepare it. The pictures come either from freestock images websites or have been taken by.
         </p>
     </div>
     <div class="report-container" id="inspiration">
         <h2>Inspiration</h2>
         <p>
-            My first inspiration would be my wife, she cooks amazing dishes for the whole family. Cooking is a great
-            passion of hers and you can feel a positive energy in the whole house whilst she is preparing anything in
-            the kitchen.
+            My first source of inspiration comes from my wife, she cooks amazing dishes for the whole family. Cooking is a great passion of hers and you can feel the positive energy in the whole house whilst she is prepares anything in the kitchen.
         </p>
         <p>
-            My second inspiration would be the guys at <a
-                href="https://sorted.club/">https://sorted.club/</a>https://sorted.club/. My wife and I watch their
-            videos on YouTube very often. Their website has a simple but fun structure, it was of inspiration when
-            designing mine.
+            The guys at SORTEDfood <a href="https://sorted.club/">https://sorted.club/</a>  are another source of inspiration for me. My wife and I watch their YouTube videos very often. The Sorted Club website has a simple but fun structured that inspired me when designing my website in a way that was user friendly and entertaining at the same time. 
         </p>
         <p>
-            My third inspiration would be a variety of other cooking and recipe websites. I did a lot of research to see
-            how the most viewed website on the web as of today are structured. Websites such as: <a
+            Finally, when researching for this assignment I found a variety of other cooking and recipe websites that guided my creative process. I wanted to familiarise myself with the structure of the most viewed websites offering similar content, to have a better understanding of what users appreciate. Websites such as: <a
                 href="https://www.seriouseats.com/">https://www.seriouseats.com/</a>, <a
                 href="https://www.hotforfoodblog.com/">https://www.hotforfoodblog.com/</a> and <a
-                href="https://pinchofyum.com/">https://pinchofyum.com/</a> https://pinchofyum.com/ have all been of
+                href="https://pinchofyum.com/">https://pinchofyum.com/</a> have all been of
             inspiration.
         </p>
     </div>
     <div class="report-container" id="accessibility">
         <h2>Accessibility</h2>
         <p>
-            When designing and developing my website I wanted to be sure that accessibility was taken into account. I
-            installed a chrome extension called "Screen Reader" (it can be found here <a
-                href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en). ">https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
-            </a>https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
+            Ensuring accessibility of all users was a priority when designing and developing my website. To do so, I installed a chrome extension called "Screen Reader" (available here  <a
+                href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en). ">
+                https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
+            </a>. This extension reads the content of a website and is designed for blind or partially sighted users. 
         </p>
         <p>
-            This extension reads the content of a website and it's designed for people that are blind or have very
-            little vision. I tried to navigate my website with my eyes closed using the extension. If I got stuck on the
-            webpage I would change the design to make it more accessible.
+            As I wanted to make sure that bling or partially sighted users’ experience was optimal, I tested how my website performed with this extension and navigated it my eyes closed. Thanks to this test I was able to identify a few issues, e.g. easily move through the elements of the page, which I resolved by changing the design to make it more accessible.
         </p>
         <p>
-            Additionally I researched what makes a better alt text for images. I made sure that all recipe images have a
-            good alt text.
+            Additionally, I researched how to write the best alt text for images and made sure that all the recipe images on my website have a good alt text.
         </p>
         <p>
-            Finally I added a feature that can change the website to dark mode. This mode makes the background dark and
-            the text white so that people who have difficulties to read on white backgrounds can change nod to dark and
-            have a better experience.
+            Finally, I added a feature that allows users to switch the website from light to dark mode. By making the backgrounder dark and the text white, people who encounter difficulties in reading on a white background have the option to switch mode and have a better experience. 
         </p>
     </div>
     <div class="report-container" id="usability">
         <h2>Usability</h2>
         <p>
-            I made sure that the website is both mobile and pc friendly. I took in consideration and studied the
-            responsiveness of the website. I made sure that all the media query would satisfy all possible, phones,
-            tablets and PC screen sizes. The cards and content of the website changes design according to the width of
-            the screen. Additionally on pc you have all the options to click, hover on links and cards while on mobile
-            devices I added touch features on certain pages (such as swiping cards left or right in the dessert.html
-            page).
+            I made sure that my website is both mobile and PC friendly, by taking into consideration and assessing its responsiveness. To do so, I ensure that all the media query satisfy all possible phones, tablets and PC screen sizes. The <i>Recipe Cards</i> and content of the website adapt their design according to the width of the screen. 
         </p>
         <p>
-            I developed my website with an aesthetic and minimalist design. By choosing a predetermined colour palette
-            and using the recognizable card design, users should not find difficulty in browsing and searching what they
-            are looking for.
+            Additionally, while on PC users have the options to click and/or hover on links and Cards, on mobile devices I added touch features on certain pages, such as swiping cards left or right on the <i>dessert.html</i> page. 
         </p>
         <p>
-            A third usability feature is a search bar at the top of each category. It can help user search for a
-            particular recipe title or it can filter the recipe's by ingredients.
+            When developing my website I opted for an aesthetic and minimalist design. By choosing a predetermined colour palette and using the recognizable Card design, users experience in browsing and searching is eased. 
+        </p>
+        <p>
+            Another usability feature I wanted for my website, is the search bar at the top of each category. This facilitates user research for a particular recipe title and can also filter by ingredients.
         </p>
     </div>
     <div class="report-container" id="learning">
         <h2>Learning</h2>
         <p>
-            JavaScript was one of the things I had to improve. To create the website in the way that I wanted, I wrote a
-            lot of lines of JavaScript. At the beginning my JavaScript code were not optimal. By reworking many times my
-            lines of code I have improved the quality of my code (hopefully).
+            My main learning experience through this assignment revolves around JavaScript and CSS. When I first approached this project my JavaScript codes were not optimal. As I wanted to create a website that matched with my idea, I reworked my lines of code many times to achieve my objectives and, by doing so, I feel that I have improved the overall quality of my coding.
         </p>
         <p>
-            I had to research and learn what are the basic accessibility fundamentals. It was mind opening, reading from
+            CSS is a very powerful tool that makes websites more dynamic. Throughout the module, I learned how to use CSS effectively, however, when I began working on this project I wanted to deepen my CSS knowledge and researched tips and tricks on how to better apply CSS attributes to my HTML tags.
+        </p>
+        <p>
+            Another great learning I drew from this project is about accessibility as I had to research the basics of accessibility fundamentals for my website. Learning these aspects from sources such as 
             <a
                 href="https://www.w3.org/standards/webdesign/accessibility">https://www.w3.org/standards/webdesign/accessibility</a>,
-            how we design our websites can affect so many people. It's unfair that some people with disabilities would
-            not have the possibility to enjoy your website if you did not take accessibility into consideration.
-        </p>
-        <p>
-            Another thing that I had to improve was my CSS knowledge. CSS can be a very powerful tool to make your
-            website more dynamic. Whilst during the entirety of the module we learnt a lot about CSS, there are so many
-            tips and tricks that can be found online to make some amazing styles for your website.
+                was a mind-opening experience and an opportunity to reflect on the extent to which website design can affect the experience of people with different capacities. I find it unfair that people with disabilities may not be able to enjoy a website if the appropriate accessibility considerations are not taken into account. 
         </p>
     </div>
     <div class="report-container" id="evaluation1">
         <h2>Evaluation I</h2>
         <p>
-            I am very happy of how I managed to create a template in basic JavaScript that will get the information from
-            another .js file and then fill each page with the appropriate recipes. When designing the website, I wanted
-            to make sure I could give a text file to my wife that she could easily fill with new recipes. I would then
-            copy paste these recipes into the .js file called recipes.js. The first time I saw that the bakery page
-            added my first six recipes automatically it was an amazing feeling of achievement. I am looking forward into
-            the future to see how many recipes we will be able to add to the website.
+            I am very pleased with my capacity to create a template in basic JavaScript that gets the information from another .js file and then automatically fills each page with the relevant recipes. When designing the website, I wanted to make the process of loading new recipes on the website as easy as possible. I gave a text file to my wife that she could easily fill and then copied and pasted them into the .js file called recipes.js. I felt very accomplished the first time that the bakery page added the first six recipes automatically. I am looking forward to adding many new recipes to the website in the future. 
         </p>
     </div>
     <div class="report-container" id="evaluation2">
         <h2>Evaluation II</h2>
         <p>
-            One thing I am not too happy about is using stock images to complete the website. It's fundamental that you
-            have good media on your website. My wife and I cooked all the recipes that are on the website but we haven't
-            taken pictures of what we have cooked or the pictures are really not that good. I had to use free stock
-            images to make the website more beautiful to look at. It is difficult to take good pictures of the food you
-            prepare if you are not trained and if you don't have the right equipment. I am planning in the future to try
-            and put all original pictures taken from me on the website.
+            One aspect of my website that does not fully satisfy me is the use of stock images. I believe that having good media is essential on a website. However, although my wife and I cooked all the recipes of the website, we are not used to take pictures of our dishes and the quality of those we have is not good enough for a website. Taking good quality pictures of food without having the necessary training or equipment is not easy. 
+            Therefore, to ensure that the images on my website were of a good quality and beautiful to look at I resorted to free stock images. In the future, I am planning to replace the stock images with original pictures of our recipes. 
+            
         </p>
     </div>
     <div class="report-container" id="resources">
@@ -267,10 +225,10 @@
                 website looked. I could then make cahnges to my CSS to make everything work well.
             </li>
             <li>
-                I used the bootstrap library to help with some of the CSS and give me the fonts I like the most.
+                I used the bootstrap library (<a href="https://getbootstrap.com/">https://getbootstrap.com/</a>) to help with some of the CSS and give me the fonts I like the most.
             </li>
             <li>
-                I used jQuery library for my JavaScript. It helped a lot to select and modify Items.
+                I used jQuery library (<a href="https://jquery.com/">https://jquery.com/</a>) for my JavaScript. It helped a lot to select and modify Items.
             </li>
             <li>
                 I have Google analytics connected to the website.
@@ -284,6 +242,7 @@
                     <li><a href="https://pixabay.com/">https://pixabay.com/</a></li>
                     <li><a href="https://www.shutterstock.com/">https://www.shutterstock.com/</a></li>
                 </ul>
+                These Images are copyright free and do not require to mention the author
             </li>
             <li>I used a software for image editing called "GIMP", to modify pictures and create icons.</li>
             <li>

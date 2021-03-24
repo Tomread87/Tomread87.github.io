@@ -686,6 +686,17 @@ function PopulateIndex(collection, lang = "ENG") {
         FillLatest(val, lang)
     })
     Carousel(6000, 1000) //we start the Carosuel function here
+    if (lang == "ENG"){
+        $("#latest-header").text("Our Latest Recipes")
+        $("#p1").text("Hi! Welcome to our website! We are just a normal couple that likes to cook and have finally found a way to make it easy to share our favourite recipes with friends and family.")
+        $("#p2").text("All our recipes are lactose free, so if you are looking for non-dairy recipes you are in the right spot.")
+        $("#p3").text("We hope that you will find what you are looking for, if not come back soon. We will be adding new recipes constantly." )
+    }   else {
+        $("#latest-header").text("Le ultime Ricette")
+        $("#p1").text("Ciao! Benvenuti sul nostro sito web! Siamo una semplice coppia a cui piace cucinare e abbiamo finalmente trovato un modo per condividere facilmente le nostre ricette preferite con amici e familiari.")
+        $("#p2").text("Tutte le nostre ricette sono prive di lattosio, quindi se stai cercando ricette senza latte animale, sei nel posto giusto.")
+        $("#p3").text("Speriamo che troverai la ricetta che stai cercando, altrimenti torna presot siccome ne aggiungeremo di nuove costantmente." )
+    }
 }
 function PopulateStarters(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
@@ -706,6 +717,20 @@ function PopulateDesserts(collection, lang = "ENG") {
     Object.values(collection).forEach(val => {
         FillDesserts(val, lang)
     })
+    if (lang == "ENG"){
+        $("#baking-dairy").text("Baking Dairy Free")
+        $("#range-vegan-desserts").text("See Our Range of dairyfree recipes below")
+        $("#p1").text("All of the recipes here are made 100% lactose free. We are well aware that some people are not able to have meals containing milk. So all our recipes are made with non-dairy milk.")
+        $("#p2").text("Non-dairy milk is made from plants such as soja, almonds, rice, coconuts  and many more.")
+        $("#p3").text("Our favourites are almond or coconut milk. Soja also works perfectly well and some might even prefer its taste." )
+    }   else {
+        $("#baking-dairy").text("Cucinare Senza Latte")
+        $("#range-vegan-desserts").text("Ecco la nostra gamma di ricette senza lattosio")
+        $("#p1").text("I nostri dessert sono realizzate al 100% senza lattosio. Sappiamo bene che alcune persone non sono in grado di consumare pasti contenenti latte. Quindi tutte le nostre ricette in questa pagina sono realizzate con latte vegetale.")
+        $("#p2").text("Il latte vegetale è ottenuto da piante come soia, mandorle, riso, noci di cocco e molte altre.")
+        $("#p3").text("I nostri preferiti sono il latte di mandorle o di cocco. Anche la soja funziona perfettamente e alcuni potrebbero addirittura preferirne il gusto." )
+    }
+    
 }
 
 
@@ -801,22 +826,22 @@ function RecipeCarousel() {
             let leftnext = parseFloat(container.style.left)
             console.log(leftnext, xDiff, diff);
             if (xDiff > 0) {
-                let leftCheck = leftnext - xDiff*20
+                let leftCheck = leftnext - 200
                 if (leftCheck <= diff) {
                     container.style.left = diff + "px"
                 }
                 else {
                     //console.log("swipe");
-                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*10 + "px"
+                    container.style.left = parseFloat(getComputedStyle(container).left) - 200 + "px"
                 }
             } else {
-                let leftCheck = leftnext - xDiff*20
+                let leftCheck = leftnext + 200
                 if (leftCheck >= 0) {
                     container.style.left = 0 + "px"
                 }
                 else {
                     console.log("swipe");
-                    container.style.left = parseFloat(getComputedStyle(container).left) - xDiff*10 + "px"
+                    container.style.left = parseFloat(getComputedStyle(container).left) + 200 + "px"
                 }
             }
         }
