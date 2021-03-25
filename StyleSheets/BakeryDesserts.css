@@ -1,0 +1,103 @@
+/*---------- Bakery Styling  ----------*/
+.main-bakery .bakery-page{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly
+}
+
+.bakery {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+    margin: 16px;
+    transition: 0.5s;
+    overflow: hidden;
+    height: 450px;
+    position: relative;
+}
+.bakMaxWidth{
+    max-width: 240px
+}
+
+.after-description {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255, 1) 70%);
+    width: 100%;
+    height: 5em;
+}
+
+.bakery p{
+    overflow: hidden;
+}
+
+.bakery img{
+    /*height: 250px;*/
+    object-fit: cover;
+}
+
+.bakery-tab {
+    display: flex;
+    flex-direction: column;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.bakery-main-content {
+    display: none;
+}
+
+.bakery-thumbnail {
+    /*min-height: 168px;*/
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+
+#desserts-template-container{
+    position: relative;
+    display:inline-flex;
+    flex-wrap: nowrap;
+    transition: 0.5s ease;
+    height: auto;
+    left: 0px;
+    justify-content: left;
+}
+
+.prev-dessert, .next-dessert{
+    color: rgba(255,70,70);
+    background-color: rgba(180, 180, 180, 0.40);
+}
+
+.prev-dessert:hover, .next-dessert:hover{
+    color: rgba(255,255,255);
+    transition: 0.2s;
+    background-color: rgba(255, 70, 70);
+}
+
+/*---------- Responsive CCSS starts here ----------*/
+
+@media screen and (max-width: 600px) {
+    .recipe, .bakery{
+        margin: 24px 8px 24px 8px
+    }
+    .bakMaxWidth {
+        max-width: 320px;
+    }
+    .dessMinWidth {
+        min-width: 280px
+    }
+    .next-dessert, .prev-dessert {
+        font-size: 22px;
+        padding: 6px;
+    }
+    
+
+}

@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-    <head>
-        <title>Chef Piruggi's Recipes, Starters</title>
-        <link rel="icon" href="./assets/favicon.ico">
-        <meta name="description" content="Delicious Recipes">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Ivo Teruggi">
-        <meta name="keywords" content="cooking, recipes, good food, vegan">
-        <meta charset="utf-8">
-        <script src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="js/recipes.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH8VX0X1YC"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-    
-            gtag('config', 'G-WH8VX0X1YC');
-        </script>
-        <link rel="stylesheet" href="StyleSheets.css"> <!-- loaded last so that I am sure my css will overlap bootstrap's-->
-    </head>
+<head>
+    <title>Chef Piruggi's Recipes, Home Page</title>
+    <!-- very important for accessibility reason to give an appropriate titel to each page-->
+    <link rel="icon" href="./assets/favicon.ico"> <!-- Website tab icon -->
+    <meta name="description" content="Delicious Recipes">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- make sure that itemms scale with -->
+    <meta name="author" content="Ivo Teruggi">
+    <meta name="keywords" content="cooking, recipes, good food, vegan">
+    <meta charset="utf-8">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- loads script from jQuery-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--loads css from bootstrap-->
+    <script src="js/recipes.js" type="text/javascript"></script> <!-- loads recipes into the dome-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script> <!-- loads the script from bootstrap-->
+    <!-- Global site tag (gtag.js) - Google Analytics - below -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH8VX0X1YC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WH8VX0X1YC');
+    </script>
+    <!-- End of google analytics-->
+    <link rel="stylesheet" href="./StyleSheets/StyleSheets.css"> <!-- loaded last so that I am sure my css will overlap bootstrap's-->
+</head>
 
 <body>
 
     <header id="header">
         <div class="main">
             <img id="logo" src="./assets/chef-piruggi-watermark.png" height="80"
-                alt="logo contaning the initials of Chef Piruggi">
+                alt="logo contaning the initials of Chef Piruggi"> <!-- logo of the website -->
             <div class="top-right-menu">
+                <!-- top right navigation menu taht will contain the buttons to other pages, language selection, -->
                 <ul class="nav-menu  lang">
                     <li>
-                        <img id="dark-mode" class="light-dark" src="./assets/dark-mode.png" alt="dark mode button" >
+                        <img id="dark-mode" class="light-dark" src="./assets/dark-mode.png" alt="dark mode button">
+                        <!-- makes the website darker-->
                         <img id="light-mode" class="light-dark" src="./assets/light-mode.png" alt="light mode button">
+                        <!-- makes the website turn to it's original state-->
                     </li>
-                    <li id="lang-ita"><a class="nav-menu-a-tags">ITA</a><img src="./assets/italy-flag.png" alt="italian flag emoji"></li>
-                    <li id="lang-eng"><a class="nav-menu-a-tags">ENG</a><img src="./assets/uk-flag.png" alt="england flag emoji"></li>
+                    <li id="lang-ita"><a class="nav-menu-a-tags">ITA</a><img src="./assets/italy-flag.png"
+                            alt="italian flag emoji"></li> <!-- Change language to italian-->
+                    <li id="lang-eng"><a class="nav-menu-a-tags">ENG</a><img src="./assets/uk-flag.png"
+                            alt="england flag emoji"></li> <!-- Change language to English-->
                 </ul>
 
                 <div id="drop-down">
+                    <!-- drop down menu for when we are using small sreens-->
                     <div id="button-menu">MENU</div>
                     <div id="nav-menu" class="">
                         <!-- Java Script Will Fill the Nav with the options according to language-->
+                        <!-- Here is an HTML sample of will will be created
+
+                        <ul class="nav-menu">
+                            <li><a id="index" href="index.html" class="nav-menu-a-tags"
+                                    style="border-bottom: 2px solid rgb(255, 70, 70);">HOME</a></li>
+                            <li><a id="starters" href="starters.html" class="nav-menu-a-tags">STARTERS &amp; SIDES</a>
+                            </li>
+                            <li><a id="maindishes" href="maindishes.html" class="nav-menu-a-tags">MAINS</a></li>
+                            <li><a id="bakery" href="bakery.html" class="nav-menu-a-tags">BAKERY</a></li>
+                            <li><a id="desserts" href="desserts.html" class="nav-menu-a-tags">DESSERTS</a></li>
+                        </ul> 
+                    
+                        End of HTML Sample-->
                     </div>
                 </div>
 
@@ -58,54 +82,87 @@
     </header>
     <!-- Start of Main Content-->
     <div class="main">
-        <div class="carousel-container">
+        <!-- Main central content area, it will store latest recipes and about us section-->
+        <section class="carousel-container">
             <div class="inside-img">
-                <img src="./assets/chef-piruggi.jpg">
+                <img src="./assets/chef-piruggi.jpg" alt="Chef Piruggi signature on top of a kitchen table">
+                <!-- 1st Carousel Image-->
             </div>
             <div class="inside-img notvisible">
-                <a href="bakery.html#Soft Bread">
-                    <p><span>Fragrant Bread</span></p>
+                <a href="bakery.html">
+                    <p><span>Fragrant Bread</span></p> <!-- 2nd Carousel Inner Text-->
                 </a>
-                <img src="./assets/carousel1.jpg">
+                <img src="./assets/carousel1.jpg" alt="section of bread with perfectly brwoend crust ">
+                <!-- 2nd Carousel Image-->
             </div>
             <div class="inside-img notvisible">
-                <a href="bakery.html#Soft Bread">
-                    <p><span>Delicious Breakfast</span></p>
+                <a href="bakery.html">
+                    <p><span>Delicious Breakfast</span></p> <!-- 3rd Carousel Inner Text-->
                 </a>
-                <img src="./assets/carousel2.jpg">
+                <img src="./assets/carousel2.jpg"
+                    alt="table covered with various staple breakfast paltes such as panckages, coffee, fruit">
+                <!-- 3rd Carousel Image-->
             </div>
             <div class="inside-img notvisible">
                 <a href="starters.html">
-                    <p>Tasty Salads</p>
+                    <p>Tasty Salads</p> <!-- 4th Carousel Inner Text-->
                 </a>
-                <img src="./assets/carousel3.jpg">
+                <img src="./assets/carousel3.jpg" alt="salad table seen from above "> <!-- 4th Carousel Image-->
             </div>
 
-            <a class="prev" onclick="">&#10094;</a>
-            <a class="next" onclick="">&#10095;</a>
-        </div>
+            <a class="prev" onclick="">&#10094;</a> <!-- button prev for carousel -->
+            <a class="next" onclick="">&#10095;</a> <!-- button next for carousel -->
+        </section>
         <!-- End of Carousel -->
         <!-- Start of Latest Recipes -->
-        <div id="latest-recipes">
+
+        <section id="latest-recipes">
+            <!-- -->
             <h2 style="margin-bottom: 32px;" id="latest-header">Our Latest Recipes</h2>
             <div id="main-content">
-                <div id="template-container"></div>
+                <div id="template-container">
+                    <!-- Latest recipes will be automatically added here through javascript-->
+                    <!-- The javascript will sort all the recepies and then load the most recent 4 recipes-->
+                    <!-- Example of one of the recipe cards that will be added 
+                        
+                    <div class="recipe-container"><img class="recipe-image"
+                            src="./assets/recipes/starters/Sformato-di-carote.jpg" alt="undefined">
+                        <div class="general-text-box">
+                            <div class="recipe-heading"><span class="latest-recipe-date">19-02-2021</span>
+                                <h2>Carrot Flan</h2>
+                            </div>
+                            <p>Carrot flan is a colorful dish that I have chosen to prepare in small single-portion
+                                casseroles. To prepare it you practically need ingredients that are hardly missing at
+                                home, carrots, eggs, parmesan and with the addition of a little nutmeg which serves to
+                                give that extra touch of flavor.</p><a href="starters.html#Carrot Flan">Go to Recipe</a>
+                        </div>
+                    </div>                        
+                        
+                    
+                    end of Example -->
+
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- End of Latest Recipes -->
 
         <!-- Start of About us Section-->
 
-        <div id="about-us">
-            <img src="./assets/about-us-picture.jpg" alt="Woman in a beatiful kitchen preparing one of Chef Piruggi's recipe's; Donna in una bellissima cucina che sta perparando uan delle ricette di Chef Piruggi">
+        <section id="about-us">
+            <img src="./assets/about-us-picture.jpg"
+                alt="Woman in a beatiful kitchen preparing one of Chef Piruggi's recipe's; Donna in una bellissima cucina che sta perparando uan delle ricette di Chef Piruggi">
             <article class="general-text-box">
-                <h2>Chef Piruggi</h2>
-                <p id="p1">Hi! Welcome to our website! We are just a normal couple that likes to cook and have finally found a way to make it easy to share our favourite recipes with friends and family.</p>
-                <p id="p2">All our recipes are lactose free, so if you are looking for non-dairy recipes you are in the right spot.</p>
-                <p id="p3">We hope that you will find what you are looking for, if not come back soon. We will be adding new recipes constantly..</p>
+                <h2>Chef Piruggi</h2> <!-- Title of section -->
+                <!-- All p tags in this section are changed through javascript-->
+                <p id="p1">Hi! Welcome to our website! We are just a normal couple that likes to cook and have finally
+                    found a way to make it easy to share our favourite recipes with friends and family.</p>
+                <p id="p2">All our recipes are lactose free, so if you are looking for non-dairy recipes you are in the
+                    right spot.</p>
+                <p id="p3">We hope that you will find what you are looking for, if not come back soon. We will be adding
+                    new recipes constantly..</p>
             </article>
-        </div>
+        </section>
 
         <!-- Enf of About us Section-->
 
@@ -116,10 +173,13 @@
     <!-- Start of Footer -->
     <footer>
         <div class="footer-info-container">
+            <!-- Standard footer to clsoe the page -->
             <div class="footer-info-box">
-                <img src="./assets/chef-piruggi-singature.png" height="80px">
+                <img src="./assets/chef-piruggi-singature.png" height="80" alt="Signature of Chef Piruggi">
+                <!-- Signature of Chef Piruggi-->
 
                 <p>
+                    <!-- all rights reserved-->
                     <br>
                     © 2021 Chef Piruggi. All Rights Reserved.
                     <br>
@@ -127,23 +187,21 @@
                 </p>
             </div>
             <div class="footer-info-box">
+                <!-- Social media hrefs are still pending-->
                 <h3>Reach Us Also At</h3>
                 <div id="social-tab">
 
-                    <a><img src="./assets/facebook-social.png" alt=""></a>
-                    <a><img src="./assets/instagram-social.png" alt=""></a>
-                    <a><img src="./assets/twitter-social.png" alt=""></a>
+                    <a><img src="./assets/facebook-social.png" alt="facebook icon, link not yet available"></a>
+                    <a><img src="./assets/instagram-social.png" alt="instagram icon, link not available yet"></a>
+                    <a><img src="./assets/twitter-social.png" alt="twitter icon, link not available yet"></a>
                     <a href="https://www.youtube.com/channel/UCrLrA73U_eluqFsLj7-2iTg" target="blank"><img
-                            src="./assets/youtube-social.png" alt=""></a>
+                            src="./assets/youtube-social.png" alt="youttube icon, link to youtube account"></a>
                 </div>
 
 
             </div>
         </div>
     </footer>
-    <!-- Template Script Here-->
-
-    </script>
     <!-- My script here-->
     <script src="./js/myScripts.js"></script>
 </body>
