@@ -469,6 +469,25 @@ var BakeryITA = {
         link: "bakery.html#",
         tags: [],
     },
+    Recipe_7: {
+        title: "Pane Arabo",
+        imageUrl: "assets/recipes/bakery/flat-bread.jpg",
+        imageAlt: "Magnifico pane arabo con bolle carbonizzate sulla parte superiore, adagiata in una padella di ghisa",
+        description: "Il Pane Arabo fatto in casa è una delle delizie della nostra vita. Con questa ricetta facilissima potrete avere un ottimo pane arabo per farci dei panini o dei rotoli ripieni.",
+
+        ingredients: ["425 grammi farina","10 grammi di lievito chimico","12grammi di sale", "56 grammi Olio d'oliva extravergine d'oliva","240 ml di latte vegetale non dolcificato"],
+        steps: [
+            "In un ciottola mischiare la farina setaccaiata con il bicarbonato e il sale.",
+            "In un'altra ciottola mischiare l'olio e il latte vegetale",
+            "combinare gli ingredienti fino ad ottenre un impasto liscio ed elastico",
+            "Lasciare l'impasto riposare per minimo 10 minuti",
+            "Dividiere l'impasto in 8 pezzetti, formare delle palline da stenedre con un mattarello.",
+            "Cuocere la pasta appiattita una alla volta in una padella oliata, tre minuti per lato circa."
+        ],
+        dateAdded: "25-03-2021",
+        link: "bakery.html#",
+        tags: [],
+    },
 }
 var BakeryENG = {
     Recipe_1: {
@@ -618,6 +637,25 @@ var BakeryENG = {
             "Bake the brioche doughs in an oven at 180℃ for 15 minutes",
         ],
         dateAdded: "11-3-2021",
+        link: "bakery.html#",
+        tags: [],
+    },
+    Recipe_7: {
+        title: "Flat Bread",
+        imageUrl: "assets/recipes/bakery/flat-bread.jpg",
+        imageAlt: "beatiful flat bread with charred bubble on the top, laying in an iron cast skillet",
+        description: "Homemade flat bread is one of the delights of our life. With this easy recipe you can have an excellent Arabic bread to make sandwiches or stuffed rolls.",
+
+        ingredients: ["425 grams of flour", "10 grams of baking powder", "12 grams of salt", "56 grams of extra virgin olive oil", "240 ml of unsweetened vegetable milk"],
+        steps: [
+            "In a bowl, mix the sifted flour with the baking soda and salt.",
+            "In another bowl, mix the oil and vegetable milk",
+            "combine the ingredients until you get a smooth and elastic dough",
+            "Leave the dough to rest for at least 10 minutes",
+            "Divide the dough into 8 pieces, roll into balls with a rolling pin.",
+            "Cook the flattened pasta one at a time in an oiled pan, about three minutes per side."
+        ],
+        dateAdded: "25-03-2021",
         link: "bakery.html#",
         tags: [],
     },
