@@ -202,6 +202,7 @@ function LightDark() {//adds a class to various elements
         $("a").addClass("darkModeText")
         $(".recipe, .bakery").addClass("darkHeader")
         $(".after-description").addClass("dark-after-description")
+        $(".dark-after-description").removeClass("after-description")
         $("#dark-mode").css("height", "24px")
         $("#light-mode").css("height", "16px")
 
@@ -211,6 +212,7 @@ function LightDark() {//adds a class to various elements
         $("header").removeClass("darkHeader")
         $("a").removeClass("darkModeText")
         $(".recipe, .bakery").removeClass("darkHeader")
+        $(".dark-after-description").addClass("after-description")
         $(".after-description").removeClass("dark-after-description")
         $("#light-mode").css("height", "24px")
         $("#dark-mode").css("height", "16px")
